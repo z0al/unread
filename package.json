@@ -29,12 +29,18 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"saxes": "^3.1.6"
+		"readable-stream": "^3.1.1",
+		"saxes": "^3.1.6",
+		"string_decoder": "^1.2.0"
 	},
 	"devDependencies": {
 		"@types/jest": "^24.0.5",
+		"@types/readable-stream": "^2.3.0",
 		"jest": "^24.1.0",
 		"rollup": "^1.1.2",
+		"rollup-plugin-commonjs": "^9.2.0",
+		"rollup-plugin-node-builtins": "^2.1.2",
+		"rollup-plugin-node-globals": "^1.4.0",
 		"rollup-plugin-node-resolve": "^4.0.0",
 		"rollup-plugin-typescript2": "^0.19.2",
 		"temp-dir": "^1.0.0",
