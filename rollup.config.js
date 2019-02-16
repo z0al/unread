@@ -12,7 +12,14 @@ export default {
 	plugins: [
 		resolve(),
 		typescript({
-			cacheRoot: `${tmp}/.rpt2_cache`
+			cacheRoot: `${tmp}/.rpt2_cache`,
+			tsconfigOverride: {
+				// Force ESNext. We use 'commonjs' in tsconfig.json so that
+				// Autocomplete will work, especially for 'saxes'.
+				compilerOptions: {
+					module: 'ESNext'
+				}
+			}
 		})
 	]
 };
