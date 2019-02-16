@@ -1,0 +1,39 @@
+{
+	"name": "feed.io",
+	"version": "0.1.0",
+	"description": "Robust RSS, Atom, and JSON feed parsing in JavaScript",
+	"keywords": [
+		"atom",
+		"feed",
+		"json",
+		"rss",
+		"syndication",
+		"xml"
+	],
+	"homepage": "https://github.com/z0al/feed.io#readme",
+	"bugs": {
+		"url": "https://github.com/z0al/feed.io/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/z0al/feed.io.git"
+	},
+	"license": "MIT",
+	"author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest"
+	},
+	"dependencies": {
+		"saxes": "^3.1.6"
+	},
+	"devDependencies": {
+		"@types/jest": "^24.0.5",
+		"jest": "^24.1.0",
+		"rollup": "^1.1.2",
+		"rollup-plugin-node-resolve": "^4.0.0",
+		"rollup-plugin-typescript2": "^0.19.2",
+		"ts-jest": "^23.10.5",
+		"typescript": "^3.3.3"
+	}
+}
