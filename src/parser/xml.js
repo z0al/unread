@@ -1,9 +1,9 @@
 // @ts-check
 
 // Packages
-const { Transform } = require('readable-stream');
-const { SaxesParser } = require('saxes');
-const { StringDecoder } = require('string_decoder');
+import { SaxesParser } from 'saxes';
+import { Transform } from 'readable-stream';
+import { StringDecoder } from 'string_decoder';
 
 /**
  * RSS/ATOM Parser
@@ -81,4 +81,4 @@ class Parser extends Transform {
 	}
 }
 
-module.exports = Parser;
+export default Parser;

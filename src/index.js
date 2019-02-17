@@ -1,3 +1,3 @@
-const XMLParser = require('./parser/xml');
+import XMLParser from './parser/xml';
 
-module.exports = XMLParser;
+export default XMLParser;

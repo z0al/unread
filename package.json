@@ -1,6 +1,6 @@
 {
 	"name": "feedify",
-	"version": "0.1.0",
+	"version": "0.0.0",
 	"description": "A Robust RSS, Atom, and JSON feeds parser in JavaScript",
 	"keywords": [
 		"atom",
@@ -10,22 +10,18 @@
 		"syndication",
 		"xml"
 	],
-	"homepage": "https://github.com/z0al/feed.io#readme",
-	"bugs": {
-		"url": "https://github.com/z0al/feed.io/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/z0al/feed.io.git"
-	},
+	"repository": "z0al/feedify",
 	"license": "MIT",
 	"author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
 	"files": [
 		"dist"
 	],
-	"main": "index.js",
+	"main": "dist/index.js",
+	"browser": "dist/index.umd.js",
 	"scripts": {
-		"prepublishOnly": "rollup -c",
+		"prebuild": "rimraf ./dist",
+		"build": "rollup -c",
+		"prepublishOnly": "npm run build",
 		"test": "jest"
 	},
 	"dependencies": {
@@ -34,7 +30,18 @@
 		"string_decoder": "^1.2.0"
 	},
 	"devDependencies": {
+		"@babel/preset-env": "^7.3.1",
 		"@types/readable-stream": "^2.3.0",
-		"jest": "^24.1.0"
+		"jest": "^24.1.0",
+		"rimraf": "^2.6.3",
+		"rollup": "^1.2.0",
+		"rollup-plugin-babel": "^4.3.2",
+		"rollup-plugin-commonjs": "^9.2.0",
+		"rollup-plugin-node-builtins": "^2.1.2",
+		"rollup-plugin-node-globals": "^1.4.0",
+		"rollup-plugin-node-resolve": "^4.0.0"
+	},
+	"engines": {
+		"node": ">=10"
 	}
 }
