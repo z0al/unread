@@ -10,7 +10,12 @@ import { StringDecoder } from 'string_decoder';
  */
 class Parser extends Transform {
 	constructor() {
-		super();
+		// Object mode: In short, allows readable streams to push any type of chunk
+		// other than Buffer and Uint8Array.
+		//
+		// https://nodejs.org/api/stream.html#stream_object_mode
+		super({ objectMode: true });
+
 		// XML Parser
 		this._parser = new SaxesParser({ xmlns: true });
 		this._parser.onopentag = this.onopentag.bind(this);
