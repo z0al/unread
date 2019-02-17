@@ -37,24 +37,33 @@ class Parser extends Transform {
 	 * @override
 	 */
 	_transform(chunk, encoding, cb) {
-		const str = this._decoder.write(chunk);
-		this._parser.write(str);
+		try {
+			const str = this._decoder.write(chunk);
+			this._parser.write(str);
 
-		cb();
+			cb();
+		} catch (err) {
+			// Manually trigger an end, no more parsing!
+			cb(err, null);
+		}
 	}
 
 	/**
+	 * This will be called when there is no more written data to be consumed,
+	 * but before the 'end' event is emitted signaling the end of the Readable
+	 * stream.
+	 *
 	 * @param {Function} cb
 	 *
 	 * @override
 	 */
 	_flush(cb) {
-		this._parser.close();
-		this._parser = null;
-
-		this._decoder = null;
-
-		cb();
+		try {
+			this._parser.close();
+			cb();
+		} catch (err) {
+			cb(err);
+		}
 	}
 
 	/**
