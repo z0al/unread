@@ -20,13 +20,20 @@ export default [
 	// Browser
 	{
 		input,
-		output: { file: pkg.browser, format: 'umd', name: 'Feedify' },
+		output: {
+			file: pkg.browser,
+			format: 'umd',
+			name: 'Feedify'
+		},
 		plugins: [globals(), builtins(), ...plugins]
 	},
 	// Node.js
 	{
 		input,
-		output: { file: pkg.main, format: 'cjs' },
+		output: {
+			file: pkg.main,
+			format: 'cjs'
+		},
 		plugins,
 		external: ['readable-stream', 'string_decoder']
 	}

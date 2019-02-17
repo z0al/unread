@@ -9,12 +9,18 @@ import { StringDecoder } from 'string_decoder';
  * RSS/ATOM Parser
  */
 class Parser extends Transform {
-	constructor() {
+	/**
+	 *
+	 * @param {string} [encoding]
+	 */
+	constructor(encoding) {
+		encoding = encoding || 'utf8';
+
 		// Object mode: In short, allows readable streams to push any type of chunk
 		// other than Buffer and Uint8Array.
 		//
 		// https://nodejs.org/api/stream.html#stream_object_mode
-		super({ objectMode: true });
+		super({ objectMode: true, encoding });
 
 		// XML Parser
 		this._parser = new SaxesParser({ xmlns: true });
@@ -26,7 +32,7 @@ class Parser extends Transform {
 
 		// Decodes Buffer to string
 		// TODO: support other encoding options
-		this._decoder = new StringDecoder('utf8');
+		this._decoder = new StringDecoder(encoding);
 	}
 
 	/**
