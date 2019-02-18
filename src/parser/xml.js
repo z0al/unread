@@ -97,7 +97,7 @@ class Parser extends Transform {
 	 * @param {Error} err
 	 */
 	onerror(err) {
-		console.log(err);
+		this.emit('error', err);
 	}
 }
 
