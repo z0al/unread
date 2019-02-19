@@ -21,8 +21,9 @@
 	"scripts": {
 		"prebuild": "rimraf ./dist",
 		"build": "rollup -c",
+		"watch": "rollup -c -w",
 		"prepublishOnly": "npm run build",
-		"test": "jest"
+		"test": "ava"
 	},
 	"dependencies": {
 		"readable-stream": "^3.1.1",
@@ -32,7 +33,7 @@
 	"devDependencies": {
 		"@babel/preset-env": "^7.3.1",
 		"@types/readable-stream": "^2.3.0",
-		"jest": "^24.1.0",
+		"ava": "^1.2.1",
 		"rimraf": "^2.6.3",
 		"rollup": "^1.2.0",
 		"rollup-plugin-babel": "^4.3.2",

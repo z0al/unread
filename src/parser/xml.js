@@ -33,6 +33,14 @@ class Parser extends Transform {
 		// Decodes Buffer to string
 		// TODO: support other encoding options
 		this._decoder = new StringDecoder(encoding);
+
+		// Feed meta
+		this._feed = null;
+		this._item = null;
+
+		// Holds all non-self closing tags temporary
+		/** @type Array<any> */
+		this._stack = [];
 	}
 
 	/**
@@ -73,25 +81,56 @@ class Parser extends Transform {
 	}
 
 	/**
-	 * @param {import('saxes').SaxesTag} tag
+	 * Access current feed data at any time
 	 */
-	onopentag(tag) {
-		console.log(tag);
+	feed() {
+		return { ...this._feed };
 	}
 
 	/**
-	 * @param {import('saxes').SaxesTag} tag
+	 * @param {import('saxes').SaxesTag} node
 	 */
-	onclosetag(tag) {
-		console.log(tag);
+	onopenfeed(node) {
+		if (!this._feed) {
+			this._feed = {};
+
+			// Atom
+			if (node.name === 'feed') {
+				this._feed['@type'] = 'atom';
+				this._feed['@version'] = 1.0;
+			}
+		}
+	}
+
+	onclosefeed() {
+		// Manually trigger an end. We shouldn't parse anymore, right?
+		this.push(null);
+	}
+
+	/**
+	 * @param {import('saxes').SaxesTag} node
+	 */
+	onopentag(node) {
+		// Feed/Channel
+		if (node.name === 'feed') {
+			this.onopenfeed(node);
+		}
+	}
+
+	/**
+	 * @param {import('saxes').SaxesTag} node
+	 */
+	onclosetag(node) {
+		// Feed/Channel
+		if (node.name === 'feed') {
+			this.onclosefeed();
+		}
 	}
 
 	/**
 	 * @param {string} text
 	 */
-	ontext(text) {
-		console.log(text);
-	}
+	ontext(text) {}
 
 	/**
 	 * @param {Error} err
