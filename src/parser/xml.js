@@ -5,6 +5,9 @@ import { SaxesParser } from 'saxes';
 import { Transform } from 'readable-stream';
 import { StringDecoder } from 'string_decoder';
 
+// Ours
+import ns from './namespaces';
+
 /**
  * RSS/ATOM Parser
  */
@@ -29,18 +32,17 @@ class Parser extends Transform {
 		this._parser.ontext = this.ontext.bind(this);
 		this._parser.oncdata = this.ontext.bind(this);
 		this._parser.onerror = this.onerror.bind(this);
+		this._parser.onend = this.onend.bind(this);
 
 		// Decodes Buffer to string
 		// TODO: support other encoding options
 		this._decoder = new StringDecoder(encoding);
 
-		// Feed meta
-		this._feed = null;
-		this._item = null;
-
 		// Holds all non-self closing tags temporary
 		/** @type Array<any> */
 		this._stack = [];
+
+		this._emitMeta = true;
 	}
 
 	/**
@@ -81,50 +83,49 @@ class Parser extends Transform {
 	}
 
 	/**
-	 * Access current feed data at any time
+	 * @param {Object} node
 	 */
-	feed() {
-		return { ...this._feed };
+	isFeed(node) {
+		return (
+			node['@name'] === 'feed' ||
+			// Or
+			(node['@local'] === 'feed' && ns[node['@uri']] === 'atom') ||
+			// Or
+			!!node['@type']
+		);
 	}
 
 	/**
-	 * @param {import('saxes').SaxesTag} node
+	 * @param {import('saxes').SaxesTag} tag
 	 */
-	onopenfeed(node) {
-		if (!this._feed) {
-			this._feed = {};
+	onopentag(tag) {
+		const node = {
+			'@name': tag.name,
+			'@prefix': tag.prefix,
+			'@local': tag.local,
+			'@uri': tag.uri,
+			attr: [],
+			meta: {}
+		};
 
-			// Atom
-			if (node.name === 'feed') {
-				this._feed['@type'] = 'atom';
-				this._feed['@version'] = 1.0;
+		// Feed/Channel
+		if (this.isFeed(node)) {
+			switch (node['@local']) {
+				case 'feed':
+					node['@type'] = 'atom';
+					node['@version'] = '1.0';
+					break;
 			}
 		}
-	}
 
-	onclosefeed() {
-		// Manually trigger an end. We shouldn't parse anymore, right?
-		this.push(null);
+		this._stack.unshift(node);
 	}
 
 	/**
-	 * @param {import('saxes').SaxesTag} node
+	 * @param {import('saxes').SaxesTag} tag
 	 */
-	onopentag(node) {
-		// Feed/Channel
-		if (node.name === 'feed') {
-			this.onopenfeed(node);
-		}
-	}
-
-	/**
-	 * @param {import('saxes').SaxesTag} node
-	 */
-	onclosetag(node) {
-		// Feed/Channel
-		if (node.name === 'feed') {
-			this.onclosefeed();
-		}
+	onclosetag(tag) {
+		console.log('closing', tag.name);
 	}
 
 	/**
@@ -137,6 +138,11 @@ class Parser extends Transform {
 	 */
 	onerror(err) {
 		this.emit('error', err);
+	}
+
+	onend() {
+		// We are done here
+		this.push(null);
 	}
 }
 

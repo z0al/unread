@@ -1,15 +1,24 @@
-// Native
 const fs = require('fs');
 const path = require('path');
-
-// Packages
 const Parser = require('..');
 
-const xml = fs.readFileSync(path.join(__dirname, 'data', 'overreacted.xml'));
-const start = Date.now();
+const feed = path.resolve(__dirname, 'data', 'atom.xml');
 
-const parser = new Parser();
-
-parser.write(xml);
-
-console.log(`Parsing time: ${Date.now() - start}`);
+fs.createReadStream(feed)
+	.on('error', function(error) {
+		console.error(error);
+	})
+	.pipe(new Parser())
+	.on('error', function(error) {
+		console.error(error);
+	})
+	.on('meta', function(meta) {
+		// console.log({ meta });
+	})
+	.on('readable', function() {
+		var stream = this,
+			item;
+		while ((item = stream.read())) {
+			console.log({ item });
+		}
+	});

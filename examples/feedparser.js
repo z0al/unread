@@ -13,7 +13,7 @@ fs.createReadStream(feed)
 		console.error(error);
 	})
 	.on('meta', function(meta) {
-		// console.log({ meta });
+		console.log({ meta });
 	})
 	.on('readable', function() {
 		var stream = this,
