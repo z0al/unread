@@ -99,10 +99,8 @@ class Parser extends Transform {
 	/**
 	 * @param {Node} node
 	 */
-	isFeed(node) {
+	isfeed(node) {
 		return (
-			node.$name === 'feed' ||
-			// Or
 			(node.$local === 'feed' && ns[node.$uri] === 'atom') ||
 			// Or
 			Boolean(node.type)
@@ -128,8 +126,8 @@ class Parser extends Transform {
 
 		// TODO: check if we are inside xhtml
 
-		// Feed/Channel
-		if (this.isFeed(node)) {
+		// <rss> or <feed>
+		if (this.isfeed(node)) {
 			switch (node.$local) {
 				case 'feed':
 					node.type = 'atom';
