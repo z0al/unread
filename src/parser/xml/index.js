@@ -16,7 +16,7 @@ import ns from './namespaces';
  * @property {string} [$prefix]
  * @property {string} [$local]
  * @property {string} [$uri]
- * @property {Array} attr
+ * @property {Object} attr
  * @property {string} value
  * @property {Object} meta
  *
@@ -52,7 +52,7 @@ class Parser extends Transform {
 		// TODO: support other encoding options
 		this._decoder = new StringDecoder(encoding);
 
-		// Holds all non-self closing tags temporary
+		// Holds all open tags
 		/** @type Array<Node> */
 		this._stack = [];
 
@@ -108,6 +108,23 @@ class Parser extends Transform {
 	}
 
 	/**
+	 * Parse tag attributes
+	 *
+	 * @param {import('saxes').SaxesTag} tag
+	 *
+	 */
+	attributes({ attributes }) {
+		const attrs = {};
+
+		for (const key in attributes) {
+			// `attributes` should always be Array of Objects (due to xmlns:true prop)
+			// @ts-ignore
+			attrs[key] = attributes[key].value;
+		}
+		return attrs;
+	}
+
+	/**
 	 * @param {import('saxes').SaxesTag} tag
 	 */
 	onopentag(tag) {
@@ -119,7 +136,7 @@ class Parser extends Transform {
 			$prefix: tag.prefix,
 			$local: tag.local,
 			$uri: tag.uri,
-			attr: [],
+			attr: this.attributes(tag),
 			meta: {},
 			value: ''
 		};
