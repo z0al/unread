@@ -9,6 +9,20 @@ import { StringDecoder } from 'string_decoder';
 import ns from './namespaces';
 
 /**
+ * @typedef Node
+ * @property {string} [type]
+ * @property {string} [version]
+ * @property {string} [$name]
+ * @property {string} [$prefix]
+ * @property {string} [$local]
+ * @property {string} [$uri]
+ * @property {Array} attr
+ * @property {string} value
+ * @property {Object} meta
+ *
+ */
+
+/**
  * RSS/ATOM Parser
  */
 class Parser extends Transform {
@@ -39,7 +53,7 @@ class Parser extends Transform {
 		this._decoder = new StringDecoder(encoding);
 
 		// Holds all non-self closing tags temporary
-		/** @type Array<any> */
+		/** @type Array<Node> */
 		this._stack = [];
 
 		this._emitMeta = true;
@@ -83,15 +97,15 @@ class Parser extends Transform {
 	}
 
 	/**
-	 * @param {Object} node
+	 * @param {Node} node
 	 */
 	isFeed(node) {
 		return (
-			node['@name'] === 'feed' ||
+			node.$name === 'feed' ||
 			// Or
-			(node['@local'] === 'feed' && ns[node['@uri']] === 'atom') ||
+			(node.$local === 'feed' && ns[node.$uri] === 'atom') ||
 			// Or
-			!!node['@type']
+			Boolean(node.type)
 		);
 	}
 
@@ -99,21 +113,27 @@ class Parser extends Transform {
 	 * @param {import('saxes').SaxesTag} tag
 	 */
 	onopentag(tag) {
+		/**
+		 * @type Node
+		 */
 		const node = {
-			'@name': tag.name,
-			'@prefix': tag.prefix,
-			'@local': tag.local,
-			'@uri': tag.uri,
+			$name: tag.name,
+			$prefix: tag.prefix,
+			$local: tag.local,
+			$uri: tag.uri,
 			attr: [],
-			meta: {}
+			meta: {},
+			value: ''
 		};
+
+		// TODO: check if we are inside xhtml
 
 		// Feed/Channel
 		if (this.isFeed(node)) {
-			switch (node['@local']) {
+			switch (node.$local) {
 				case 'feed':
-					node['@type'] = 'atom';
-					node['@version'] = '1.0';
+					node.type = 'atom';
+					node.version = '1.0';
 					break;
 			}
 		}
@@ -125,13 +145,18 @@ class Parser extends Transform {
 	 * @param {import('saxes').SaxesTag} tag
 	 */
 	onclosetag(tag) {
-		console.log('closing', tag.name);
+		// this._stack.shift();
 	}
 
 	/**
 	 * @param {string} text
 	 */
-	ontext(text) {}
+	ontext(text) {
+		text = text.trim();
+		if (text && this._stack.length > 0) {
+			this._stack[0].value += text;
+		}
+	}
 
 	/**
 	 * @param {Error} err

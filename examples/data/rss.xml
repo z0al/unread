@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>
+            <![CDATA[Overreacted]]>
+        </title>
+        <description>
+            <![CDATA[Personal blog by Dan Abramov. I explain with words and code.]]>
+        </description>
+        <link>https://overreacted.io</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sat, 16 Feb 2019 02:09:07 GMT</lastBuildDate>
+        <item>
+            <title>
+                <![CDATA[Fix Like No One’s Watching]]>
+            </title>
+            <description>
+                <![CDATA[The other kind of technical debt.]]>
+            </description>
+            <link>https://overreacted.io/fix-like-no-ones-watching/</link>
+            <guid isPermaLink="false">https://overreacted.io/fix-like-no-ones-watching/</guid>
+            <pubDate>Fri, 15 Feb 2019 00:00:00 GMT</pubDate>
+            <content:encoded>Some technical debt is in plain sight
+              </content:encoded>
+        </item>
+    </channel>
+</rss>
