@@ -17,9 +17,9 @@ import ns from './namespaces';
  * @property {string} [$uri]
  * @property {Boolean} [$xhtml]
  * @property {Boolean} [$selfclosing]
- * @property {Object} attrs
+ * @property {Map} attrs
  * @property {string} value
- * @property {Object} meta
+ * @property {Map} meta
  *
  */
 
@@ -103,12 +103,12 @@ class Parser extends Transform {
 			$uri: tag.uri,
 			$selfclosing: tag.selfClosing,
 			attrs: this.attributes(tag),
-			meta: {},
+			meta: new Map(),
 			value: ''
 		};
 
 		// xhtml?
-		if (node.attrs['type'] === 'xhtml') {
+		if (node.attrs.get('type') === 'xhtml') {
 			node.$xhtml = true;
 		}
 
@@ -232,12 +232,12 @@ class Parser extends Transform {
 	 *
 	 */
 	attributes({ attributes }) {
-		const attrs = {};
+		const attrs = new Map();
 
 		for (const name in attributes) {
 			// `attributes` should always be Array of Objects (due to xmlns:true prop)
 			// @ts-ignore
-			attrs[name] = attributes[name].value;
+			attrs.set(name, attributes[name].value);
 		}
 
 		return attrs;
@@ -260,11 +260,12 @@ class Parser extends Transform {
 			// Remove private attributes
 			this.clear(child);
 
-			// Existing node with the same key
-			let node = parent.meta[key];
+			let node;
 
 			// Handle duplicated keys
-			if (node) {
+			if (parent.meta.has(key)) {
+				node = parent.meta.get(key);
+
 				if (node instanceof Array) {
 					node.push(child);
 				} else {
@@ -274,7 +275,7 @@ class Parser extends Transform {
 				node = child;
 			}
 
-			parent.meta = { ...parent.meta, [key]: node };
+			parent.meta.set(key, node);
 		}
 	}
 
