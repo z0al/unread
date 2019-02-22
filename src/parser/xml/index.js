@@ -33,7 +33,7 @@ class Parser extends Transform {
 		super({ objectMode: true });
 
 		// XML Parser
-		this._parser = new SaxesParser({ xmlns: true });
+		this._parser = new SaxesParser({ xmlns: true, position: false });
 		this._parser.onopentag = this.onopentag.bind(this);
 		this._parser.onclosetag = this.onclosetag.bind(this);
 		this._parser.ontext = this.ontext.bind(this);
