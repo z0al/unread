@@ -162,7 +162,12 @@ class Parser extends Transform {
 		const node = this._stack.shift();
 
 		if (this.isitem(node)) {
-			// TODO: delete private attributes (those start with '$')
+			// Remove private attributes
+			delete node.$name;
+			delete node.$prefix;
+			delete node.$local;
+			delete node.$uri;
+
 			this.emit('item', node);
 		}
 	}
