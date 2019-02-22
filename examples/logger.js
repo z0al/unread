@@ -12,8 +12,8 @@ fs.createReadStream(feed)
 	.on('error', function(error) {
 		console.error(error);
 	})
-	.on('meta', function(meta) {
-		console.log({ meta });
+	.on('feed', function(feed) {
+		console.log({ feed });
 	})
 	.on('item', function(item) {
 		console.log({ item });

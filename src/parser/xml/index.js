@@ -44,6 +44,12 @@ class Parser extends Transform {
 		// Holds all open tags
 		/** @type Array<Node> */
 		this._stack = [];
+
+		// We only emit a "feed" event if we:
+		//
+		// 1. Encountered an item and `_emitfeed` is true.
+		// 2. Reached the end of the feed and `_emitfeed` is true.
+		this._emitfeed = false;
 	}
 
 	/**
@@ -110,6 +116,19 @@ class Parser extends Transform {
 			}
 		}
 
+		// Emit updated feed
+		if (this.isitem(node) && this._emitfeed) {
+			// Don't emit again unless the feed has changed
+			this._emitfeed = false;
+
+			// Find & clone feed node
+			const feed = { ...this._stack.find(n => this.isfeed(n)) };
+
+			this.clear(feed);
+
+			this.emit('feed', feed);
+		}
+
 		this._stack.unshift(node);
 	}
 
@@ -142,7 +161,21 @@ class Parser extends Transform {
 			// Remove private attributes
 			this.clear(node);
 
-			return (parent.meta = { ...parent.meta, [key]: node });
+			parent.meta = { ...parent.meta, [key]: node };
+		}
+
+		if (parent && this.isfeed(parent)) {
+			this._emitfeed = true;
+		}
+
+		if (this.isfeed(node) && this._emitfeed) {
+			// This is probably the end anyway, but still, let's make sure that
+			// We don't emit unnecessary events
+			this._emitfeed = false;
+
+			this.clear(node);
+
+			this.emit('feed', node);
 		}
 	}
 
