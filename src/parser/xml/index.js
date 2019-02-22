@@ -247,6 +247,9 @@ class Parser extends Transform {
 	 * @param {Node} node
 	 */
 	clear(node) {
+		if (this.isfeed(node) || this.isitem(node)) {
+			delete node.value;
+		}
 		delete node.$name;
 		delete node.$prefix;
 		delete node.$local;
