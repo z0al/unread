@@ -15,7 +15,9 @@ import ns from './namespaces';
  * @property {string} [$prefix]
  * @property {string} [$local]
  * @property {string} [$uri]
- * @property {Object} attr
+ * @property {Boolean} [$xhtml]
+ * @property {Boolean} [$selfclosing]
+ * @property {Object} attrs
  * @property {string} value
  * @property {Object} meta
  *
@@ -99,12 +101,16 @@ class Parser extends Transform {
 			$prefix: tag.prefix,
 			$local: tag.local,
 			$uri: tag.uri,
-			attr: this.attributes(tag),
+			$selfclosing: tag.selfClosing,
+			attrs: this.attributes(tag),
 			meta: {},
 			value: ''
 		};
 
-		// TODO: check if we are inside xhtml
+		// xhtml?
+		if (node.attrs['type'] === 'xhtml') {
+			node.$xhtml = true;
+		}
 
 		// <rss> or <feed>
 		if (this.isfeed(node) && this._stack.length === 0) {
@@ -228,11 +234,12 @@ class Parser extends Transform {
 	attributes({ attributes }) {
 		const attrs = {};
 
-		for (const key in attributes) {
+		for (const name in attributes) {
 			// `attributes` should always be Array of Objects (due to xmlns:true prop)
 			// @ts-ignore
-			attrs[key] = attributes[key].value;
+			attrs[name] = attributes[name].value;
 		}
+
 		return attrs;
 	}
 
@@ -243,41 +250,64 @@ class Parser extends Transform {
 	 * @param {Node} child
 	 */
 	assign(parent, child) {
-		// Keep the name
-		const key = child.$name;
-
-		// Remove private attributes
-		this.clear(child);
-
-		// Existing node with the same key
-		let node = parent.meta[key];
-
-		// Handle duplicated keys
-		if (node) {
-			if (node instanceof Array) {
-				node.push(child);
-			} else {
-				node = [node, child];
-			}
+		// HTML?
+		if (parent.$xhtml) {
+			parent.value = this.node2html(child);
 		} else {
-			node = child;
-		}
+			// Keep the name
+			const key = child.$name;
 
-		parent.meta = { ...parent.meta, [key]: node };
+			// Remove private attributes
+			this.clear(child);
+
+			// Existing node with the same key
+			let node = parent.meta[key];
+
+			// Handle duplicated keys
+			if (node) {
+				if (node instanceof Array) {
+					node.push(child);
+				} else {
+					node = [node, child];
+				}
+			} else {
+				node = child;
+			}
+
+			parent.meta = { ...parent.meta, [key]: node };
+		}
+	}
+
+	/**
+	 * Converts a given node to html string recursively
+	 *
+	 * @param {Node} node
+	 */
+	node2html(node) {
+		// key="value" pairs string
+		// const attrs = Object.keys(node.attrs)
+		// 	.map(k => `${k}="${node.attrs[k]}"`)
+		// 	.join(' ');
+
+		return 'TODO: this should be xhtml';
 	}
 
 	/**
 	 * Removes private attributes from a given node.
+	 *
 	 * @param {Node} node
 	 */
 	clear(node) {
 		if (node.value === '') {
 			delete node.value;
 		}
+
 		delete node.$name;
 		delete node.$prefix;
 		delete node.$local;
 		delete node.$uri;
+		delete node.$xhtml;
+		delete node.$selfclosing;
 	}
 }
 
