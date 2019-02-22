@@ -155,7 +155,7 @@ class Parser extends Transform {
 		// NOTE: We only rely on the internal stack to ensure correct output
 		// in some cases. That being said, it's up to the consumer to decide
 		// what happens in case of XML error.
-		if (this._stack.length !== 0 && this._stack[0].$name !== tag.name) {
+		if (this._stack.length === 0 || this._stack[0].$name !== tag.name) {
 			return;
 		}
 
@@ -168,7 +168,7 @@ class Parser extends Transform {
 			delete node.$local;
 			delete node.$uri;
 
-			this.emit('item', node);
+			return this.emit('item', node);
 		}
 	}
 
