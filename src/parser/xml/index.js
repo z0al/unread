@@ -16,10 +16,9 @@ import ns from './namespaces';
  * @property {string} [$local]
  * @property {string} [$uri]
  * @property {Boolean} [$xhtml]
- * @property {Boolean} [$selfclosing]
- * @property {Map} attrs
+ * @property {Map<string,string>} attrs
  * @property {string} value
- * @property {Map} meta
+ * @property {Map<string,Node|Node[]>} meta
  *
  */
 
@@ -101,41 +100,55 @@ class Parser extends Transform {
 			$prefix: tag.prefix,
 			$local: tag.local,
 			$uri: tag.uri,
-			$selfclosing: tag.selfClosing,
 			attrs: this.attributes(tag),
 			meta: new Map(),
 			value: ''
 		};
 
-		// xhtml?
-		if (node.attrs.get('type') === 'xhtml') {
-			node.$xhtml = true;
-		}
+		// Inside xhtml
+		if (this._stack.length > 0 && this._stack[0].$xhtml) {
+			// name="value" pairs
+			const attrs = Array.from(node.attrs)
+				.map(([k, v]) => `${k}="${v}"`)
+				.join(' ');
 
-		// <rss> or <feed>
-		if (this.isfeed(node) && this._stack.length === 0) {
-			switch (node.$local) {
-				case 'feed':
-					node.type = 'atom';
-					node.version = '1.0';
-					break;
+			// e.g. <a href="#"
+			this._stack[0].value += `<${node.$name}${attrs && ' ' + attrs}`;
+
+			if (!tag.isSelfClosing) {
+				this._stack[0].value += '>';
 			}
+		} else {
+			// xhtml?
+			if (node.attrs.get('type') === 'xhtml') {
+				node.$xhtml = true;
+			}
+
+			// <rss> or <feed>
+			if (this.isfeed(node) && this._stack.length === 0) {
+				switch (node.$local) {
+					case 'feed':
+						node.type = 'atom';
+						node.version = '1.0';
+						break;
+				}
+			}
+
+			// Emit updated feed
+			if (this.isitem(node) && this._emitfeed) {
+				// Don't emit again unless the feed has changed
+				this._emitfeed = false;
+
+				// Find & clone feed node
+				const feed = { ...this._stack.find(n => this.isfeed(n)) };
+
+				this.clear(feed);
+
+				this.emit('feed', feed);
+			}
+
+			this._stack.unshift(node);
 		}
-
-		// Emit updated feed
-		if (this.isitem(node) && this._emitfeed) {
-			// Don't emit again unless the feed has changed
-			this._emitfeed = false;
-
-			// Find & clone feed node
-			const feed = { ...this._stack.find(n => this.isfeed(n)) };
-
-			this.clear(feed);
-
-			this.emit('feed', feed);
-		}
-
-		this._stack.unshift(node);
 	}
 
 	/**
@@ -145,37 +158,42 @@ class Parser extends Transform {
 		// NOTE: We only rely on the internal stack to ensure correct output
 		// in some cases. That being said, it's up to the consumer to decide
 		// what happens in case of XML error.
-		if (this._stack.length === 0 || this._stack[0].$name !== tag.name) {
+		if (this._stack.length === 0) {
 			return;
 		}
 
-		const node = this._stack.shift();
+		// Inside xhtml
+		if (this._stack[0].$xhtml && tag.name !== this._stack[0].$name) {
+			this._stack[0].value += tag.isSelfClosing ? '/>' : `</${tag.name}>`;
+		} else {
+			const node = this._stack.shift();
 
-		if (this.isitem(node)) {
-			// Remove private attributes
-			this.clear(node);
+			if (this.isitem(node)) {
+				// Remove private attributes
+				this.clear(node);
 
-			return this.emit('item', node);
-		}
+				return this.emit('item', node);
+			}
 
-		const parent = this._stack[0];
+			const parent = this._stack[0];
 
-		if (parent) {
-			this.assign(parent, node);
-		}
+			if (parent) {
+				this.assign(parent, node);
+			}
 
-		if (parent && this.isfeed(parent)) {
-			this._emitfeed = true;
-		}
+			if (parent && this.isfeed(parent)) {
+				this._emitfeed = true;
+			}
 
-		if (this.isfeed(node) && this._emitfeed) {
-			// This is probably the end anyway, but still, let's make sure that
-			// We don't emit unnecessary events
-			this._emitfeed = false;
+			if (this.isfeed(node) && this._emitfeed) {
+				// This is probably the end anyway, but still, let's make sure that
+				// We don't emit unnecessary events
+				this._emitfeed = false;
 
-			this.clear(node);
+				this.clear(node);
 
-			this.emit('feed', node);
+				this.emit('feed', node);
+			}
 		}
 	}
 
@@ -250,47 +268,28 @@ class Parser extends Transform {
 	 * @param {Node} child
 	 */
 	assign(parent, child) {
-		// HTML?
-		if (parent.$xhtml) {
-			parent.value = this.node2html(child);
-		} else {
-			// Keep the name
-			const key = child.$name;
+		// Keep the name
+		const key = child.$name;
 
-			// Remove private attributes
-			this.clear(child);
+		// Remove private attributes
+		this.clear(child);
 
-			let node;
+		let node;
 
-			// Handle duplicated keys
-			if (parent.meta.has(key)) {
-				node = parent.meta.get(key);
+		// Handle duplicated keys
+		if (parent.meta.has(key)) {
+			node = parent.meta.get(key);
 
-				if (node instanceof Array) {
-					node.push(child);
-				} else {
-					node = [node, child];
-				}
+			if (node instanceof Array) {
+				node.push(child);
 			} else {
-				node = child;
+				node = [node, child];
 			}
-
-			parent.meta.set(key, node);
+		} else {
+			node = child;
 		}
-	}
 
-	/**
-	 * Converts a given node to html string recursively
-	 *
-	 * @param {Node} node
-	 */
-	node2html(node) {
-		// key="value" pairs string
-		// const attrs = Object.keys(node.attrs)
-		// 	.map(k => `${k}="${node.attrs[k]}"`)
-		// 	.join(' ');
-
-		return 'TODO: this should be xhtml';
+		parent.meta.set(key, node);
 	}
 
 	/**
@@ -308,7 +307,6 @@ class Parser extends Transform {
 		delete node.$local;
 		delete node.$uri;
 		delete node.$xhtml;
-		delete node.$selfclosing;
 	}
 }
 

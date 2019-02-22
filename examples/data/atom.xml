@@ -21,6 +21,7 @@
 		<content type="xhtml">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<p>This is the entry content.</p>
+				<img src="http://example.org/logo.png" />
 			</div>
 		</content>
 		<author>
