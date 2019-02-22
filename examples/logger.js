@@ -15,10 +15,6 @@ fs.createReadStream(feed)
 	.on('meta', function(meta) {
 		// console.log({ meta });
 	})
-	.on('readable', function() {
-		var stream = this,
-			item;
-		while ((item = stream.read())) {
-			console.log({ item });
-		}
+	.on('item', function(item) {
+		console.log({ item });
 	});

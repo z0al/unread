@@ -93,6 +93,13 @@ class Parser extends Transform {
 	}
 
 	/**
+	 * @param {Node} node
+	 */
+	isitem(node) {
+		return node.$local === 'entry' && ns[node.$uri] === 'atom';
+	}
+
+	/**
 	 * Parse tag attributes
 	 *
 	 * @param {import('saxes').SaxesTag} tag
@@ -145,7 +152,19 @@ class Parser extends Transform {
 	 * @param {import('saxes').SaxesTag} tag
 	 */
 	onclosetag(tag) {
-		// this._stack.shift();
+		// NOTE: We only rely on the internal stack to ensure correct output
+		// in some cases. That being said, it's up to the consumer to decide
+		// what happens in case of XML error.
+		if (this._stack.length !== 0 && this._stack[0].$name !== tag.name) {
+			return;
+		}
+
+		const node = this._stack.shift();
+
+		if (this.isitem(node)) {
+			// TODO: delete private attributes (those start with '$')
+			this.emit('item', node);
+		}
 	}
 
 	/**
