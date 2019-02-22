@@ -82,41 +82,6 @@ class Parser extends Transform {
 	}
 
 	/**
-	 * @param {Node} node
-	 */
-	isfeed(node) {
-		return (
-			(node.$local === 'feed' && ns[node.$uri] === 'atom') ||
-			// Or
-			Boolean(node.type)
-		);
-	}
-
-	/**
-	 * @param {Node} node
-	 */
-	isitem(node) {
-		return node.$local === 'entry' && ns[node.$uri] === 'atom';
-	}
-
-	/**
-	 * Parse tag attributes
-	 *
-	 * @param {import('saxes').SaxesTag} tag
-	 *
-	 */
-	attributes({ attributes }) {
-		const attrs = {};
-
-		for (const key in attributes) {
-			// `attributes` should always be Array of Objects (due to xmlns:true prop)
-			// @ts-ignore
-			attrs[key] = attributes[key].value;
-		}
-		return attrs;
-	}
-
-	/**
 	 * @param {import('saxes').SaxesTag} tag
 	 */
 	onopentag(tag) {
@@ -163,12 +128,21 @@ class Parser extends Transform {
 
 		if (this.isitem(node)) {
 			// Remove private attributes
-			delete node.$name;
-			delete node.$prefix;
-			delete node.$local;
-			delete node.$uri;
+			this.clear(node);
 
 			return this.emit('item', node);
+		}
+
+		const parent = this._stack[0];
+
+		if (parent) {
+			// Keep the name
+			const key = node.$name;
+
+			// Remove private attributes
+			this.clear(node);
+
+			return (parent.meta = { ...parent.meta, [key]: node });
 		}
 	}
 
@@ -192,6 +166,58 @@ class Parser extends Transform {
 	onend() {
 		// We are done here
 		this.push(null);
+	}
+
+	/**
+	 * Checks if a given node is <rss> or <feed> tag
+	 *
+	 * @param {Node} node
+	 * @returns {Boolean}
+	 */
+	isfeed(node) {
+		return Boolean(
+			(node.$local === 'feed' && ns[node.$uri] === 'atom') ||
+				// Or
+				node.type
+		);
+	}
+
+	/**
+	 * Checks if a given node is <item> or <entry> tag
+	 *
+	 * @param {Node} node
+	 * @returns {Boolean}
+	 */
+	isitem(node) {
+		return Boolean(node.$local === 'entry' && ns[node.$uri] === 'atom');
+	}
+
+	/**
+	 * Parse tag attributes
+	 *
+	 * @param {import('saxes').SaxesTag} tag
+	 *
+	 */
+	attributes({ attributes }) {
+		const attrs = {};
+
+		for (const key in attributes) {
+			// `attributes` should always be Array of Objects (due to xmlns:true prop)
+			// @ts-ignore
+			attrs[key] = attributes[key].value;
+		}
+		return attrs;
+	}
+
+	/**
+	 * Removes private attributes from a given node.
+	 * @param {Node} node
+	 */
+	clear(node) {
+		delete node.$name;
+		delete node.$prefix;
+		delete node.$local;
+		delete node.$uri;
 	}
 }
 
