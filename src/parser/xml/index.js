@@ -155,13 +155,7 @@ class Parser extends Transform {
 		const parent = this._stack[0];
 
 		if (parent) {
-			// Keep the name
-			const key = node.$name;
-
-			// Remove private attributes
-			this.clear(node);
-
-			parent.meta = { ...parent.meta, [key]: node };
+			this.assign(parent, node);
 		}
 
 		if (parent && this.isfeed(parent)) {
@@ -243,11 +237,41 @@ class Parser extends Transform {
 	}
 
 	/**
+	 * Adds the child node to parent's meta
+	 *
+	 * @param {Node} parent
+	 * @param {Node} child
+	 */
+	assign(parent, child) {
+		// Keep the name
+		const key = child.$name;
+
+		// Remove private attributes
+		this.clear(child);
+
+		// Existing node with the same key
+		let node = parent.meta[key];
+
+		// Handle duplicated keys
+		if (node) {
+			if (node instanceof Array) {
+				node.push(child);
+			} else {
+				node = [node, child];
+			}
+		} else {
+			node = child;
+		}
+
+		parent.meta = { ...parent.meta, [key]: node };
+	}
+
+	/**
 	 * Removes private attributes from a given node.
 	 * @param {Node} node
 	 */
 	clear(node) {
-		if (this.isfeed(node) || this.isitem(node)) {
+		if (node.value === '') {
 			delete node.value;
 		}
 		delete node.$name;
