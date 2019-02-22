@@ -3,7 +3,6 @@
 // Packages
 import { SaxesParser } from 'saxes';
 import { Transform } from 'readable-stream';
-import { StringDecoder } from 'string_decoder';
 
 // Ours
 import ns from './namespaces';
@@ -26,18 +25,12 @@ import ns from './namespaces';
  * RSS/ATOM Parser
  */
 class Parser extends Transform {
-	/**
-	 *
-	 * @param {string} [encoding]
-	 */
-	constructor(encoding) {
-		encoding = encoding || 'utf8';
-
+	constructor() {
 		// Object mode: In short, allows readable streams to push any type of chunk
 		// other than Buffer and Uint8Array.
 		//
 		// https://nodejs.org/api/stream.html#stream_object_mode
-		super({ objectMode: true, encoding });
+		super({ objectMode: true });
 
 		// XML Parser
 		this._parser = new SaxesParser({ xmlns: true });
@@ -48,15 +41,9 @@ class Parser extends Transform {
 		this._parser.onerror = this.onerror.bind(this);
 		this._parser.onend = this.onend.bind(this);
 
-		// Decodes Buffer to string
-		// TODO: support other encoding options
-		this._decoder = new StringDecoder(encoding);
-
 		// Holds all open tags
 		/** @type Array<Node> */
 		this._stack = [];
-
-		this._emitMeta = true;
 	}
 
 	/**
@@ -68,9 +55,7 @@ class Parser extends Transform {
 	 */
 	_transform(chunk, encoding, cb) {
 		try {
-			const str = this._decoder.write(chunk);
-			this._parser.write(str);
-
+			this._parser.write(chunk);
 			cb();
 		} catch (err) {
 			// Manually trigger an end, no more parsing!
@@ -144,7 +129,7 @@ class Parser extends Transform {
 		// TODO: check if we are inside xhtml
 
 		// <rss> or <feed>
-		if (this.isfeed(node)) {
+		if (this.isfeed(node) && this._stack.length === 0) {
 			switch (node.$local) {
 				case 'feed':
 					node.type = 'atom';
