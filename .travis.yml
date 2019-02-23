@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - '10'
+	- '11'
+	- latest
+
+cache: npm
+
+# after_success:
+#   - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
+
+notifications:
+  email: false
