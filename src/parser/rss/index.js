@@ -180,24 +180,29 @@ class Parser extends Transform {
 		} else {
 			// Consume node
 			this._stack.shift();
-
-			if (this.is_item(node)) {
-				// Remove private attributes
-				this.clear(node);
-
-				return this.push(node);
-			}
-
 			const parent = this._stack[0];
 
+			if (parent && this.is_item(node)) {
+				// Don't emit illegally nested items
+				if (this.is_feed(parent) || parent.$name === 'channel') {
+					// Remove private attributes
+					this.clear(node);
+
+					return this.push(node);
+				}
+			}
+
+			// Add this node as a child
 			if (parent) {
 				this.assign(parent, node);
+
+				// Was it a feed node?
+				if (this.is_feed(parent)) {
+					this._emitfeed = true;
+				}
 			}
 
-			if (parent && this.is_feed(parent)) {
-				this._emitfeed = true;
-			}
-
+			// Emit "feed" if necessary
 			if (this.is_feed(node) && this._emitfeed) {
 				// This is probably the end anyway, but still, let's make sure that
 				// We don't emit unnecessary events
