@@ -176,7 +176,7 @@ class Parser extends Transform {
 				// Remove private attributes
 				this.clear(node);
 
-				return this.emit('item', node);
+				return this.push(node);
 			}
 
 			const parent = this._stack[0];

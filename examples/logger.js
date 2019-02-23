@@ -15,6 +15,12 @@ fs.createReadStream(feed)
 	.on('feed', function(feed) {
 		console.log({ feed });
 	})
-	.on('item', function(item) {
-		console.log({ item });
+	.on('readable', function() {
+		let item;
+		while ((item = this.read())) {
+			console.log(item);
+		}
+	})
+	.on('end', () => {
+		console.log('ended');
 	});
