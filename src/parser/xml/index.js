@@ -125,7 +125,7 @@ class Parser extends Transform {
 			}
 
 			// <rss> or <feed>
-			if (this.isfeed(node) && this._stack.length === 0) {
+			if (this.is_feed(node) && this._stack.length === 0) {
 				switch (node.$local) {
 					case 'feed':
 						node.type = 'atom';
@@ -135,12 +135,12 @@ class Parser extends Transform {
 			}
 
 			// Emit updated feed
-			if (this.isitem(node) && this._emitfeed) {
+			if (this.is_item(node) && this._emitfeed) {
 				// Don't emit again unless the feed has changed
 				this._emitfeed = false;
 
 				// Find & clone feed node
-				const feed = { ...this._stack.find(n => this.isfeed(n)) };
+				const feed = { ...this._stack.find(n => this.is_feed(n)) };
 
 				this.clear(feed);
 
@@ -162,13 +162,17 @@ class Parser extends Transform {
 			return;
 		}
 
-		// Inside xhtml
-		if (this._stack[0].$xhtml && tag.name !== this._stack[0].$name) {
-			this._stack[0].value += tag.isSelfClosing ? '/>' : `</${tag.name}>`;
-		} else {
-			const node = this._stack.shift();
+		// Stack.peek()
+		const node = this._stack[0];
 
-			if (this.isitem(node)) {
+		// Inside xhtml
+		if (node.$xhtml && !this.equals(node, tag)) {
+			node.value += tag.isSelfClosing ? '/>' : `</${tag.name}>`;
+		} else {
+			// Consume node
+			this._stack.shift();
+
+			if (this.is_item(node)) {
 				// Remove private attributes
 				this.clear(node);
 
@@ -181,11 +185,11 @@ class Parser extends Transform {
 				this.assign(parent, node);
 			}
 
-			if (parent && this.isfeed(parent)) {
+			if (parent && this.is_feed(parent)) {
 				this._emitfeed = true;
 			}
 
-			if (this.isfeed(node) && this._emitfeed) {
+			if (this.is_feed(node) && this._emitfeed) {
 				// This is probably the end anyway, but still, let's make sure that
 				// We don't emit unnecessary events
 				this._emitfeed = false;
@@ -225,7 +229,7 @@ class Parser extends Transform {
 	 * @param {Node} node
 	 * @returns {Boolean}
 	 */
-	isfeed(node) {
+	is_feed(node) {
 		return Boolean(
 			(node.$local === 'feed' && ns[node.$uri] === 'atom') ||
 				// Or
@@ -239,7 +243,7 @@ class Parser extends Transform {
 	 * @param {Node} node
 	 * @returns {Boolean}
 	 */
-	isitem(node) {
+	is_item(node) {
 		return Boolean(node.$local === 'entry' && ns[node.$uri] === 'atom');
 	}
 
@@ -290,6 +294,29 @@ class Parser extends Transform {
 		}
 
 		parent.meta.set(key, node);
+	}
+
+	/**
+	 * Check if a node and an XML tag are equal
+	 * @param {Node} node
+	 * @param {import('saxes').SaxesTag} tag
+	 * @returns {Boolean}
+	 */
+	equals(node, tag) {
+		if (node.attrs.size !== Object.keys(tag.attributes).length) {
+			return false;
+		}
+
+		return (
+			node.$name === tag.name &&
+			node.$local === tag.local &&
+			node.$prefix === tag.prefix &&
+			node.$uri === tag.uri &&
+			Array.from(node.attrs).every(([k, v]) => {
+				// @ts-ignore
+				return tag.attributes[k] && tag.attributes[k].value === v;
+			})
+		);
 	}
 
 	/**
