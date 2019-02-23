@@ -33,6 +33,7 @@
 		"@babel/preset-env": "^7.3.1",
 		"@types/readable-stream": "^2.3.0",
 		"feedparser": "^2.2.9",
+		"globby": "^9.0.0",
 		"jest": "^24.1.0",
 		"rimraf": "^2.6.3",
 		"rollup": "^1.2.0",
