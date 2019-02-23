@@ -14,8 +14,8 @@ import ns from './namespaces';
  * @property {string} [$name]
  * @property {string} [$prefix]
  * @property {string} [$local]
- * @property {string} [$uri]
  * @property {Boolean} [$xhtml]
+ * @property {string} uri
  * @property {Map<string,string>} attrs
  * @property {string} value
  * @property {Map<string,Node|Node[]>} meta
@@ -99,7 +99,7 @@ class Parser extends Transform {
 			$name: tag.name,
 			$prefix: tag.prefix,
 			$local: tag.local,
-			$uri: tag.uri,
+			uri: tag.uri,
 			attrs: this.attributes(tag),
 			meta: new Map(),
 			value: ''
@@ -231,7 +231,7 @@ class Parser extends Transform {
 	 */
 	is_feed(node) {
 		return Boolean(
-			(node.$local === 'feed' && ns[node.$uri] === 'atom') ||
+			(node.$local === 'feed' && ns[node.uri] === 'atom') ||
 				// Or
 				node.type
 		);
@@ -244,7 +244,7 @@ class Parser extends Transform {
 	 * @returns {Boolean}
 	 */
 	is_item(node) {
-		return Boolean(node.$local === 'entry' && ns[node.$uri] === 'atom');
+		return Boolean(node.$local === 'entry' && ns[node.uri] === 'atom');
 	}
 
 	/**
@@ -306,7 +306,7 @@ class Parser extends Transform {
 			node.$name === tag.name &&
 			node.$local === tag.local &&
 			node.$prefix === tag.prefix &&
-			node.$uri === tag.uri &&
+			node.uri === tag.uri &&
 			Array.from(node.attrs).every(([k, v]) => {
 				// @ts-ignore
 				return tag.attributes[k] && tag.attributes[k].value === v;
@@ -327,7 +327,6 @@ class Parser extends Transform {
 		delete node.$name;
 		delete node.$prefix;
 		delete node.$local;
-		delete node.$uri;
 		delete node.$xhtml;
 	}
 }
