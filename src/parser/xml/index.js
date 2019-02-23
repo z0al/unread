@@ -253,16 +253,11 @@ class Parser extends Transform {
 	 * @param {import('saxes').SaxesTag} tag
 	 *
 	 */
-	attributes({ attributes }) {
-		const attrs = new Map();
-
-		for (const name in attributes) {
-			// `attributes` should always be Array of Objects (due to xmlns:true prop)
-			// @ts-ignore
-			attrs.set(name, attributes[name].value);
-		}
-
-		return attrs;
+	attributes(tag) {
+		return Object.entries(tag.attributes).reduce(
+			(map, [name, meta]) => map.set(name, meta.value),
+			new Map()
+		);
 	}
 
 	/**
