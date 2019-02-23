@@ -1,14 +1,14 @@
 const fs = require('fs');
 const path = require('path');
-const Parser = require('..');
+const { RSSParser } = require('..');
 
-const feed = path.resolve(__dirname, 'data', 'atom.xml');
+const feed = path.resolve(__dirname, 'data', 'sample.atom');
 
 fs.createReadStream(feed)
 	.on('error', function(error) {
 		console.error(error);
 	})
-	.pipe(new Parser())
+	.pipe(new RSSParser())
 	.on('error', function(error) {
 		console.error(error);
 	})
@@ -18,9 +18,9 @@ fs.createReadStream(feed)
 	.on('readable', function() {
 		let item;
 		while ((item = this.read())) {
-			console.log(item);
+			console.log({ item });
 		}
 	})
 	.on('end', () => {
-		console.log('ended');
+		console.log('Finished!');
 	});
