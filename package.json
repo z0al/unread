@@ -1,6 +1,6 @@
 {
 	"name": "feedify",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "A Robust RSS, Atom, and JSON feeds parser in JavaScript",
 	"keywords": [
 		"atom",
