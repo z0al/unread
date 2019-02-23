@@ -13,7 +13,7 @@ let samples = [];
 
 beforeAll(async () => {
 	// List availalbe samples
-	samples = samples.concat(await glob('*.atom', { cwd }));
+	samples = samples.concat(await glob('*', { cwd }));
 });
 
 test('Snapshots', async () => {

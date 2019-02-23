@@ -1,3 +1,6 @@
-import XMLParser from './parser/xml';
+// @ts-check
 
-export default XMLParser;
+// Ours
+import RSSParser from './parser/rss';
+
+export { RSSParser };

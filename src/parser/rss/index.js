@@ -127,10 +127,19 @@ class Parser extends Transform {
 			// <rss> or <feed>
 			if (this.is_feed(node) && this._stack.length === 0) {
 				switch (node.$local) {
-					case 'feed':
+					case 'feed': {
 						node.type = 'atom';
 						node.version = '1.0';
 						break;
+					}
+					case 'rss': {
+						node.type = 'rss';
+						node.version = node.attrs.get('version') || '2.0';
+						if (node.version !== '2.0') {
+							this.emit('error', new Error('Unsupported RSS version'));
+						}
+						break;
+					}
 				}
 			}
 
@@ -231,7 +240,8 @@ class Parser extends Transform {
 	 */
 	is_feed(node) {
 		return Boolean(
-			(node.$local === 'feed' && ns[node.uri] === 'atom') ||
+			node.$name === 'rss' ||
+				(node.$local === 'feed' && ns[node.uri] === 'atom') ||
 				// Or
 				node.type
 		);
@@ -244,7 +254,10 @@ class Parser extends Transform {
 	 * @returns {Boolean}
 	 */
 	is_item(node) {
-		return Boolean(node.$local === 'entry' && ns[node.uri] === 'atom');
+		return Boolean(
+			node.$name === 'item' ||
+				(node.$local === 'entry' && ns[node.uri] === 'atom')
+		);
 	}
 
 	/**
@@ -272,6 +285,12 @@ class Parser extends Transform {
 
 		// Remove private attributes
 		this.clear(child);
+
+		// Are we assigning "channel" element?
+		if (parent.type === 'rss' && key === 'channel') {
+			parent.meta = child.meta;
+			return;
+		}
 
 		let node;
 
