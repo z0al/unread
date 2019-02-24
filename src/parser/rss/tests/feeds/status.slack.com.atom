@@ -1,0 +1,1827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+    <id>https://status.slack.com</id>
+    <link rel="alternate" type="text/html" href="https://status.slack.com"/>
+    <link rel="self" type="application/atom+xml" href="https://status.slack.com/feed/atom"/>
+    <title>Slack System Status</title>
+    <updated>2019-02-21T20:50:52-08:00</updated>
+    <author>
+        <name>Slack</name>
+    </author>
+    <entry>
+        <id>https://status.slack.com/2019-02/69d120f665f3923c</id>
+        <published>2019-02-21T04:50:33-08:00</published>
+        <updated>2019-02-21T20:50:52-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-02/69d120f665f3923c"/>
+        <title>Incident: Errors when accessing Slack</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On February 21 between 7:00am PT to 9:20am PT, some users experienced connectivity issues with Slack.
+            <br />
+            <br />
+The connectivity issue arose from a misconfiguration that was discovered by our engineers. At 8:45am PT a change in the configuration led to users being able to successfully connect to Slack again.
+            <br />
+            <br />
+We’re hard at work on scoping preventative measures to ensure this doesn’t happen again in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;8:50pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On February 21 between 7:00am PT to 9:20am PT, some users experienced connectivity issues with Slack.
+            <br />
+            <br />
+The connectivity issue arose from a misconfiguration that was discovered by our engineers. At 8:45am PT a change in the configuration led to users being able to successfully connect to Slack again.
+            <br />
+            <br />
+We’re hard at work on scoping preventative measures to ensure this doesn’t happen again in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:20am PST&lt;/small&gt; - The issue some folks were running into with Slack failing to load has now been resolved. Thank you for your patience while we sorted that out.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:52am PST&lt;/small&gt; - Slack is not loading for a small number of people. We're sorry for the trouble - our team is working to find the cause and fix the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:50am PST&lt;/small&gt; - We're currently looking into the reports of Slack not loading correctly for some people. Apologies for the disruption.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-02/d7b84e659de62c1e</id>
+        <published>2019-02-21T17:15:30-08:00</published>
+        <updated>2019-02-21T18:52:33-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-02/d7b84e659de62c1e"/>
+        <title>Incident: Delayed push notifications</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On February 21st at 4:22PM PST, we deployed a database change, which caused unexpected delays for processes such as notifications and link/image previews in Slack. The problem was identified and corrected, however a backlog of notifications and previews had formed in the meantime. We continued to monitor this backlog after the fix was implemented, and by 5:20PM PST, all functionality returned to normal.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;6:52pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On February 21st at 4:22PM PST, we deployed a database change, which caused unexpected delays for processes such as notifications and link/image previews in Slack. The problem was identified and corrected, however a backlog of notifications and previews had formed in the meantime. We continued to monitor this backlog after the fix was implemented, and by 5:20PM PST, all functionality returned to normal.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:26pm PST&lt;/small&gt; - We're seeing that push notifications are arriving on time once again. However, if you're still experiencing troubles, please let us know at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:15pm PST&lt;/small&gt; - Push notifications may be running slower than expected. We’re investigating and will have an update shortly.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-02/06202409be3748a8</id>
+        <published>2019-02-19T16:34:06-08:00</published>
+        <updated>2019-02-21T11:02:00-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-02/06202409be3748a8"/>
+        <title>Outage: Issues with mobile notifications for some Grid customers</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On February 15th at 12:30 PM PT, a database change was deployed to help us move to a new system. The change in systems resulted in push notifications not being delivered for some Grid customers. Between February 15th and 19th, we received reports of missing notifications from Grid customers which were attributed to a bug and further investigated. On February 19th, our team identified the root issue affecting Grid customers and reverted the deploy. By 6:30 PM PT the revert had been fully deployed and push notifications were working normally again.
+            <br />
+            <br />
+We’re very sorry to those affected for the disruption. We’re investigating the root cause and making plans to ensure this doesn’t happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;11:02am PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On February 15th at 12:30 PM PT, a database change was deployed to help us move to a new system. The change in systems resulted in push notifications not being delivered for some Grid customers. Between February 15th and 19th, we received reports of missing notifications from Grid customers which were attributed to a bug and further investigated. On February 19th, our team identified the root issue affecting Grid customers and reverted the deploy. By 6:30 PM PT the revert had been fully deployed and push notifications were working normally again.
+            <br />
+            <br />
+We’re very sorry to those affected for the disruption. We’re investigating the root cause and making plans to ensure this doesn’t happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:44pm PST&lt;/small&gt; - We have resolved the notification issue and everyone should be receiving mobile notifications as expected once more. We know this was really disruptive and frustrating, and we're very sorry for the trouble. Thank you for sticking with us.
+            <br />
+            <br />
+If you have any further hassles, please reach out to us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:36pm PST&lt;/small&gt; - We're on the case and working hard to resolve the notification issue, but we're not out of the woods just yet.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:06pm PST&lt;/small&gt; - We don't have any news to share just yet, but this is our top priority right now. We appreciate your patience and understanding.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:36pm PST&lt;/small&gt; - We are still working hard to resolve the issue with mobile notifications.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:06pm PST&lt;/small&gt; - We have all hands on deck as we continue digging into the mobile notification issue. Thank you for bearing with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:34pm PST&lt;/small&gt; - We are investigating issues with some mobile notifications failing for some Grid customers. We're very sorry for the disruption, and we're working on it.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-02/4b0afffbb8ef6169</id>
+        <published>2019-02-20T17:58:24-08:00</published>
+        <updated>2019-02-20T21:12:32-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-02/4b0afffbb8ef6169"/>
+        <title>Incident: Some people are seeing errors when accessing Slack</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On February 20th from 2:34PM PST, we began receiving reports from customers who were seeing a “For some reason, Slack couldn’t load” error when attempting to access Slack. By 7:34PM PST, we determined that everything was working as expected and all affected customers have been followed up directly for further investigation.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;9:12pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On February 20th from 2:34PM PST, we began receiving reports from customers who were seeing a “For some reason, Slack couldn’t load” error when attempting to access Slack. By 7:34PM PST, we determined that everything was working as expected and all affected customers have been followed up directly for further investigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:44pm PST&lt;/small&gt; - We're seeing positive signs that we're in the clear with this error message. However, if you're still having issues accessing Slack, please let us know at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:58pm PST&lt;/small&gt; - We’ve seen reports of some people seeing a "For some reason, Slack couldn't load" error when accessing Slack. We’re investigating and we’ll keep you posted on any updates.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-02/6f76cbee0127cc14</id>
+        <published>2019-02-19T16:29:24-08:00</published>
+        <updated>2019-02-19T16:59:54-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-02/6f76cbee0127cc14"/>
+        <title>Incident: Trouble with sending messages</title>
+        <summary>The team have been monitoring things and have given us the all-clear. If you are still experiencing issues with message delivery please let us know at feedback@slack.com. So sorry for all this hassle.</summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;4:59pm PST&lt;/small&gt; - The team have been monitoring things and have given us the all-clear. If you are still experiencing issues with message delivery please let us know at feedback@slack.com. So sorry for all this hassle.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:29pm PST&lt;/small&gt; - We're investigating why some people are having issues sending messages. Apologies for this disruption.&lt;/p&gt;</content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-02/e9f24f8067bbd139</id>
+        <published>2019-02-14T20:56:22-08:00</published>
+        <updated>2019-02-15T03:44:13-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-02/e9f24f8067bbd139"/>
+        <title>Incident: Trouble with reminders in Slack</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On February 14th at 6:40PM PST we deployed a change to one of our core systems. It caused scheduled reminders to fail for some users. We reverted the change, which resolved the issue. By 10:12PM PST all reminders were functioning as expected.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;3:44am PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On February 14th at 6:40PM PST we deployed a change to one of our core systems. It caused scheduled reminders to fail for some users. We reverted the change, which resolved the issue. By 10:12PM PST all reminders were functioning as expected.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:15pm PST&lt;/small&gt; - We're happy to say that reminders should be working once again. We’re sorry for the trouble this caused, and thanks for sticking with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:58pm PST&lt;/small&gt; - Our team is getting closer to fixing reminders for everyone. We hope to bring some good news soon.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:26pm PST&lt;/small&gt; - We're still trying to pin down the root cause of the issue with reminders. We really appreciate your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:56pm PST&lt;/small&gt; - We’ve seen reports of reminders not working in Slack. We're sorry for the disruption, but we’re on the case and we’ll keep you posted.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-02/f0db7f15a8ffd08e</id>
+        <published>2019-02-13T17:43:17-08:00</published>
+        <updated>2019-02-13T22:19:41-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-02/f0db7f15a8ffd08e"/>
+        <title>Incident: Emails to Slack not working</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On February 13th at 5:02pm PST, we received reports that emails were failing to deliver to Slack forwarding addresses. We identified that this was the result of an expired certificate used to verify requests sent from our email provider. At 7:20pm PST, we deployed an update to address this. We identified that emails sent as early as 12:07pm PST may have been affected by this issue. Unfortunately, any emails sent via the integration during this time would not have been successful. However, they can now be manually re-sent.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;10:19pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On February 13th at 5:02pm PST, we received reports that emails were failing to deliver to Slack forwarding addresses. We identified that this was the result of an expired certificate used to verify requests sent from our email provider. At 7:20pm PST, we deployed an update to address this. We identified that emails sent as early as 12:07pm PST may have been affected by this issue. Unfortunately, any emails sent via the integration during this time would not have been successful. However, they can now be manually re-sent.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:28pm PST&lt;/small&gt; - We're happy to say that emails to Slack should be working once again. Thanks for sticking with us and if you see any other troubles, please reach out through feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:13pm PST&lt;/small&gt; - We don't have any new information on the email integration issue, but we're continuing our efforts to fix it. We really appreciate your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:43pm PST&lt;/small&gt; - We’ve found the root cause that's causing emails to not post to Slack and we’re working to get things running again. Thanks for bearing with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:13pm PST&lt;/small&gt; - We're still exploring the issue with our email integration. Sorry for the disruption and we hope to be back to normal soon.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:43pm PST&lt;/small&gt; - We're investigating an issue preventing emails from being posted to Slack using our email integration. Our engineers are on the case and we are sorry for the inconvenience.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-02/5cce6446b18753c8</id>
+        <published>2019-02-11T23:24:16-08:00</published>
+        <updated>2019-02-12T10:54:09-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-02/5cce6446b18753c8"/>
+        <title>Incident: Trouble with importing HipChat and Stride messages</title>
+        <summary>Our engineers have discovered the source of the reported issues, and we're aware of some issues with Atlassian Imports. If you're experiencing any troubles, please reach out to us at feedback@slack.com.</summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;10:54am PST&lt;/small&gt; - Our engineers have discovered the source of the reported issues, and we're aware of some issues with Atlassian Imports. If you're experiencing any troubles, please reach out to us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:24pm PST&lt;/small&gt; - We’ve seen reports that some people are having trouble with importing messages from HipChat and Stride into Slack workspaces. We’re investigating and we’ll keep you posted on any updates.&lt;/p&gt;</content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-02/1a04824a80af8810</id>
+        <published>2019-02-06T11:03:22-08:00</published>
+        <updated>2019-02-06T18:02:22-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-02/1a04824a80af8810"/>
+        <title>Incident: Trouble with uploading files for some users</title>
+        <summary>We're aware of some issues with file uploads. For further troubleshooting, please reach out to feedback@slack.com, as we're happy to lend a hand.</summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;6:02pm PST&lt;/small&gt; - We're aware of some issues with file uploads. For further troubleshooting, please reach out to feedback@slack.com, as we're happy to lend a hand.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:34pm PST&lt;/small&gt; - We have no new information to share just yet, but we'll provide more information as soon as it becomes available. We truly appreciate your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:03pm PST&lt;/small&gt; - We’re still working on the file uploads issues at the moment, and we’re sorry for the interruption to your day.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:33am PST&lt;/small&gt; - Our team is continuing the investigation into this file upload problem. We hope to have a solution in place as soon as we can.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:03am PST&lt;/small&gt; - We're sorry to report that some folks may be having trouble uploading files at this time. Our team is working to resolve this as quickly as possible.&lt;/p&gt;</content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-02/a8216819dca5d688</id>
+        <published>2019-02-05T16:56:00-08:00</published>
+        <updated>2019-02-05T16:56:00-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-02/a8216819dca5d688"/>
+        <title>Incident: Customers unable to send messages through the API</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On February 5th at 4:29PM to 4:56PM PST, some customers were not able to send messages through Slack's API.
+            <br />
+            <br />
+At 4:29PM PST, we deployed a change which affected caching for our Slack API apps resulting in a database becoming unavailable. This caused some messages sent via the API to fail. At 4:56 PM PST we deployed a revert for the change and resolved the issue.
+            <br />
+            <br />
+If you notice any further issues with sending messages through the API, please let us know at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;4:56pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On February 5th at 4:29PM to 4:56PM PST, some customers were not able to send messages through Slack's API.
+            <br />
+            <br />
+At 4:29PM PST, we deployed a change which affected caching for our Slack API apps resulting in a database becoming unavailable. This caused some messages sent via the API to fail. At 4:56 PM PST we deployed a revert for the change and resolved the issue.
+            <br />
+            <br />
+If you notice any further issues with sending messages through the API, please let us know at feedback@slack.com.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-01/1513ef2c0027d002</id>
+        <published>2019-01-30T21:22:28-08:00</published>
+        <updated>2019-02-01T18:03:32-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-01/1513ef2c0027d002"/>
+        <title>Incident: Some Android app users may be unable to sign in with their identity providers on Grid</title>
+        <summary>On January 30 at 8:40 PM PST, we internally detected an issue where customers were unable to sign into the Android app through Single Sign-On. Upon investigation, we determined that the issue was related to a recent browser release. On February 1 at 3:29 PM PST, we implemented a fix, so all customers should now be able to sign into Slack on their Android devices. If you are still having trouble, please let us know at feedback@slack.com.</summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;6:03pm PST&lt;/small&gt; - On January 30 at 8:40 PM PST, we internally detected an issue where customers were unable to sign into the Android app through Single Sign-On. Upon investigation, we determined that the issue was related to a recent browser release. On February 1 at 3:29 PM PST, we implemented a fix, so all customers should now be able to sign into Slack on their Android devices. If you are still having trouble, please let us know at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:05pm PST&lt;/small&gt; - Thanks so much for your patience while our team addressed these issues with sign in on Android users. Everything should be working as it should once again, but if you run into trouble, please let us know at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:06am PST&lt;/small&gt; - We believe to have narrowed the issue down to users on Chrome version 72. We do however have a workaround for the meantime. If you’re facing this problem, please try the following steps:
+            <br />
+            <br />
+1. Open a mobile web browser and navigate to your workspace URL
+            <br />
+2. Tap 'Sign in with [your identity provider]'
+            <br />
+3. Enter your username and password, then sign in
+            <br />
+4. Once signed in, tap 'Open Slack' under 'Have the app already?' to launch your workspace&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:25pm PST&lt;/small&gt; - We've identified that this affects some Android app users signing in with their identity providers on Grid. We're continuing to investigate the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:22pm PST&lt;/small&gt; - Some customers may have trouble signing in to the Android app through their identity provider. We're very sorry for the disruption — we're on the case.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-01/2a10adb34c0b1f4e</id>
+        <published>2019-01-21T09:38:19-08:00</published>
+        <updated>2019-01-21T13:08:02-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-01/2a10adb34c0b1f4e"/>
+        <title>Incident: Connectivity issues</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On January 21 at 8:42 AM PT, we noticed network issues that caused some customers to be temporarily disconnected from Slack. We investigated the issue and re-routed traffic to healthier servers. The issue was resolved at 11:18 AM PT. Everyone should now be able to connect to Slack.
+            <br />
+            <br />
+Thanks for your patience as we worked through the issue. If you are still having issues, please reach out to us at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;1:08pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On January 21 at 8:42 AM PT, we noticed network issues that caused some customers to be temporarily disconnected from Slack. We investigated the issue and re-routed traffic to healthier servers. The issue was resolved at 11:18 AM PT. Everyone should now be able to connect to Slack.
+            <br />
+            <br />
+Thanks for your patience as we worked through the issue. If you are still having issues, please reach out to us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:39am PST&lt;/small&gt; - It looks like we are out of the woods for the connection issues some workspaces were facing before. We're sorry for any disruption this caused to your day. If you're still experiencing any trouble, please reach out to feedback@slack.com&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:07am PST&lt;/small&gt; - We're still looking into connectivity issues for some folks, but things look to be trending in the right direction. We'll continue to keep an eye out and share any news.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:38am PST&lt;/small&gt; - We're currently investigating connectivity issues affecting some workspaces. We'll have more updates to share soon.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-01/8240d05d98def202</id>
+        <published>2019-01-17T18:24:00-08:00</published>
+        <updated>2019-01-17T18:24:00-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-01/8240d05d98def202"/>
+        <title>Incident: Some customers having trouble searching</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+From 6:24PM to 6:46PM PT, some customers were not able to complete search requests in Slack.
+            <br />
+            <br />
+An internal proxy server that was stuck caused the search service to get caught in a bad state, resulting in customers being unable to search in Slack.
+            <br />
+            <br />
+We restarted the service, which fixed searches for all customers. The all clear was called at 6:46PM PT.
+            <br />
+            <br />
+If you notice any further issues with searching, please do let us know at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;6:24pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+From 6:24PM to 6:46PM PT, some customers were not able to complete search requests in Slack.
+            <br />
+            <br />
+An internal proxy server that was stuck caused the search service to get caught in a bad state, resulting in customers being unable to search in Slack.
+            <br />
+            <br />
+We restarted the service, which fixed searches for all customers. The all clear was called at 6:46PM PT.
+            <br />
+            <br />
+If you notice any further issues with searching, please do let us know at feedback@slack.com.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-01/65dd2378d9565469</id>
+        <published>2019-01-09T09:22:14-08:00</published>
+        <updated>2019-01-16T20:49:52-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-01/65dd2378d9565469"/>
+        <title>Incident: Some Android users are not receiving notifications</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On January 7th, 2019 PT the execution of a weekly cleanup job errantly caused some Android users to be unable to receive notifications to their mobile devices.
+            <br />
+            <br />
+We manually reverted the errant changes made by the cleanup job, and by January 15th at 3:32pm Pacific Time all notification functionality was restored.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;8:49pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On January 7th, 2019 PT the execution of a weekly cleanup job errantly caused some Android users to be unable to receive notifications to their mobile devices.
+            <br />
+            <br />
+We manually reverted the errant changes made by the cleanup job, and by January 15th at 3:32pm Pacific Time all notification functionality was restored.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:11pm PST&lt;/small&gt; - Folks should now be receiving push notifications on Android. If you're still not receiving push notifications, please drop us a line at feedback@slack.com. Thanks for your patience!&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:44pm PST&lt;/small&gt; - We’re still investigating notification issues on Android; however, we’ve received reports from folks who have had success with the steps below.
+            <br />
+            <br />
+1. Open your phone’s recently active app list, dismiss the Slack app from the list, and relaunch the app.
+            <br />
+2. Navigate into the app’s Settings > Notification Settings section and tap Troubleshoot notifications.
+            <br />
+3. If you don’t see a test notification appear at the end of the test, please back out into the app’s main Settings page, scroll down, and tap Advanced > Reset Cache.
+            <br />
+            <br />
+Please reach out to feedback@slack.com if you’re still having trouble receiving notifications.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:30pm PST&lt;/small&gt; - We’re still working to fix the push notification problems that have been impacting Android users. We hope to have the issue fully resolved as soon as possible.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:00pm PST&lt;/small&gt; - Our engineers are still investigating the cause of issues affecting Android push notifications. We're sorry for any disruption this has caused to your day.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:30pm PST&lt;/small&gt; - We have no new information to share just yet, but we're continuing our efforts to resolve push notifications issues on Android devices. We truly appreciate your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:22am PST&lt;/small&gt; - We're investigating an issue where some folks may not be receiving push notifications on Android devices. We're very sorry for the disruption, and hope to have things sorted out soon.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-01/5aed0201fcd66efc</id>
+        <published>2019-01-15T22:41:44-08:00</published>
+        <updated>2019-01-16T17:38:53-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-01/5aed0201fcd66efc"/>
+        <title>Incident: Slackbot is not responding to messages written in Japanese</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On Jan 14th at 12:46 PM PST, a code change was made to how Slackbot fetches Help Center articles. Customers with locales set to Japanese failed to get proper responses in their DM with Slackbot. Instead, they were sent the generic error "何を言われたかわかりませんでした。ごめんなさい" ("I'm sorry, I don't understand!")
+            <br />
+            <br />
+We deployed a fix for the issue at 2:00 PM PT on Jan 16th and restored Slackbot's functionality for all users.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;5:38pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On Jan 14th at 12:46 PM PST, a code change was made to how Slackbot fetches Help Center articles. Customers with locales set to Japanese failed to get proper responses in their DM with Slackbot. Instead, they were sent the generic error "何を言われたかわかりませんでした。ごめんなさい" ("I'm sorry, I don't understand!")
+            <br />
+            <br />
+We deployed a fix for the issue at 2:00 PM PT on Jan 16th and restored Slackbot's functionality for all users.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:09pm PST&lt;/small&gt; - We’re happy to say we’ve resolved the issue with Slackbot failing to respond to messages in Japanese. Thank you for your patience while we rolled out a fix for this.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:41pm PST&lt;/small&gt; - We are investigating why Slackbot is not responding to messages in Japanese. Sorry for the trouble. We're working on it.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-01/a9ca29916211bcb1</id>
+        <published>2019-01-11T13:51:01-08:00</published>
+        <updated>2019-01-16T17:35:21-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-01/a9ca29916211bcb1"/>
+        <title>Incident: Problems inviting Guest Accounts for Enterprise Grid Customers</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On January 11th at 12:13 PM PT, a code change affected the invitation flow for Enterprise Grid users. A small percentage of Grid users were unable to invite Guests to their Grid workspaces. After investigation, we identified the issue and reverted the code change. The issue was resolved by 2:55 PM PT.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;5:35pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On January 11th at 12:13 PM PT, a code change affected the invitation flow for Enterprise Grid users. A small percentage of Grid users were unable to invite Guests to their Grid workspaces. After investigation, we identified the issue and reverted the code change. The issue was resolved by 2:55 PM PT.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:57pm PST&lt;/small&gt; - Thanks for your patience while we worked to fix the problems with invitations for Guest Accounts on Enterprise Grid. The issue should now be fully resolved, however if you run into any further trouble, please let us know at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:51pm PST&lt;/small&gt; - We're not quite out of the woods yet, but we should have a solution in place very soon for the Guest Account invitation issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:21pm PST&lt;/small&gt; - Our team is getting closer to a solution for the invitation problem for Guest Accounts. We're hoping to have this in place as soon as possible.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:51pm PST&lt;/small&gt; - We're sorry to report that Enterprise Grid workspaces may be seeing issues when attempting to invite Guest Accounts to join. Our team is on the case, and we hope to have good news to share soon.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-01/59738ee8cdb3ab7f</id>
+        <published>2019-01-15T18:27:25-08:00</published>
+        <updated>2019-01-15T22:09:05-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-01/59738ee8cdb3ab7f"/>
+        <title>Incident: Problems with uploading new custom emoji</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On January 15th at 12:00pm PT, a code change to improve error messages in Slack caused some users to experience difficulties editing and uploading custom emoji. At 6:00pm PT we identified the affected deploy, conducted an investigation and reverted the deploy, resulting in all users being able to successfully edit or upload custom emoji by 8:00pm PT.
+            <br />
+            <br />
+We have implemented preventive measures to ensure this doesn’t happen in the future. If you are still having issues, please reach out to us at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;10:09pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On January 15th at 12:00pm PT, a code change to improve error messages in Slack caused some users to experience difficulties editing and uploading custom emoji. At 6:00pm PT we identified the affected deploy, conducted an investigation and reverted the deploy, resulting in all users being able to successfully edit or upload custom emoji by 8:00pm PT.
+            <br />
+            <br />
+We have implemented preventive measures to ensure this doesn’t happen in the future. If you are still having issues, please reach out to us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:01pm PST&lt;/small&gt; - We've been given the all-clear! Everyone should be able to upload new custom emoji once more. We're so sorry for getting in the way of you and your shiny new emoji. Thank you for your patience and understanding.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:27pm PST&lt;/small&gt; - We're digging into why people are unable to upload new custom emoji. Apologies for the disruption.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-12/9a0d69ecc7f5ee93</id>
+        <published>2018-12-28T06:51:00-08:00</published>
+        <updated>2019-01-09T07:28:45-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-12/9a0d69ecc7f5ee93"/>
+        <title>Incident: Problems with email previews in Slack</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On December 26th at 2:32 PM PST, we discovered that a small percentage of emails forwarded into some workspaces using our Email Ingestion feature were appearing blank. After investigating the issue, it was determined that the process responsible for handling these emails was occasionally failing and returning an empty file. A change was made to detect and retry the processing of any emails received in this state, and the Email Ingestion feature returned to full operation on December 28th at 1:43 PM PST.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;7:28am PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On December 26th at 2:32 PM PST, we discovered that a small percentage of emails forwarded into some workspaces using our Email Ingestion feature were appearing blank. After investigating the issue, it was determined that the process responsible for handling these emails was occasionally failing and returning an empty file. A change was made to detect and retry the processing of any emails received in this state, and the Email Ingestion feature returned to full operation on December 28th at 1:43 PM PST.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:52pm PST&lt;/small&gt; - We've resolved the issue with email previews in Slack and they should now be displaying as expected. Thanks for bearing with us. If you continue to experience any trouble, please reach out to us at feedback@slack.com for further assistance.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:51am PST&lt;/small&gt; - Some users may be experiencing issues with emails to Slack displaying incorrectly. We are actively investigating the cause of the trouble, and apologise for the inconvenience.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-01/cfb2b908120ed793</id>
+        <published>2019-01-08T10:34:00-08:00</published>
+        <updated>2019-01-08T10:34:00-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-01/cfb2b908120ed793"/>
+        <title>Incident: Folks using our API are receiving invalid_auth errors</title>
+        <summary>Between 10:34am to 10:52 am PT today, users of our API were receiving invalid_auth errors when making a request to a range of API methods. We noticed that both bot and user tokens were being used to call various methods of our API. These requests were being erroneously rejected with the invalid_token error due to a database issue.
+            <br />
+            <br />
+We have since fixed the issue. Thank you for hanging in there, and our apologies for any inconvenience.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;10:34am PST&lt;/small&gt; - Between 10:34am to 10:52 am PT today, users of our API were receiving invalid_auth errors when making a request to a range of API methods. We noticed that both bot and user tokens were being used to call various methods of our API. These requests were being erroneously rejected with the invalid_token error due to a database issue.
+            <br />
+            <br />
+We have since fixed the issue. Thank you for hanging in there, and our apologies for any inconvenience.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-01/ffed22614a5751cc</id>
+        <published>2019-01-06T20:34:00-08:00</published>
+        <updated>2019-01-06T20:34:00-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-01/ffed22614a5751cc"/>
+        <title>Incident: File uploads failing for some users on iOS</title>
+        <summary>On January 4th at 1:59 pm PT, we changed a feature flag that would make uploads faster and more reliable for customers using iOS, specifically for those outside North America. After some investigation, it was determined that some iOS customers were not correctly switching over to the new functionality. This caused some users to experience failures when trying to uploads files on iOS.
+            <br />
+            <br />
+We deployed a change to fix the issue, and customers were able to successfully upload files again on their iOS devices as of January 6th, at 8:34 pm PT.
+            <br />
+            <br />
+Thanks for your patience as we worked through the issue. We’re making plans to ensure this doesn’t happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;8:34pm PST&lt;/small&gt; - On January 4th at 1:59 pm PT, we changed a feature flag that would make uploads faster and more reliable for customers using iOS, specifically for those outside North America. After some investigation, it was determined that some iOS customers were not correctly switching over to the new functionality. This caused some users to experience failures when trying to uploads files on iOS.
+            <br />
+            <br />
+We deployed a change to fix the issue, and customers were able to successfully upload files again on their iOS devices as of January 6th, at 8:34 pm PT.
+            <br />
+            <br />
+Thanks for your patience as we worked through the issue. We’re making plans to ensure this doesn’t happen in the future.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2019-01/0072a982ccb40d17</id>
+        <published>2019-01-03T19:22:36-08:00</published>
+        <updated>2019-01-03T21:58:15-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2019-01/0072a982ccb40d17"/>
+        <title>Notice: Trouble with the Google Calendar integration</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On January 3rd between 6:37pm and 8:01pm Pacific Time, we experienced an issue with our Google Calendar integration. This prevented new integrations from being configured and may have affected general Calendar functionality as well.
+            <br />
+            <br />
+After contacting Google we were able to deploy a fix and all normal functionality has been restored. If you are experiencing any continued issues, please reach out via feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;9:58pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On January 3rd between 6:37pm and 8:01pm Pacific Time, we experienced an issue with our Google Calendar integration. This prevented new integrations from being configured and may have affected general Calendar functionality as well.
+            <br />
+            <br />
+After contacting Google we were able to deploy a fix and all normal functionality has been restored. If you are experiencing any continued issues, please reach out via feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:29pm PST&lt;/small&gt; - All good! The Google Calendar integration is up and running again. Thanks for sticking with us!&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:22pm PST&lt;/small&gt; - We're experiencing issues with the Google Calendar integration. We're currently investigating, and hope to have an update soon. Thanks for your patience.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-12/7976a69e0344ea82</id>
+        <published>2018-12-24T11:00:00-08:00</published>
+        <updated>2018-12-24T11:00:00-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-12/7976a69e0344ea82"/>
+        <title>Incident: Issues with file search</title>
+        <summary>We identified an issue with the file search function where files older than 2 weeks were not searchable in the index. We deployed a fix that restored the functionality. Please refresh Slack with Cmd/Ctrl + R to fetch the update. If you have any further hassles, please let us know at feedback@slack.com. Apologies for the disruption.</summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;11:00am PST&lt;/small&gt; - We identified an issue with the file search function where files older than 2 weeks were not searchable in the index. We deployed a fix that restored the functionality. Please refresh Slack with Cmd/Ctrl + R to fetch the update. If you have any further hassles, please let us know at feedback@slack.com. Apologies for the disruption.&lt;/p&gt;</content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-12/11d58a6f37b53a8e</id>
+        <published>2018-12-18T09:29:29-08:00</published>
+        <updated>2018-12-18T12:46:19-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-12/11d58a6f37b53a8e"/>
+        <title>Incident: Some workspaces are experiencing degraded service</title>
+        <summary>Technical summary
+            <br />
+On December 18 at 8:55am PT we experienced an event that resulted in one of our databases being overloaded. This led to longer than usual response times for various actions in Slack, for a small subset of workspaces.
+            <br />
+            <br />
+Our engineering team worked on implementing a fix, and functionality was restored to all workspaces by 10:05am PT.
+            <br />
+            <br />
+We’re currently investigating preventive measures to ensure that this doesn’t happen again. If you’re still running into any issues, please reach out to us at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;12:46pm PST&lt;/small&gt; - Technical summary
+            <br />
+On December 18 at 8:55am PT we experienced an event that resulted in one of our databases being overloaded. This led to longer than usual response times for various actions in Slack, for a small subset of workspaces.
+            <br />
+            <br />
+Our engineering team worked on implementing a fix, and functionality was restored to all workspaces by 10:05am PT.
+            <br />
+            <br />
+We’re currently investigating preventive measures to ensure that this doesn’t happen again. If you’re still running into any issues, please reach out to us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:07am PST&lt;/small&gt; - Good news! Search and workspace management functionality is back up and running. Thank you for your patience!&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:59am PST&lt;/small&gt; - We have received reports of degraded service (search, workspace management) for a subset of workspaces. We apologize for the disruption and we hope to be back to normal soon.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:29am PST&lt;/small&gt; - We’ve heard reports that some people are experiencing degraded service. Our engineers are on the case and we'll keep you posted on any updates. Thanks for your patience.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-12/47c45b1ed9ce5332</id>
+        <published>2018-12-13T15:43:18-08:00</published>
+        <updated>2018-12-17T14:04:18-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-12/47c45b1ed9ce5332"/>
+        <title>Incident: Degraded search and workspace management services for some customers</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On December 13th from 2:56pm PT until 4:57pm PT, we experienced an event that caused a significant increase in load on some of our databases. During this time, customers experienced slower-than-normal response times when searching members from their Admin pages.
+            <br />
+            <br />
+To resolve the issue, we implemented a short-term fix to reduce the load on the impacted databases. Full functionality was restored by 4:57pm PT. We are currently scoping preventive measures to ensure this doesn’t happen in the future. If you continue to have issues, please reach out to us at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:04pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On December 13th from 2:56pm PT until 4:57pm PT, we experienced an event that caused a significant increase in load on some of our databases. During this time, customers experienced slower-than-normal response times when searching members from their Admin pages.
+            <br />
+            <br />
+To resolve the issue, we implemented a short-term fix to reduce the load on the impacted databases. Full functionality was restored by 4:57pm PT. We are currently scoping preventive measures to ensure this doesn’t happen in the future. If you continue to have issues, please reach out to us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:03pm PST&lt;/small&gt; - We've resolved the problems with search and the workspace management services. Sorry for the disruption, and thanks for your patience with us. If you see any other problems, please reach out at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:45pm PST&lt;/small&gt; - We're making changes to mitigate the impact of these issues and working towards a resolution. Thanks for sticking with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:14pm PST&lt;/small&gt; - We're continuing to look into the issues with search and the workspace management pages. Please bear with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:43pm PST&lt;/small&gt; - We're looking into an issue with search and workspace management services for some customers. We're terribly sorry for the disruption.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-12/bc0f970e626e80fd</id>
+        <published>2018-12-12T20:12:05-08:00</published>
+        <updated>2018-12-12T20:51:53-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-12/bc0f970e626e80fd"/>
+        <title>Incident: Issues with image previews</title>
+        <summary>We have resolved the image preview problem and deployed a fix. Please refresh Slack with Cmd/Ctrl + R to fetch the update. If you have any further hassles, please let us know at feedback@slack.com. Apologies again for the disruption.</summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;8:51pm PST&lt;/small&gt; - We have resolved the image preview problem and deployed a fix. Please refresh Slack with Cmd/Ctrl + R to fetch the update. If you have any further hassles, please let us know at feedback@slack.com. Apologies again for the disruption.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:42pm PST&lt;/small&gt; - We're still digging into the image preview issue and chasing down some leads. Thank you for bearing with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:12pm PST&lt;/small&gt; - We are investigating some issues with image previews in Slack. We're very sorry for the trouble. We're on the case.&lt;/p&gt;</content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-12/0582a24382b2166c</id>
+        <published>2018-12-12T13:27:54-08:00</published>
+        <updated>2018-12-12T14:55:35-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-12/0582a24382b2166c"/>
+        <title>Incident: Users are unable to delete custom emojis</title>
+        <summary>We're happy to report that we’ve resolved the issue, so people should be able to delete custom emojis again! Thanks for sticking with us.</summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:55pm PST&lt;/small&gt; - We're happy to report that we’ve resolved the issue, so people should be able to delete custom emojis again! Thanks for sticking with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:27pm PST&lt;/small&gt; - We're almost out of the woods. Thanks for sticking with us!&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:57pm PST&lt;/small&gt; - The ability to delete custom emojis has been interrupted. We hope to have the issue resolved as soon as possible.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:27pm PST&lt;/small&gt; - Some users are unable to delete custom emojis.&lt;/p&gt;</content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-12/480025e027dfd320</id>
+        <published>2018-12-11T13:24:48-08:00</published>
+        <updated>2018-12-12T02:51:07-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-12/480025e027dfd320"/>
+        <title>Incident: New users experiencing troubles with the custom Terms of Service</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+At 10:35 AM PST on December 11, 2018, a code change was deployed that inadvertently caused users to see a “There's been a glitch…” error page instead of the Custom Terms of Service for their Enterprise Grid organization. This effectively prevented a subset of people from accessing their workspaces. After an investigation, we were able to identify and confirm the issue, and finally resolved the error at 2:15 PM PST by reverting the relevant change for all users.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:51am PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+At 10:35 AM PST on December 11, 2018, a code change was deployed that inadvertently caused users to see a “There's been a glitch…” error page instead of the Custom Terms of Service for their Enterprise Grid organization. This effectively prevented a subset of people from accessing their workspaces. After an investigation, we were able to identify and confirm the issue, and finally resolved the error at 2:15 PM PST by reverting the relevant change for all users.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:22pm PST&lt;/small&gt; - The custom Terms of Service should be back to normal for users once again. Thanks for sticking with us!&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:54pm PST&lt;/small&gt; - Our team has isolated the issue and are actively working on a fix. We appreciate your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:24pm PST&lt;/small&gt; - New users on enterprise orgs may see a "Glitch" page when trying to load the Custom "Terms of Service" page. We're looking into the cause of the issue and hope to have an update shortly.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-12/9de790501e8e7733</id>
+        <published>2018-12-10T21:04:33-08:00</published>
+        <updated>2018-12-11T14:40:33-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-12/9de790501e8e7733"/>
+        <title>Incident: Calls on mobile not working for some customers in Asia</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+Earlier in the day, on December 10th, our Singapore calls server was temporarily taken out of action for some scheduled maintenance.
+            <br />
+            <br />
+This exposed an existing bug in the calls API that had been re-routing calls originating from India and Japan to our Singapore calls server. With this server now offline, we started to receive reports from those regions of calls via mobile failing. At 9:19pm PT, we put a fix in place, and calls began to no longer fail on mobile devices.
+            <br />
+            <br />
+Calls from these regions should now be working as expected. However, if you notice anything amiss, please contact us at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:40pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+Earlier in the day, on December 10th, our Singapore calls server was temporarily taken out of action for some scheduled maintenance.
+            <br />
+            <br />
+This exposed an existing bug in the calls API that had been re-routing calls originating from India and Japan to our Singapore calls server. With this server now offline, we started to receive reports from those regions of calls via mobile failing. At 9:19pm PT, we put a fix in place, and calls began to no longer fail on mobile devices.
+            <br />
+            <br />
+Calls from these regions should now be working as expected. However, if you notice anything amiss, please contact us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:23pm PST&lt;/small&gt; - We've been given the green light! Everyone should be able to make calls from their mobile once more but please let us know at feedback@slack.com if not. We're truly sorry for disrupting your day.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:04pm PST&lt;/small&gt; - We're looking into why some customers in Asia are having trouble connecting to calls from mobile devices. Please bear with us as we get this sorted.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-12/a4ade99dc2606c86</id>
+        <published>2018-12-10T19:34:10-08:00</published>
+        <updated>2018-12-10T21:43:17-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-12/a4ade99dc2606c86"/>
+        <title>Incident: Slow link previews for all users</title>
+        <summary>Technical Summary:
+            <br />
+On December 10th, 2018 at 5:31pm PT, a workspace deletion caused a spike in our job queue as the backlog of data was cleaned up.
+            <br />
+            <br />
+During this period, some users may have seen delayed link unfurls. We deployed a fix at 7:41pm PT and unfurls should be working as expected going forward.
+            <br />
+            <br />
+We also implemented a change to job queuing to prevent this from happening again. If you experience any issues, please let us know at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;9:43pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+On December 10th, 2018 at 5:31pm PT, a workspace deletion caused a spike in our job queue as the backlog of data was cleaned up.
+            <br />
+            <br />
+During this period, some users may have seen delayed link unfurls. We deployed a fix at 7:41pm PT and unfurls should be working as expected going forward.
+            <br />
+            <br />
+We also implemented a change to job queuing to prevent this from happening again. If you experience any issues, please let us know at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:16pm PST&lt;/small&gt; - We've been given the all-clear! Everyone should see their links preview at normal speeds now. Thank you for your patience through that.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:03pm PST&lt;/small&gt; - The team are still working to get to the bottom of these delayed link previews. Please hold tight.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:34pm PST&lt;/small&gt; - We're investigating reports of delays in previewing links. Apologies for this interruption to your day.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-12/dfe522d4e1143317</id>
+        <published>2018-12-04T16:13:42-08:00</published>
+        <updated>2018-12-04T18:24:29-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-12/dfe522d4e1143317"/>
+        <title>Notice: Google authentication issues when adding some apps</title>
+        <summary>The Google authentication issues have been resolved and should no longer be causing any trouble. If you have any further hassles, please reach out to us at feedback@slack.com. Thank you for bearing with us.</summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;6:24pm PST&lt;/small&gt; - The Google authentication issues have been resolved and should no longer be causing any trouble. If you have any further hassles, please reach out to us at feedback@slack.com. Thank you for bearing with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:13pm PST&lt;/small&gt; - We are aware of Google authentication issues when trying to add some apps to a workspace. We are monitoring the situation and will provide updates. We're very sorry for the disruption.&lt;/p&gt;</content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/b618435fde16c719</id>
+        <published>2018-11-29T22:01:11-08:00</published>
+        <updated>2018-12-02T20:50:34-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/b618435fde16c719"/>
+        <title>Incident: Slack imports are not importing messages into channels successfully</title>
+        <summary>Technical summary:
+            <br />
+On November 29th at 9:03am PT, we made a change that restructured how we filter channels IDs during imports. This had a negative effect on the import tool, and we failed to retrieve public channel messages from the export file during Slack to Slack imports.
+            <br />
+            <br />
+After identifying the problem, our team deployed a fix at 10:40pm PT. Going forward, all new imports are now working as expected. If, however, you do experience any issues, please let us know at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;8:50pm PST&lt;/small&gt; - Technical summary:
+            <br />
+On November 29th at 9:03am PT, we made a change that restructured how we filter channels IDs during imports. This had a negative effect on the import tool, and we failed to retrieve public channel messages from the export file during Slack to Slack imports.
+            <br />
+            <br />
+After identifying the problem, our team deployed a fix at 10:40pm PT. Going forward, all new imports are now working as expected. If, however, you do experience any issues, please let us know at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:48pm PST&lt;/small&gt; - We've been given the all-clear! The import tool is working as expected once more. Apologies for interrupting your day.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:31pm PST&lt;/small&gt; - We have located the cause of these import tool issues and are working on a fix. Please hold tight.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:01pm PST&lt;/small&gt; - We are looking into reports of messages not being imported correctly into channels from the import tool. Apologies for this hassle. We are working to get this sorted as quickly as possible.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/57083c5a9ee7a44d</id>
+        <published>2018-11-28T13:10:00-08:00</published>
+        <updated>2018-11-29T19:35:59-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/57083c5a9ee7a44d"/>
+        <title>Incident: Slow unfurls being experienced by all users.</title>
+        <summary>Technical Summary:
+            <br />
+On November 28th between 1:10pm (PT) and 4:33pm (PT), some customers experienced delays with parts of our service.
+            <br />
+            <br />
+An issue occurred at 1:10pm (PT) that triggered a high amount of API calls, creating a backlog in one of our job queues. This caused delays for some customers with features that rely on the job queue, including unfurls, Slackbot messages, and "All Threads" or "All Unreads".
+            <br />
+            <br />
+We worked through the backlog and deployed a fix which allowed the job queue to recover. The all clear was called at 1:38pm (PT).
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;7:35pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+On November 28th between 1:10pm (PT) and 4:33pm (PT), some customers experienced delays with parts of our service.
+            <br />
+            <br />
+An issue occurred at 1:10pm (PT) that triggered a high amount of API calls, creating a backlog in one of our job queues. This caused delays for some customers with features that rely on the job queue, including unfurls, Slackbot messages, and "All Threads" or "All Unreads".
+            <br />
+            <br />
+We worked through the backlog and deployed a fix which allowed the job queue to recover. The all clear was called at 1:38pm (PT).&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:47pm PST&lt;/small&gt; - Unfurls are working properly once again! Please do let us know if you continue to see issues. Thank you for your patience while we sorted this out!&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:10pm PST&lt;/small&gt; - We're experiencing delays with unfurling, reaction emoji, and the /giphy command. We're investigating!&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/e3c26eb6ed8557da</id>
+        <published>2018-11-27T22:33:51-08:00</published>
+        <updated>2018-11-28T09:03:05-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/e3c26eb6ed8557da"/>
+        <title>Incident: Trouble with the Google Calendar integration</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On November 27th at 3:07 pm PT, an update was made to the Google Drive integration that was not correctly processed. This prevented Google Calendar reminders from appearing correctly in channels for a subset of users.
+            <br />
+            <br />
+After an investigation of the problem, our team deployed a fix at 11:41 pm PT, where normal functionality resumed at 12:14am PT. We'll continue to monitor the integration. If you continue to experience any issues please drop us a note at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;9:03am PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On November 27th at 3:07 pm PT, an update was made to the Google Drive integration that was not correctly processed. This prevented Google Calendar reminders from appearing correctly in channels for a subset of users.
+            <br />
+            <br />
+After an investigation of the problem, our team deployed a fix at 11:41 pm PT, where normal functionality resumed at 12:14am PT. We'll continue to monitor the integration. If you continue to experience any issues please drop us a note at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:24am PST&lt;/small&gt; - We’ve resolved the Google Calendar issues, and all functionality should be back to normal. Sorry for the hiccup!&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:33pm PST&lt;/small&gt; - We believe we've narrowed down the issue affecting our Google Calendar integration, and are close to a fix. Thanks for bearing with us!&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:07pm PST&lt;/small&gt; - We're still investigating the root cause of the troubles with our Google Calendar integration, but we hope to have things fixed up shortly.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:33pm PST&lt;/small&gt; - We're currently experiencing some issues with our Google Calendar integration. We're actively investigating, and hope to have an update soon. Thanks for your patience.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/b7f3e3f62e67d909</id>
+        <published>2018-11-27T13:05:00-08:00</published>
+        <updated>2018-11-28T08:01:28-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/b7f3e3f62e67d909"/>
+        <title>Incident: Trouble with the channels.join API method</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+At 1:05 pm PT, we made a webapp deploy that contained a change in the Platform API for `channels.join`.
+            <br />
+            <br />
+Our Platform engineers noticed errors increasing for that particular endpoint and almost immediately, the culprit was identified.  At 2.54pm PT a forward fix was deployed.
+            <br />
+            <br />
+The fix was immediate and the all clear was called at 3.10pm PT.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;8:01am PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+At 1:05 pm PT, we made a webapp deploy that contained a change in the Platform API for `channels.join`.
+            <br />
+            <br />
+Our Platform engineers noticed errors increasing for that particular endpoint and almost immediately, the culprit was identified.  At 2.54pm PT a forward fix was deployed.
+            <br />
+            <br />
+The fix was immediate and the all clear was called at 3.10pm PT.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:15pm PST&lt;/small&gt; - We have excellent news! The problem with the channels.join API method has now been resolved, so apps and integrations should be working properly for everyone once again. Our apologies for the trouble earlier.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:05pm PST&lt;/small&gt; - We're currently seeing some issues with the channels.join API method failing to work as expected. This may mean some apps may not be working properly as a result. Our team is on the case, and we hope to have this resolved as quickly as possible. Thanks for bearing with us.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/dfb286a2a9c9c5c7</id>
+        <published>2018-11-19T09:16:39-08:00</published>
+        <updated>2018-11-21T09:35:34-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/dfb286a2a9c9c5c7"/>
+        <title>Incident: Some customers are unable to use search in their Administration pages</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On November 19th at approximately 07:46 AM PT our team internally identified a server that manages user-related information which was no longer serving requests in a timely manner. This affected a subset of users, and caused the Admin pages to not load properly. As a result, customers were not able to manage team members. We received the first reports from our customers at 08:54am PT, during this time our team was actively investigating the root cause of the issue.
+            <br />
+            <br />
+A few contributing factors led to this incident, including a new feature that relied on the fetching and loading of user-groups and how it the functioned with the auto-complete modal. Our team worked to reduce the strain on the server which hosts user-related information. From there, we were able to deploy a fix, stabilizing the affected server at 04:07 PM PT. An official All-Clear was called at 04:45 PM PT on November 20th.
+            <br />
+            <br />
+We’re sorry for the disruption to your work day. If you are still experiencing issues with managing team members, please drop us a line at feedback@slack.com
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;9:35am PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On November 19th at approximately 07:46 AM PT our team internally identified a server that manages user-related information which was no longer serving requests in a timely manner. This affected a subset of users, and caused the Admin pages to not load properly. As a result, customers were not able to manage team members. We received the first reports from our customers at 08:54am PT, during this time our team was actively investigating the root cause of the issue.
+            <br />
+            <br />
+A few contributing factors led to this incident, including a new feature that relied on the fetching and loading of user-groups and how it the functioned with the auto-complete modal. Our team worked to reduce the strain on the server which hosts user-related information. From there, we were able to deploy a fix, stabilizing the affected server at 04:07 PM PT. An official All-Clear was called at 04:45 PM PT on November 20th.
+            <br />
+            <br />
+We’re sorry for the disruption to your work day. If you are still experiencing issues with managing team members, please drop us a line at feedback@slack.com&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:48am PST&lt;/small&gt; - All features of the Administration pages, including search, should now be working properly. Please get in touch with us directly if any issues persist. We sincerely apologize for any inconvenience this may have caused.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:31pm PST&lt;/small&gt; - We're seeing more evidence of search returning on the Admin pages for affected customers though we are still working to make sure this is completely resolved before calling the all-clear. Thank you for all your patience through this.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:55pm PST&lt;/small&gt; - We've been monitoring things and can confirm that everyone should be able to load the Admin page and search User Groups once more. In saying this, search on the Manage members page is slowly recovering and we're making sure search is working generally across the Admin pages. We will share any new information as it becomes available on these outstanding issues.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:27pm PST&lt;/small&gt; - We're still working on returning Administration page features to full functionality. Please hold tight.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:26pm PST&lt;/small&gt; - Our team is close to a full resolution, thanks for hanging in there!&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:00pm PST&lt;/small&gt; - No new updates. Affected features are slowly returning but not fully functional just yet.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:56pm PST&lt;/small&gt; - No new updates. Affected features are slowly returning but not fully functional just yet.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:26pm PST&lt;/small&gt; - We’re almost out of the woods. The ability to load the Administration page and search for User Groups is slowly returning, although some users may have difficulty searching for members.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:57pm PST&lt;/small&gt; - We are getting reports of some users being able to reload the Administration page again. We are still experiencing issues with the ability to search for User Groups. Thanks for hanging in there.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:25pm PST&lt;/small&gt; - No new updates. We’re still digging into the root cause of issues with the Administrator page and the ability to search for User Groups.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:55pm PST&lt;/small&gt; - We are getting reports that the ability to search for user groups has also been affected. Apologies for the continued interruption to your day.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:29pm PST&lt;/small&gt; - We have no new information to share just yet, but we're continuing our efforts. We truly appreciate your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:54pm PST&lt;/small&gt; - We're getting closer to a resolution, but some users may still see problems loading their Manage Members (Administration) page. Thanks for hanging in there.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:24pm PST&lt;/small&gt; - No news to share at this time, but our efforts to remedy this are ongoing.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:50am PST&lt;/small&gt; - We're continuing to investigate a solution for the customers who are unable to load the Administration page.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:21am PST&lt;/small&gt; - Our team is still investigating, but we’re on the right track towards a solution. We hope to have more good news to share shortly.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:50am PST&lt;/small&gt; - We don't have any further updates right now, but thank you for your patience while we continue to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:21am PST&lt;/small&gt; - We're still trying to pin down the root cause of the Administration page failing to load for some customers. We hope to bring some good news soon. We appreciate your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:49am PST&lt;/small&gt; - We are continuing to investigate issues with loading the Administration page for some customers.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:16am PST&lt;/small&gt; - Some folks are having troubles loading their "Manage members" administration page. We're looking into the root cause.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/8bde70551adfa4e5</id>
+        <published>2018-11-20T14:35:07-08:00</published>
+        <updated>2018-11-21T08:30:41-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/8bde70551adfa4e5"/>
+        <title>Incident: Problems with Search</title>
+        <summary>On November 20th at 2:35pm PT, we released a deploy which introduced an error in our code, which resulted in search failing for all users.
+            <br />
+            <br />
+At 3:37pm PT, we identified the affected deploy and reverted it. This cleared up the search errors, and all users were able to use search successfully again at 4:39pm PT.
+            <br />
+            <br />
+We’re very sorry to those affected for the disruption to your day. We’re investigating the root cause and making plans to ensure this doesn’t happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;8:30am PST&lt;/small&gt; - On November 20th at 2:35pm PT, we released a deploy which introduced an error in our code, which resulted in search failing for all users.
+            <br />
+            <br />
+At 3:37pm PT, we identified the affected deploy and reverted it. This cleared up the search errors, and all users were able to use search successfully again at 4:39pm PT.
+            <br />
+            <br />
+We’re very sorry to those affected for the disruption to your day. We’re investigating the root cause and making plans to ensure this doesn’t happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:39pm PST&lt;/small&gt; - We’re pleased to report that the search trouble has now been fixed. Everyone should be able to use the search feature successfully at this time. Thank you for your patience and understanding with us today.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:16pm PST&lt;/small&gt; - Things are starting to improve, but we're still not out of the woods just yet with the search trouble. We hope to have the issue resolved as soon as possible.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:46pm PST&lt;/small&gt; - Our team is continuing their efforts to find a solution to the search problems. We hope to have some positive news to share soon.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:35pm PST&lt;/small&gt; - We're sorry to report that there is an issue with the search feature that is impacting folks. We're working to resolve this as quickly as we can.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/e1159d007796a987</id>
+        <published>2018-11-19T05:12:00-08:00</published>
+        <updated>2018-11-19T19:15:00-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/e1159d007796a987"/>
+        <title>Incident: Connectivity troubles</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On November 19, 2018 between 05:12 am PT and 06:00 am PT, a small percentage of our users were unable to connect to Slack.
+            <br />
+            <br />
+The connection issue was caused when a single Point of Presence (POP) failed to respond to requests to slack.com. Requests going through that specific POP were either delayed or timed out, which resulted in our users being unable to connect to their workspace, or experiencing slowness in Slack. We worked with our cloud provider to remove this POP from our distribution, and resolved the issue at 06:08 am.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;7:15pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On November 19, 2018 between 05:12 am PT and 06:00 am PT, a small percentage of our users were unable to connect to Slack.
+            <br />
+            <br />
+The connection issue was caused when a single Point of Presence (POP) failed to respond to requests to slack.com. Requests going through that specific POP were either delayed or timed out, which resulted in our users being unable to connect to their workspace, or experiencing slowness in Slack. We worked with our cloud provider to remove this POP from our distribution, and resolved the issue at 06:08 am.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:08am PST&lt;/small&gt; - We've got good news: everyone should now be able to connect again! Please reload Slack using Ctrl or Cmd + R to reconnect to your workspace, and let us know at feedback@slack.com if you're still seeing issues after that.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:12am PST&lt;/small&gt; - We are getting reports that folks cannot connect to Slack and that some of our services are slow. We are investigating these issues as we speak, and we thank you for your patience.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/8b93d7ed11dae018</id>
+        <published>2018-11-13T15:45:27-08:00</published>
+        <updated>2018-11-14T12:56:38-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/8b93d7ed11dae018"/>
+        <title>Incident: Issues loading display names for some NA West customers</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On November 13th between 8:08am PT and 4:09pm PT, a small percentage of users were unable to search for direct messages (DMs), and experienced issues loading display names in channels. This was due to a error with one of our servers.
+            <br />
+            <br />
+At 3:45pm PT we reloaded the affected server and continued to investigate and monitor the issue, until the issue was fully recovered at 4:09pm PT.
+            <br />
+            <br />
+We're very sorry to those affected for the disruption to your day. We're investigating the root cause and making plans to ensure this doesn't happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;12:56pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On November 13th between 8:08am PT and 4:09pm PT, a small percentage of users were unable to search for direct messages (DMs), and experienced issues loading display names in channels. This was due to a error with one of our servers.
+            <br />
+            <br />
+At 3:45pm PT we reloaded the affected server and continued to investigate and monitor the issue, until the issue was fully recovered at 4:09pm PT.
+            <br />
+            <br />
+We're very sorry to those affected for the disruption to your day. We're investigating the root cause and making plans to ensure this doesn't happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:09pm PST&lt;/small&gt; - We come bearing good news! All customers should be able to see display names in their workspaces once more. Sorry for that disruption to your day.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:45pm PST&lt;/small&gt; - We're investigating reports of display names not rendering correctly for some folks. Apologies for the hassle here — we're on it.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/91ea065b78fee016</id>
+        <published>2018-11-12T14:29:00-08:00</published>
+        <updated>2018-11-12T14:29:00-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/91ea065b78fee016"/>
+        <title>Incident: Some people having trouble deleting private channels</title>
+        <summary>Technical Summary:
+            <br />
+On November 13th, 2018 between 2:29 PM (PT) and 5:39 PM (PT) customers were unable to delete private channels if they were previously converted from public channels.
+            <br />
+            <br />
+We made a change at 2:29 PM (PT) that affected how we check for token types and scopes in our API in relation to private channels. This introduced a bug that prevented customers from deleting these private channels. The change was reverted at 5:39 PM (PT).
+            <br />
+            <br />
+To those affected, we are truly sorry for interrupting your day and are working hard to make sure this doesn't happen again.
+            <br />
+            <br />
+If you notice any further issues with deleting channels please do let us know at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:29pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+On November 13th, 2018 between 2:29 PM (PT) and 5:39 PM (PT) customers were unable to delete private channels if they were previously converted from public channels.
+            <br />
+            <br />
+We made a change at 2:29 PM (PT) that affected how we check for token types and scopes in our API in relation to private channels. This introduced a bug that prevented customers from deleting these private channels. The change was reverted at 5:39 PM (PT).
+            <br />
+            <br />
+To those affected, we are truly sorry for interrupting your day and are working hard to make sure this doesn't happen again.
+            <br />
+            <br />
+If you notice any further issues with deleting channels please do let us know at feedback@slack.com.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/8abae7811317864c</id>
+        <published>2018-11-08T00:35:38-08:00</published>
+        <updated>2018-11-09T12:45:32-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/8abae7811317864c"/>
+        <title>Incident: Connectivity issues in Europe</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On November 7th at 12:17 AM (PT), we began experiencing issues that prevented some users in Europe from successfully connecting to their workspaces over the course of two days.
+            <br />
+            <br />
+These connectivity problems were caused by unexpected resource limitations in two European data centers.
+            <br />
+            <br />
+We have been working with our upstream service provider, AWS, to understand why this has been isolated to these two regions. In order to reduce disconnections, we have performed the following mitigation steps:
+            <br />
+            <br />
+• We have deployed additional hardware into the pool to distribute connections across more machines.
+            <br />
+• We have converted one of these regions to work across multiple availability zones, which was done before the beginning of Europe's workday on November 9th.
+            <br />
+• AWS has put a mitigation in place for the load balancers.
+            <br />
+            <br />
+We are deeply sorry for the disruption this has caused to your workdays. Please let us know if you are still experiencing any connectivity issues at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;12:45pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On November 7th at 12:17 AM (PT), we began experiencing issues that prevented some users in Europe from successfully connecting to their workspaces over the course of two days.
+            <br />
+            <br />
+These connectivity problems were caused by unexpected resource limitations in two European data centers.
+            <br />
+            <br />
+We have been working with our upstream service provider, AWS, to understand why this has been isolated to these two regions. In order to reduce disconnections, we have performed the following mitigation steps:
+            <br />
+            <br />
+• We have deployed additional hardware into the pool to distribute connections across more machines.
+            <br />
+• We have converted one of these regions to work across multiple availability zones, which was done before the beginning of Europe's workday on November 9th.
+            <br />
+• AWS has put a mitigation in place for the load balancers.
+            <br />
+            <br />
+We are deeply sorry for the disruption this has caused to your workdays. Please let us know if you are still experiencing any connectivity issues at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:40am PST&lt;/small&gt; - We've resolved the connectivity issues affecting folks in Europe today. Everyone should be able to connect to their workspaces, and we'd like to thank you again for bearing with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:13am PST&lt;/small&gt; - Our investigation and monitoring continue. We don't have any news to share as of now, and we thank you so much again for your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:40am PST&lt;/small&gt; - We don't have any further updates right now, but we are continuing our efforts to investigate these issues further.
+            <br />
+            <br />
+Thank you again for sticking with us today.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:09am PST&lt;/small&gt; - Our engineers are still looking into today's connectivity issues.
+            <br />
+            <br />
+Thanks again for bearing with us, we really appreciate it.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:37am PST&lt;/small&gt; - We are seeing some positive signs, and we believe folks should be able to connect once again to their workspaces.
+            <br />
+            <br />
+However, our team is still digging into the root cause of these connectivity issues from today and yesterday, and we will give updates on our progress as news become available. We thank you for your continued patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:06am PST&lt;/small&gt; - We've no new information to share just yet about the connectivity issues in Europe today, but we're working on getting things back to normal as soon as we can.
+            <br />
+            <br />
+Again, we truly appreciate your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:35am PST&lt;/small&gt; - We are investigating reports of connectivity issues in Europe.
+            <br />
+            <br />
+We're very sorry for the disruption, and thank you for your patience.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/48527a5ccfb38110</id>
+        <published>2018-11-07T04:12:52-08:00</published>
+        <updated>2018-11-08T14:02:22-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/48527a5ccfb38110"/>
+        <title>Incident: Connectivity troubles in Europe</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On November 7th  12:17 AM (PT), we began experiencing issues that prevented some users in Europe from successfully connecting to their workspaces.
+            <br />
+            <br />
+We’re continuing to investigate the root cause with our upstream provider. We’ll be monitoring the situation on our end, and including any additional details as they become available. Please let us know if you have any questions in the meantime by writing in to feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:02pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On November 7th  12:17 AM (PT), we began experiencing issues that prevented some users in Europe from successfully connecting to their workspaces.
+            <br />
+            <br />
+We’re continuing to investigate the root cause with our upstream provider. We’ll be monitoring the situation on our end, and including any additional details as they become available. Please let us know if you have any questions in the meantime by writing in to feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:43am PST&lt;/small&gt; - Our team is reporting that folks should be able to connect again. We're sorry for the trouble this caused and we’ll work to ensure this is prevented from occurring again. Thanks for sticking with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:21am PST&lt;/small&gt; - Our investigation of the connection issues affecting folks in Europe is still ongoing, however we're seeing positive signs that people should be able to connect again.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:52am PST&lt;/small&gt; - Our team is still investigating, but we’re on the right track towards a solution. We'll update you with more news shortly.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:20am PST&lt;/small&gt; - Our team is continuing to work on resolving the connectivity issues affecting some users in Europe.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:51am PST&lt;/small&gt; - We're monitoring the situation and still digging into the earlier connectivity issues that have mostly affected people in Europe.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:21am PST&lt;/small&gt; - We're not fully out of the woods yet but the situation has improved. Most people are back online and we're working to keep the connection stable.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:49am PST&lt;/small&gt; - Our team continues working to restore full functionality and get to the bottom of today's connectivity problems. Thanks for bearing with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:19am PST&lt;/small&gt; - We're still investigating the cause of today's connectivity issues and working to patch things up. Apologies for the trouble and thanks for your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:49am PST&lt;/small&gt; - Our team is still looking into the cause of the connectivity issues affecting folks in Europe today, and we will continue to update you on our progress. Your patience is truly appreciated.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:18am PST&lt;/small&gt; - We are investigating some new reports that connections are dropping again for some folks in Europe. We're working on getting things back to normal for everyone as soon as possible. Our sincere apologies for the ongoing trouble.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:42am PST&lt;/small&gt; - We are continuing our efforts to investigate the root cause of these connectivity issues in Europe and resume connections for everyone. We really appreciate your patience, and thank you again for bearing with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:12am PST&lt;/small&gt; - We're not completely out of the woods yet for the connectivity issues in Europe. Our team is still investigating the root cause, and we will update you on our progress. Our apologies again for the troubles today.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:37am PST&lt;/small&gt; - We are seeing some positive signs with folks being able to connect again to their workspaces. Our team will continue to investigate until we are certain that the issue is solved for everyone. We will keep our status site open until then. Thank you for bearing with us, and our sincere apologies again for the disruption.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:12am PST&lt;/small&gt; - We got reports of folks not being able to connect to Slack in Europe. Our team is investigating the issue and we will be back with more info soon. We're so sorry for the disruption, and we appreciate your patience.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/aa55a879f52285ab</id>
+        <published>2018-11-06T10:38:30-08:00</published>
+        <updated>2018-11-07T14:22:11-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/aa55a879f52285ab"/>
+        <title>Incident: Some people are unable to upload files to Slack.</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On November 6th 2018 at 10:38 am PT, we began to receive reports that file uploads were failing in Slack for all customers.
+            <br />
+            <br />
+A recent change in our code had an adverse affect on file uploads, causing uploads to fail for 2 hours and 14 minutes. Once our engineering team discovered the issue, they reverted the code, and full functionality was restored for all customers by 12:55 pm PT. We called an All Clear at 1:21 pm PT.
+            <br />
+            <br />
+If you are still experiencing trouble please reach out to us at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:22pm PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On November 6th 2018 at 10:38 am PT, we began to receive reports that file uploads were failing in Slack for all customers.
+            <br />
+            <br />
+A recent change in our code had an adverse affect on file uploads, causing uploads to fail for 2 hours and 14 minutes. Once our engineering team discovered the issue, they reverted the code, and full functionality was restored for all customers by 12:55 pm PT. We called an All Clear at 1:21 pm PT.
+            <br />
+            <br />
+If you are still experiencing trouble please reach out to us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:25pm PST&lt;/small&gt; - All issues should now be resolved, and all users should now be able to upload files successfully. Sorry for the disruption, and if you're still running into troubles, drop us a line at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:53pm PST&lt;/small&gt; - We've identified the root cause of the issues affecting file uploads, and are close to a fix. Thanks for your ongoing patience while we iron things out.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:20pm PST&lt;/small&gt; - We’re still working to fix the ongoing file upload issues. We hope to have things fully resolved as soon as possible.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:38am PST&lt;/small&gt; - We’ve identified that some folks are unable to upload files to Slack. We’re actively investigating, and we hope to have an update soon.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/1788c1938cd5eeac</id>
+        <published>2018-11-07T01:47:38-08:00</published>
+        <updated>2018-11-07T02:12:16-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/1788c1938cd5eeac"/>
+        <title>Incident: Connectivity issues for users in Europe</title>
+        <summary>Users located in Europe should once again be able to connect to Slack. Thanks for bearing with us through this trouble.</summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:12am PST&lt;/small&gt; - Users located in Europe should once again be able to connect to Slack. Thanks for bearing with us through this trouble.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:47am PST&lt;/small&gt; - Users located in Europe may be having trouble connecting to Slack at the moment. This is something that we are currently investigating. Apologies for the disruption caused.&lt;/p&gt;</content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/97e8bbad78bd2475</id>
+        <published>2018-11-07T00:46:31-08:00</published>
+        <updated>2018-11-07T00:46:31-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/97e8bbad78bd2475"/>
+        <title>Incident: Connectivity issues for users in Europe</title>
+        <summary>We received reports that some users were having trouble connecting to Slack. We have since resolved the problem, and everyone should once again be able to connect. Apologies for the disruption to your day.</summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;12:46am PST&lt;/small&gt; - We received reports that some users were having trouble connecting to Slack. We have since resolved the problem, and everyone should once again be able to connect. Apologies for the disruption to your day.&lt;/p&gt;</content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-11/4dee90803f32f8bc</id>
+        <published>2018-11-03T03:27:59-07:00</published>
+        <updated>2018-11-05T09:39:39-08:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-11/4dee90803f32f8bc"/>
+        <title>Incident: We're having issues with some features including the Events API, notifications, unfurls, and threads</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On November 3rd from 2:57am PT until 3:44am PT, Slack experienced an outage with one of our internal services responsible for the performance of multiple features. In particular, during this time, customers may have experienced delays with product features such as push notifications, imports, search, threads, and unfurls in Slack.
+            <br />
+            <br />
+After stopping and restarting the impacted services, full functionality was restored and the issue was resolved at 3:59am PT.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;9:39am PST&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On November 3rd from 2:57am PT until 3:44am PT, Slack experienced an outage with one of our internal services responsible for the performance of multiple features. In particular, during this time, customers may have experienced delays with product features such as push notifications, imports, search, threads, and unfurls in Slack.
+            <br />
+            <br />
+After stopping and restarting the impacted services, full functionality was restored and the issue was resolved at 3:59am PT.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:01am PDT&lt;/small&gt; - Thanks for your patience. Notifications, unfurling links, loading threads, and our Events API should be back to normal now. If you're still seeing issues, drop us a line at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:27am PDT&lt;/small&gt; - Users might be running into problems with processing threads and unfurls. Notifications might be delayed as well. We're sorry about the problem and working to fix it.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/85fb7a6305ba28ba</id>
+        <published>2018-10-25T08:16:35-07:00</published>
+        <updated>2018-10-26T09:23:20-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/85fb7a6305ba28ba"/>
+        <title>Notice: Trouble using the Giphy integration</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On October 25th at 07:46 AM PT, we became aware of search issues in Giphy, which were affecting the Giphy integration in Slack. We reported the issue to Giphy, and they were able to resolve the problem. We called an all-clear at 08:30 AM PT. Slack customers should be able to use Giphy again, however if you’re still having trouble please reach out to us at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;9:23am PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On October 25th at 07:46 AM PT, we became aware of search issues in Giphy, which were affecting the Giphy integration in Slack. We reported the issue to Giphy, and they were able to resolve the problem. We called an all-clear at 08:30 AM PT. Slack customers should be able to use Giphy again, however if you’re still having trouble please reach out to us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:31am PDT&lt;/small&gt; - The issue with the Giphy integration appears to have been resolved. Thank you for your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:16am PDT&lt;/small&gt; - We have received reports that some users are having trouble with the Giphy integration. This is something that we are monitoring, and we apologise for the inconvenience.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/d2fc44fde1871338</id>
+        <published>2018-10-24T13:44:34-07:00</published>
+        <updated>2018-10-25T15:02:27-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/d2fc44fde1871338"/>
+        <title>Incident: Some folks may be experiencing connectivity issues</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On October 24, between 1:44 PM PT and 2:00 PM PT, a small percentage of customers were unable to connect to Slack. The connection issue was caused when a server exhausted available system resources. At 1:38 PM PT, we reduced the server’s memory resources, and the issue was fully resolved at 1:56 PM PT.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;3:02pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On October 24, between 1:44 PM PT and 2:00 PM PT, a small percentage of customers were unable to connect to Slack. The connection issue was caused when a server exhausted available system resources. At 1:38 PM PT, we reduced the server’s memory resources, and the issue was fully resolved at 1:56 PM PT.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:15pm PDT&lt;/small&gt; - We've successfully identified and resolved the issue, and things should be back to normal again. Thanks for your patience, and apologies for the disruption!&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:44pm PDT&lt;/small&gt; - We're currently investigating connectivity issues impacting some workspaces. Our team is on the case, and we'll have an update for you as soon as we can. Sorry for the troubles!&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/1c4a2cf8bd32a071</id>
+        <published>2018-10-24T09:14:14-07:00</published>
+        <updated>2018-10-25T14:33:05-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/1c4a2cf8bd32a071"/>
+        <title>Incident: Connectivity issues impacting some workspaces.</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On October 24 at 9:14 AM PT, we rolled out a small change to one of our services causing hosts running that service to overload and exhaust their memory resources. This resulted in some customers experiencing connection errors or increased latency in Slack.
+            <br />
+            <br />
+Once our team was alerted to the problem, the initial change was rolled back and all issues were cleared at 9:45 AM PT.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:33pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On October 24 at 9:14 AM PT, we rolled out a small change to one of our services causing hosts running that service to overload and exhaust their memory resources. This resulted in some customers experiencing connection errors or increased latency in Slack.
+            <br />
+            <br />
+Once our team was alerted to the problem, the initial change was rolled back and all issues were cleared at 9:45 AM PT.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:56am PDT&lt;/small&gt; - We're in the clear and folks should be able to connect again. We're sorry for any trouble this issue caused. Thanks for sticking with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:14am PDT&lt;/small&gt; - We're looking into reports of some folks having trouble connecting to their workspaces. We apologize for any disruption.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/d16406e5b360ed21</id>
+        <published>2018-10-22T20:37:42-07:00</published>
+        <updated>2018-10-25T14:25:10-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/d16406e5b360ed21"/>
+        <title>Incident: Degraded functionality</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On October 22nd, at approximately 8:37 PM PT, we experienced a small network issue which caused one of our servers to disconnect. This affected the queue that hosts user actions and core functionalities, ranging from push notifications to managing team members. A small subset of our customers experienced degraded functionality during this time.
+            <br />
+            <br />
+Our team worked to ensure that we had a plan to resolve the issue, and this was completed by 10:50 PM PT on October 23rd. We continued to monitor the situation, and finally declared the incident fully clear at 11:34 PM PT.
+            <br />
+            <br />
+We’re investigating the root cause, as well as making plans to ensure this doesn’t happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:25pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On October 22nd, at approximately 8:37 PM PT, we experienced a small network issue which caused one of our servers to disconnect. This affected the queue that hosts user actions and core functionalities, ranging from push notifications to managing team members. A small subset of our customers experienced degraded functionality during this time.
+            <br />
+            <br />
+Our team worked to ensure that we had a plan to resolve the issue, and this was completed by 10:50 PM PT on October 23rd. We continued to monitor the situation, and finally declared the incident fully clear at 11:34 PM PT.
+            <br />
+            <br />
+We’re investigating the root cause, as well as making plans to ensure this doesn’t happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:24am PDT&lt;/small&gt; - Thanks for your patience and understanding while we worked to resolve issues with loading new messages. Everyone affected should now be able to access their messages as usual, but please let us know if you run into any further problems at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:37pm PDT&lt;/small&gt; - We're currently experiencing some intermittent degraded functionality, which may cause a very small number of users to have trouble loading new messages in Slack. We're sorry for the disruption, and hope to have things back to normal shortly.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/8afdfdd3b594a44d</id>
+        <published>2018-10-23T16:35:27-07:00</published>
+        <updated>2018-10-24T17:26:25-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/8afdfdd3b594a44d"/>
+        <title>Incident: Connectivity issues affecting some workspaces</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On October 23 at 4:23 PM PT we received an internal alert that some servers were overloaded due to unexpected traffic. As a result, some customers were unable to connect to Slack. As the servers recovered, we continued to investigate and monitor the issue. We called an all clear at 5:07 PM PT. We're investigating the root cause and making plans to ensure this doesn't happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;5:26pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On October 23 at 4:23 PM PT we received an internal alert that some servers were overloaded due to unexpected traffic. As a result, some customers were unable to connect to Slack. As the servers recovered, we continued to investigate and monitor the issue. We called an all clear at 5:07 PM PT. We're investigating the root cause and making plans to ensure this doesn't happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:15pm PDT&lt;/small&gt; - We've been given the all-clear from the team. Everyone should be able to connect to their workspaces once more. But please let us know if not at feedback@slack.com. Apologies for this disruption to your day.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:06pm PDT&lt;/small&gt; - No updates to share just yet on the connectivity issues though we're working to get you back in as quickly as possible.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:35pm PDT&lt;/small&gt; - We're looking into reports of some people having trouble connecting to their workspaces. Apologies for this disruption.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/ea787268537b0b8b</id>
+        <published>2018-10-23T14:22:54-07:00</published>
+        <updated>2018-10-24T08:52:27-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/ea787268537b0b8b"/>
+        <title>Notice: Trouble with Giphy</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On October 23 at 1:57 PM PT, we received reports that the Giphy integration wasn’t returning results as expected in Slack. We reported the problem to the Giphy engineering team and they were able to fix the issue. Giphy was back up and running by 2:53 PM PT.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;8:52am PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On October 23 at 1:57 PM PT, we received reports that the Giphy integration wasn’t returning results as expected in Slack. We reported the problem to the Giphy engineering team and they were able to fix the issue. Giphy was back up and running by 2:53 PM PT.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:56pm PDT&lt;/small&gt; - Things should be back to normal now with Giphy for everyone. If you run into any further issues, please let us know at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:22pm PDT&lt;/small&gt; - Some folks may be running into issues with the Giphy app failing to return matches. We're looking into the issue with Giphy, and will keep you posted as soon as there is news to share. Thanks for your patience!&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/1461cbba9b59dc68</id>
+        <published>2018-10-22T13:00:01-07:00</published>
+        <updated>2018-10-23T16:33:44-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/1461cbba9b59dc68"/>
+        <title>Incident: Slack is experiencing degraded service</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+At 12:28pm (PT) on October 22, 2018, a change was deployed that caused the hosts responsible for notifications, link unfurls and other tasks to fail. As this change propagated out, customers began experiencing degraded service in the form of late notifications and elevated API response times. After identifying the issue, we updated the affected hosts at 1:13pm (PT), allowing the system to recover and begin processing these tasks again normally. Service was fully restored by 2:40pm (PT).
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;4:33pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+At 12:28pm (PT) on October 22, 2018, a change was deployed that caused the hosts responsible for notifications, link unfurls and other tasks to fail. As this change propagated out, customers began experiencing degraded service in the form of late notifications and elevated API response times. After identifying the issue, we updated the affected hosts at 1:13pm (PT), allowing the system to recover and begin processing these tasks again normally. Service was fully restored by 2:40pm (PT).&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:00pm PDT&lt;/small&gt; - We’re happy to report that the delays in services have been fixed. We’re sorry for the trouble, and thanks for sticking with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:59pm PDT&lt;/small&gt; - We’re happy to report that the delays in services have been fixed. We’re sorry for the trouble, and thanks for sticking with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:30pm PDT&lt;/small&gt; - We're seeing a return to normal service but some actions are still being delayed. We'll update you when we're back in business.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:00pm PDT&lt;/small&gt; - Nothing new to share just yet, but we're working to get things back to normal as soon as possible. Again, we truly appreciate your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:30pm PDT&lt;/small&gt; - We're still trying to pin down the root cause of the notifications issue. We've heard reports of other features being affected so we're looking into those reports. We appreciate your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:00pm PDT&lt;/small&gt; - Some users aren't receiving notifications.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/d5e4b5097bc15673</id>
+        <published>2018-10-22T08:38:19-07:00</published>
+        <updated>2018-10-23T16:24:19-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/d5e4b5097bc15673"/>
+        <title>Incident: Search returning partial results for some customers</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On October 22nd, 2018 between 8:38 AM (PT) and 9:31 AM (PT), 12% of customers experienced slow searches in Slack, and about 300 customers experienced failed searches.
+            <br />
+            <br />
+This outcome was a result of a hardware failure. Once we inspected and removed the problematic hardware, normal search performance resumed for those users.
+            <br />
+            <br />
+We are currently hard at work on scoping preventive measures to ensure this doesn’t happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;4:24pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On October 22nd, 2018 between 8:38 AM (PT) and 9:31 AM (PT), 12% of customers experienced slow searches in Slack, and about 300 customers experienced failed searches.
+            <br />
+            <br />
+This outcome was a result of a hardware failure. Once we inspected and removed the problematic hardware, normal search performance resumed for those users.
+            <br />
+            <br />
+We are currently hard at work on scoping preventive measures to ensure this doesn’t happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:38am PDT&lt;/small&gt; - Search was degraded for some customers for a short period of time. The issue has been corrected and the team is investigating the cause.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/d130bf0b7398126d</id>
+        <published>2018-10-18T17:24:56-07:00</published>
+        <updated>2018-10-19T17:33:43-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/d130bf0b7398126d"/>
+        <title>Incident: Users experiencing slowness in the app</title>
+        <summary>Technical Summary
+            <br />
+On October 18, 2018 at 4 PM PT, we identified a bug in how we were handling accounts being added to IDP groups. This resulted in the deactivation of some user accounts from their workspaces. This also removed their associated integrations, and archived many private channels.
+            <br />
+            <br />
+We quickly reverted a code change, and began restoring the affected user accounts, private channels and integrations back to their previous states.
+            <br />
+            <br />
+At 5:06 PM PT, we noticed that some servers were overloaded as a result of the restoration efforts we made. This meant that some customers were unable to connect to Slack. We monitored the situation as the server recovered. At 7:41 PM PT, our engineers confirmed functionality was restored for all customers.
+            <br />
+            <br />
+On October 19 at 4:32 PM PT, we fully resolved the provisioning issue. Customers who were affected by this issue needed to reload Slack to regain access to their workspaces. We’re continuing to investigate the root cause of these issues to ensure this doesn’t happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;5:33pm PDT&lt;/small&gt; - Technical Summary
+            <br />
+On October 18, 2018 at 4 PM PT, we identified a bug in how we were handling accounts being added to IDP groups. This resulted in the deactivation of some user accounts from their workspaces. This also removed their associated integrations, and archived many private channels.
+            <br />
+            <br />
+We quickly reverted a code change, and began restoring the affected user accounts, private channels and integrations back to their previous states.
+            <br />
+            <br />
+At 5:06 PM PT, we noticed that some servers were overloaded as a result of the restoration efforts we made. This meant that some customers were unable to connect to Slack. We monitored the situation as the server recovered. At 7:41 PM PT, our engineers confirmed functionality was restored for all customers.
+            <br />
+            <br />
+On October 19 at 4:32 PM PT, we fully resolved the provisioning issue. Customers who were affected by this issue needed to reload Slack to regain access to their workspaces. We’re continuing to investigate the root cause of these issues to ensure this doesn’t happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:40pm PDT&lt;/small&gt; - We've been given the all-clear. Everyone should be able to use Slack at full speed once more. If you are still experiencing slow performance of the app please try an app reload (ctrl or cmd + R) and let us know if this doesn't help. We are truly sorry if your day was affected by this issue. We will do all we can to make sure this doesn't happen again.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:55pm PDT&lt;/small&gt; - No new news to share just yet, but we're continuing our efforts. We truly appreciate your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:17pm PDT&lt;/small&gt; - No further developments to share but we wanted to let you know we're doing all we can to get this app slowness fixed as soon as possible. Thanks again.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:29pm PDT&lt;/small&gt; - Thank you for sticking with us through this. We hope to have the app running at regular speeds soon.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:44pm PDT&lt;/small&gt; - Nothing further to add, sadly. The team continues to monitor things and work on a solution for this app slowness.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:12pm PDT&lt;/small&gt; - To those affected by this app slowness we're truly sorry for the disruption. We're working hard to get this rectified.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:30pm PDT&lt;/small&gt; - Thank you again for your patience. We're doing all we can to get things working at normal speeds once more. We're working hard to get this rectified.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:58pm PDT&lt;/small&gt; - We're still investigating the cause of this general slowness with the app and hope to have some good news soon.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:28pm PDT&lt;/small&gt; - Thank you for your patience here. Fixing this slowness in the app is the highest priority for the team right now.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:55pm PDT&lt;/small&gt; - Nothing new to share just yet. The team are monitoring things and we'll let you know as soon as we get more information.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:24pm PDT&lt;/small&gt; - Some people have reported general slowness in their workspaces. Apologies for this hassle. We'll get this fixed as soon as possible.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/875b825326a3c962</id>
+        <published>2018-10-18T17:58:46-07:00</published>
+        <updated>2018-10-19T17:29:30-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/875b825326a3c962"/>
+        <title>Incident: SCIM issues affecting some workspaces</title>
+        <summary>Technical Summary
+            <br />
+            <br />
+On October 18, 2018 at 4 PM PT, we identified a bug in how we were handling accounts being added to IDP groups. This resulted in the deactivation of some user accounts from their workspaces. This also removed their associated integrations, and archived many private channels.
+            <br />
+            <br />
+We quickly reverted a code change, and began restoring the affected user accounts, private channels and integrations back to their previous states.
+            <br />
+            <br />
+At 5:06 PM PT, we noticed that some servers were overloaded as a result of the restoration efforts we made. This meant that some customers were unable to connect to Slack. We monitored the situation as the server recovered. At 7:41 PM PT, our engineers confirmed functionality was restored for all customers.
+            <br />
+            <br />
+On October 19 at 4:32 PM PT, we fully resolved the provisioning issue. Customers who were affected by this issue needed to reload Slack to regain access to their workspaces. We’re continuing to investigate the root cause of these issues to ensure this doesn’t happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;5:29pm PDT&lt;/small&gt; - Technical Summary
+            <br />
+            <br />
+On October 18, 2018 at 4 PM PT, we identified a bug in how we were handling accounts being added to IDP groups. This resulted in the deactivation of some user accounts from their workspaces. This also removed their associated integrations, and archived many private channels.
+            <br />
+            <br />
+We quickly reverted a code change, and began restoring the affected user accounts, private channels and integrations back to their previous states.
+            <br />
+            <br />
+At 5:06 PM PT, we noticed that some servers were overloaded as a result of the restoration efforts we made. This meant that some customers were unable to connect to Slack. We monitored the situation as the server recovered. At 7:41 PM PT, our engineers confirmed functionality was restored for all customers.
+            <br />
+            <br />
+On October 19 at 4:32 PM PT, we fully resolved the provisioning issue. Customers who were affected by this issue needed to reload Slack to regain access to their workspaces. We’re continuing to investigate the root cause of these issues to ensure this doesn’t happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:57pm PDT&lt;/small&gt; - After some more checks and monitoring we've been given the all-clear. Any affected accounts, integrations, and channel memberships should now be restored. If you’re continuing to see issues please let us know. We know how important your time is and we are truly sorry for taking it today.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:30pm PDT&lt;/small&gt; - All those affected by these SCIM problems should see things restored once more. Though please do let us know if not at feedback@slack.com. We hope to share some more positive news soon.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:41pm PDT&lt;/small&gt; - We are working closely with the affected workspaces to get these SCIM issues rectified. Thanks for holding tight.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:54pm PDT&lt;/small&gt; - The team is still monitoring the changes we've made to fix these SCIM problems. We'll let you know when we have some good news to share.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:19pm PDT&lt;/small&gt; - We are seeing positive signs so far from the fixes to these SCIM issues but we're not out of the woods just yet.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:40pm PDT&lt;/small&gt; - The team continues to work on a fix to restore users, channels, and integrations affected by this issue. We'll keep you updated.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:07pm PDT&lt;/small&gt; - We're working on a fix to restore users, channels, and integrations affected by this issue. Please hold tight.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:34pm PDT&lt;/small&gt; - We really appreciate your patience as we work to get these SCIM issues sorted.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:02pm PDT&lt;/small&gt; - No updates to share just yet with the SCIM issues affecting some workspaces. Though, we'll let you know as soon as we know.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:31pm PDT&lt;/small&gt; - We're still digging through the reports and working with customers to get these SCIM troubles sorted. Please hold tight.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:58pm PDT&lt;/small&gt; - Some workspaces using SCIM may see issues with their Slack accounts. We're working hard to get this rectified quickly.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/3390291b1e6ecd54</id>
+        <published>2018-10-18T06:26:27-07:00</published>
+        <updated>2018-10-19T12:27:13-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/3390291b1e6ecd54"/>
+        <title>Incident: Trouble with Events API, notifications, unfurls, and threads</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+Starting on October 17, 2018 at 11:28 AM PT, some customers were seeing delays with certain features, including link unfurls, notifications, and integrations. After noticing a large increase in backlogged jobs, our engineering team began performing service restarts to process the delayed job queue. This restored functionality for all affected features at 9:25 AM PT on October 18th.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;12:27pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+Starting on October 17, 2018 at 11:28 AM PT, some customers were seeing delays with certain features, including link unfurls, notifications, and integrations. After noticing a large increase in backlogged jobs, our engineering team began performing service restarts to process the delayed job queue. This restored functionality for all affected features at 9:25 AM PT on October 18th.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:05am PDT&lt;/small&gt; - Thanks for your patience. Notifications, unfurling links, loading threads, and our Events API should be back to normal now. If you're still seeing issues, drop us a line at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:59am PDT&lt;/small&gt; - We're in the final steps to restore full service to the Events API.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:29am PDT&lt;/small&gt; - Our team is close to a resolution with our Events API. Your continued patience is appreciated.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:59am PDT&lt;/small&gt; - Events API is delayed and we're working to restore the service as quick as we can. Apologies for the trouble.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:30am PDT&lt;/small&gt; - We're seeing improvements with most features working correctly again. Delays are still affecting the Events API and we're working to fix it - appreciate the patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:56am PDT&lt;/small&gt; - We're still patching up the delays affecting notifications, unfurling links, and loading threads. Apologies for the problems.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:27am PDT&lt;/small&gt; - Notifications, threads, and unfurling are not working correctly for some users. We're working to bring back full functionality.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:56am PDT&lt;/small&gt; - We're still investigating delays and problems with some features, including unfurling, threads, and notifications.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:26am PDT&lt;/small&gt; - Some users might be running into problems with processing threads and unfurls. Notifications might be delayed as well. We're sorry about the problem and working to fix it.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/09a2d5dd583da1ca</id>
+        <published>2018-10-17T12:22:20-07:00</published>
+        <updated>2018-10-18T10:17:20-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/09a2d5dd583da1ca"/>
+        <title>Incident: Some folks are experiencing performance issues</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On October 17, 2018, for a few minutes starting at 11:28 AM PT, some customers were unable to connect to Slack. In addition, between 11:28 AM PT and 12:52 PM PT, some users experienced issues with notifications being delayed or not being received, files not successfully uploading, and messages failing to send. Our investigations determined this to be caused by a networking issue with one of our cloud providers. Functionality was fully recovered by a selective restart of the servers responsible for those tasks.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;10:17am PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On October 17, 2018, for a few minutes starting at 11:28 AM PT, some customers were unable to connect to Slack. In addition, between 11:28 AM PT and 12:52 PM PT, some users experienced issues with notifications being delayed or not being received, files not successfully uploading, and messages failing to send. Our investigations determined this to be caused by a networking issue with one of our cloud providers. Functionality was fully recovered by a selective restart of the servers responsible for those tasks.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:22pm PDT&lt;/small&gt; - Our team has successfully isolated the issue, and things should be back to normal again. Thanks for your patience!&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:52pm PDT&lt;/small&gt; - We're still looking into the cause of notification, thread, and message issues some users are experiencing.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:22pm PDT&lt;/small&gt; - We've received reports that some folks are having difficulties with notifications, threads and editing messages. We're aware of the issue and are actively working towards a resolution. Sorry for the troubles!&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/7ec438ee4c62c813</id>
+        <published>2018-10-16T11:55:00-07:00</published>
+        <updated>2018-10-17T10:31:52-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/7ec438ee4c62c813"/>
+        <title>Incident: Connectivity troubles in Argentina</title>
+        <summary>Technical Summary:
+            <br />
+On October 16th, 2018 between 11:55 AM and 12:50 PM PDT we experienced an internet connectivity issue with an external provider. This caused some customers to be unable to connect to Slack. The issue has been resolved and connectivity has been restored.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;10:31am PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On October 16th, 2018 between 11:55 AM and 12:50 PM PDT we experienced an internet connectivity issue with an external provider. This caused some customers to be unable to connect to Slack. The issue has been resolved and connectivity has been restored.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:41pm PDT&lt;/small&gt; - Thanks for your patience! We're happy to share that the connectivity issues impacting customers in Argentina should now be resolved. If you run into any trouble, please let us know at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:55am PDT&lt;/small&gt; - Some folks in Argentina may be having trouble connecting to their workspaces at this time. Our team is investigating this now, and we'll share updates as soon as we can. Thanks for bearing with us.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/72cd786c10d71000</id>
+        <published>2018-10-16T08:06:29-07:00</published>
+        <updated>2018-10-16T12:54:29-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/72cd786c10d71000"/>
+        <title>Notice: Duo is having issues which could prevent users from authenticating into Slack</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On October 16, 2018, at 8:06AM PT, we internally detected a problem with Duo Two Factor Authentication that may have prevented customers from authenticating into Slack. At 8:21AM PT, Duo posted a notice that they were investigating this issue. At 8:43AM PT, Duo resolved the issue and we called an all clear. If you have any trouble signing in to Slack, please get in touch at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;12:54pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On October 16, 2018, at 8:06AM PT, we internally detected a problem with Duo Two Factor Authentication that may have prevented customers from authenticating into Slack. At 8:21AM PT, Duo posted a notice that they were investigating this issue. At 8:43AM PT, Duo resolved the issue and we called an all clear. If you have any trouble signing in to Slack, please get in touch at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:45am PDT&lt;/small&gt; - The issues with Duo that may have been preventing some folks from authenticating into Slack have now been resolved. Thanks for sticking with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:06am PDT&lt;/small&gt; - Duo is currently experiencing issues which could prevent users from authenticating into Slack. We're sorry about any inconvenience this causes, and we'll provide updates as soon as we have them.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/1c354f7a43f6d32c</id>
+        <published>2018-10-13T17:43:00-07:00</published>
+        <updated>2018-10-14T17:39:10-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/1c354f7a43f6d32c"/>
+        <title>Incident: Issues with notifications, unfurls, Slackbot custom responses, and Events API for all customers</title>
+        <summary>Technical Summary:
+            <br />
+            <br />
+On October 13th between 5:43pm PT and 6:51pm PT a group of servers were failing to process some tasks. This impacted a number of features for all customers, including notifications, unfurls, custom responses and our Events API (which some apps and integrations rely on).
+            <br />
+            <br />
+We identified issues with the health of some servers involved which were causing these processes to fail. At 6:40pm PT we restarted one of the servers and things started recovering. By 6:51pm PT, tasks that had queued up during the incident were cleared and service was back to normal.
+            <br />
+            <br />
+We’re investigating the root cause, as well as making plans to ensure this doesn’t happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;5:39pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+            <br />
+On October 13th between 5:43pm PT and 6:51pm PT a group of servers were failing to process some tasks. This impacted a number of features for all customers, including notifications, unfurls, custom responses and our Events API (which some apps and integrations rely on).
+            <br />
+            <br />
+We identified issues with the health of some servers involved which were causing these processes to fail. At 6:40pm PT we restarted one of the servers and things started recovering. By 6:51pm PT, tasks that had queued up during the incident were cleared and service was back to normal.
+            <br />
+            <br />
+We’re investigating the root cause, as well as making plans to ensure this doesn’t happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:17pm PDT&lt;/small&gt; - Thanks for your patience while we worked through this one. All functionality should be back to normal now. We're sorry for the disruptions and are continuing to investigate what went wrong to ensure this doesn't happen again.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:08pm PDT&lt;/small&gt; - Things are improving for notifications and unfurls, but we're not out of the woods yet. Customers may have experienced issues with some apps and integrations. We're seeing signs of things improving.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:36pm PDT&lt;/small&gt; - We're still working to fix the problem with notifications and unfurls. At the moment, notifications are not being received, and unfurls are not working. We are continuing to investigate the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:43pm PDT&lt;/small&gt; - There’s an issue with notifications, and its not working properly. Our team is on the case, and we'll have an update for you soon.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/2464df5576e7c501</id>
+        <published>2018-10-10T03:25:48-07:00</published>
+        <updated>2018-10-12T10:19:48-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/2464df5576e7c501"/>
+        <title>Incident: Manage members page not loading</title>
+        <summary>Technical Summary:
+            <br />
+On October 10th between 3:25am (PT) and 5:45am (PT), some customers were unable to access administration or member management functions in Slack.
+            <br />
+            <br />
+A burst of traffic overloaded one of our servers and stopped it from responding. Once we identified the source, we decreased the traffic requests, and access to these functions was restored by 05:45am (PT).
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;10:19am PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On October 10th between 3:25am (PT) and 5:45am (PT), some customers were unable to access administration or member management functions in Slack.
+            <br />
+            <br />
+A burst of traffic overloaded one of our servers and stopped it from responding. Once we identified the source, we decreased the traffic requests, and access to these functions was restored by 05:45am (PT).&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:00am PDT&lt;/small&gt; - We found the source of the problem with the Manage members page. We deployed a fix and the workspace administration is now working again. Thanks for your patience and apologies for the trouble.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:32am PDT&lt;/small&gt; - We're still working to fix the problem with the Manage members page. At the moment, some people are unable to access it. Sorry about that.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:25am PDT&lt;/small&gt; - Some people are unable to access the Manage members page in workspace administration. Sorry about the disruption - we're looking into the problem.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/33d5d5753e355491</id>
+        <published>2018-10-11T10:34:10-07:00</published>
+        <updated>2018-10-11T10:34:10-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/33d5d5753e355491"/>
+        <title>Incident: Some users are experiencing delayed notifications</title>
+        <summary>On October 11th from 10:34am (PT) to 10:42am (PT), Slack experienced an error with one of our servers, which  resulted in degraded functionality for some customers.
+            <br />
+            <br />
+We deployed new code to a server that didn't properly update. As a result, some product features were impacted. Most notably, a small number of mobile notifications were delayed up to 8 minutes.
+            <br />
+            <br />
+We rolled back the deploy, and have since updated the server properly. You should no longer experience any delays receiving notifications. If you notice any further issues, please get in touch at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;10:34am PDT&lt;/small&gt; - On October 11th from 10:34am (PT) to 10:42am (PT), Slack experienced an error with one of our servers, which  resulted in degraded functionality for some customers.
+            <br />
+            <br />
+We deployed new code to a server that didn't properly update. As a result, some product features were impacted. Most notably, a small number of mobile notifications were delayed up to 8 minutes.
+            <br />
+            <br />
+We rolled back the deploy, and have since updated the server properly. You should no longer experience any delays receiving notifications. If you notice any further issues, please get in touch at feedback@slack.com.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/f46274dc89de1bef</id>
+        <published>2018-10-09T15:33:34-07:00</published>
+        <updated>2018-10-09T15:33:34-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/f46274dc89de1bef"/>
+        <title>Incident: Errors and lagging for some workspaces</title>
+        <summary>We identified an issue earlier today where some workspaces may have been seeing errors and slowness when loading channels and sending messages. Our engineers were able to resolve the trouble promptly, and there should be no further issues at this time.</summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;3:33pm PDT&lt;/small&gt; - We identified an issue earlier today where some workspaces may have been seeing errors and slowness when loading channels and sending messages. Our engineers were able to resolve the trouble promptly, and there should be no further issues at this time.&lt;/p&gt;</content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/16528d681fd6d493</id>
+        <published>2018-10-08T13:36:57-07:00</published>
+        <updated>2018-10-09T12:14:28-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/16528d681fd6d493"/>
+        <title>Notice: Trouble loading channel history</title>
+        <summary>Technical Summary:
+            <br />
+On October 8 from 1:36pm to 1:52pm PT, we detected some people were unable to send or retrieve messages in Slack. This was the result of a disruption to internet traffic external to Slack. The interrupted connections were automatically re-routed, and the ability to send and receive messages was restored by 1:52pm.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;12:14pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On October 8 from 1:36pm to 1:52pm PT, we detected some people were unable to send or retrieve messages in Slack. This was the result of a disruption to internet traffic external to Slack. The interrupted connections were automatically re-routed, and the ability to send and receive messages was restored by 1:52pm.&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:16pm PDT&lt;/small&gt; - We are happy to report that the issue has now been resolved, and everyone should be able to view their channel history successfully. If you run into any trouble, please let us know at feedback@slack.com. Thanks for bearing with us today.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:36pm PDT&lt;/small&gt; - Some folks may be experiencing issues when they try loading their channel history from the desktop clients. We're investigating this now, and working to resolve the problem as quickly as we can. We're sorry for the interruption to your day.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/707ab942cce634b9</id>
+        <published>2018-10-07T15:43:36-07:00</published>
+        <updated>2018-10-09T05:45:30-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/707ab942cce634b9"/>
+        <title>Incident: Some customers may not be able to create Posts</title>
+        <summary>Technical Summary:
+            <br />
+On October 7th at 3:43pm PT we detected a server had become unresponsive, resulting in a small number of workspaces being unable to create new Posts. The issue was resolved at 6:22pm PT when the server was restarted. We’re investigating the root cause, as well as making plans to ensure this doesn’t happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;5:45am PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On October 7th at 3:43pm PT we detected a server had become unresponsive, resulting in a small number of workspaces being unable to create new Posts. The issue was resolved at 6:22pm PT when the server was restarted. We’re investigating the root cause, as well as making plans to ensure this doesn’t happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:37pm PDT&lt;/small&gt; - Everyone should be able to create Posts as normal now. Thank you for holding tight. If you notice any further issues, please get in touch at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:43pm PDT&lt;/small&gt; - We are aware of and investigating an issue with creating Posts. We're terribly sorry for the disruption to your workflow.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/8a3a5ecd41eb7c37</id>
+        <published>2018-10-08T17:55:04-07:00</published>
+        <updated>2018-10-08T17:55:04-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/8a3a5ecd41eb7c37"/>
+        <title>Incident: Some customers are experiencing trouble connecting to the mobile app</title>
+        <summary>Technical Summary:
+            <br />
+On October 8th between 5:55pm PT and 9:55pm PT, some customers were unable to connect to Slack’s mobile app. Affected customers were shown a connection error banner during this time.
+            <br />
+            <br />
+At 5:55pm PT, we released a deploy which introduced an error in our code and prevented connections for customers using the app on their Android or iOS devices. Once we detected the issue, we reverted the deploy and customers were able to successfully connect to Slack again at 9:55pm PT.
+            <br />
+            <br />
+We are hard at work on scoping preventive measures to ensure this doesn’t happen again in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;5:55pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On October 8th between 5:55pm PT and 9:55pm PT, some customers were unable to connect to Slack’s mobile app. Affected customers were shown a connection error banner during this time.
+            <br />
+            <br />
+At 5:55pm PT, we released a deploy which introduced an error in our code and prevented connections for customers using the app on their Android or iOS devices. Once we detected the issue, we reverted the deploy and customers were able to successfully connect to Slack again at 9:55pm PT.
+            <br />
+            <br />
+We are hard at work on scoping preventive measures to ensure this doesn’t happen again in the future.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/8c40a362f50cd01f</id>
+        <published>2018-10-01T20:11:43-07:00</published>
+        <updated>2018-10-02T12:52:00-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/8c40a362f50cd01f"/>
+        <title>Outage: Issues with connectivity and file uploads</title>
+        <summary>Technical Summary:
+            <br />
+On October 1st between 8:11pm PT and 8:22pm PT, Slack experienced issues that prevented some users from connecting to their workspace. The ability to view or upload files was also affected.
+            <br />
+            <br />
+A configuration change at 8:11pm PT caused any new app connections to fail. For connected users, the ability to view and upload files was also affected. This change was reverted at 8:22pm PT.
+            <br />
+            <br />
+We are currently hard at work on scoping preventive measures to ensure this doesn’t happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;12:52pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On October 1st between 8:11pm PT and 8:22pm PT, Slack experienced issues that prevented some users from connecting to their workspace. The ability to view or upload files was also affected.
+            <br />
+            <br />
+A configuration change at 8:11pm PT caused any new app connections to fail. For connected users, the ability to view and upload files was also affected. This change was reverted at 8:22pm PT.
+            <br />
+            <br />
+We are currently hard at work on scoping preventive measures to ensure this doesn’t happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:22pm PDT&lt;/small&gt; - Everyone should be able to upload their files and access Slack once more. We're truly sorry for disrupting your day.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:11pm PDT&lt;/small&gt; - We are looking into reports of people having trouble accessing their workspaces and uploading files. Apologies for this disruption.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-10/c6623ec51663130d</id>
+        <published>2018-10-01T09:22:00-07:00</published>
+        <updated>2018-10-01T10:17:00-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-10/c6623ec51663130d"/>
+        <title>Incident: Connectivity issues affecting workspaces in Europe</title>
+        <summary>On October 1, from 9:22AM to 9:27AM (PT) and from 9:42AM to 9:47AM, some customers in Europe were unable to access Slack.
+            <br />
+            <br />
+At 9:22AM, some customers in Europe weren’t able to connect to Slack due to trouble with servers in that region. We identified the problem, and re-routed customers to healthier servers. Everyone was able to reconnect by 9:27AM.
+            <br />
+            <br />
+At 9:42AM, customers were disconnected again. With one more re-route, all customers were able to access Slack again by 9:47AM. At 10:05AM, we declared the issue resolved with everyone able to access Slack.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;10:17am PDT&lt;/small&gt; - On October 1, from 9:22AM to 9:27AM (PT) and from 9:42AM to 9:47AM, some customers in Europe were unable to access Slack.
+            <br />
+            <br />
+At 9:22AM, some customers in Europe weren’t able to connect to Slack due to trouble with servers in that region. We identified the problem, and re-routed customers to healthier servers. Everyone was able to reconnect by 9:27AM.
+            <br />
+            <br />
+At 9:42AM, customers were disconnected again. With one more re-route, all customers were able to access Slack again by 9:47AM. At 10:05AM, we declared the issue resolved with everyone able to access Slack.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:05am PDT&lt;/small&gt; - We've steadied out on our end, and people connecting from Europe should no longer be seeing any issues. Our sincerest apologies for the continued trouble today.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:42am PDT&lt;/small&gt; - We may have spoken too soon. We’re still seeing some instability in European workspaces connecting to Slack. We’re investigating the root cause so that we can get everything stable across the board again.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:27am PDT&lt;/small&gt; - Our team has identified that these connectivity impacted folks specifically in Europe, but things are looking back to normal now. We're sorry for any trouble this caused to your day.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:22am PDT&lt;/small&gt; - We're investigating connectivity issues impacting some workspaces. Our team is on the case, and we'll have an update for you soon.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/b607be9581cadb9f</id>
+        <published>2018-09-30T17:28:07-07:00</published>
+        <updated>2018-09-30T17:28:07-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/b607be9581cadb9f"/>
+        <title>Incident: Some workspaces seeing delayed notifications and unfurls</title>
+        <summary>Technical Summary:
+            <br />
+On September 30th at 5:28pm PDT, we experienced a partial delay to some background Slack tasks, such as notifications and link unfurls.
+            <br />
+            <br />
+At 5:33pm PDT our engineers identified the issue and replaced the faulty server, resuming processing of the background tasks. By 5:50pm PDT, all new notifications were being delivered, and the all clear was called at 5:54pm PDT, August 10th.
+            <br />
+            <br />
+If you notice any further issues with background tasks such as notifications, link unfurls or reminders, please reach out to us at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;5:28pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On September 30th at 5:28pm PDT, we experienced a partial delay to some background Slack tasks, such as notifications and link unfurls.
+            <br />
+            <br />
+At 5:33pm PDT our engineers identified the issue and replaced the faulty server, resuming processing of the background tasks. By 5:50pm PDT, all new notifications were being delivered, and the all clear was called at 5:54pm PDT, August 10th.
+            <br />
+            <br />
+If you notice any further issues with background tasks such as notifications, link unfurls or reminders, please reach out to us at feedback@slack.com.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/f9510c1608e09a89</id>
+        <published>2018-09-19T03:16:53-07:00</published>
+        <updated>2018-09-20T09:15:53-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/f9510c1608e09a89"/>
+        <title>Incident: Problems with adding Google Calendar to Slack</title>
+        <summary>Technical Summary 18/09/20:
+            <br />
+On September 18th at 12:42am PT, we noticed that people were having trouble installing the Google Calendar app. Once we detected the issue, we began an internal investigation.
+            <br />
+            <br />
+At 04:52am PT on September 19th, our engineers identified a change in Google’s authentication API as the root cause of the problem. Once we assessed the impact, we made a change and we were able to call an all clear at 07:47 AM PT. If you are still experiencing issues with the Google Calendar app, please email us at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;9:15am PDT&lt;/small&gt; - Technical Summary 18/09/20:
+            <br />
+On September 18th at 12:42am PT, we noticed that people were having trouble installing the Google Calendar app. Once we detected the issue, we began an internal investigation.
+            <br />
+            <br />
+At 04:52am PT on September 19th, our engineers identified a change in Google’s authentication API as the root cause of the problem. Once we assessed the impact, we made a change and we were able to call an all clear at 07:47 AM PT. If you are still experiencing issues with the Google Calendar app, please email us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:46am PDT&lt;/small&gt; - We found and fixed the problem that was blocking authentication with Google Calendar. Setting up new calendar integrations is working again now. Sorry for the trouble and thanks for your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:16am PDT&lt;/small&gt; - Our team is still working to get the Google Calendar authentication back up and running in Slack. We're sorry for the ongoing issues.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:47am PDT&lt;/small&gt; - Trying to set up new Google Calendar integrations is still causing authentication errors. Our engineers keep investigating the source of the trouble.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:17am PDT&lt;/small&gt; - Our team keeps working on the issues with authenticating Google Calendar in Slack. We're sorry for the inconvenience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:46am PDT&lt;/small&gt; - Our engineers are digging into why authentication is failing for new Google Calendar integrations. We appreciate the patience and apologize for the trouble.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:16am PDT&lt;/small&gt; - We're still working to solve the issue with authenticating new Google Calendar integrations.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:47am PDT&lt;/small&gt; - We've narrowed down the scope of the problem to an issue with the authentication flow. The team is working on patching it up. Thanks for your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:16am PDT&lt;/small&gt; - People cannot add new Google Calendar integrations to Slack at the moment. We're sorry about that and our engineers are working on a fix.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:46am PDT&lt;/small&gt; - Adding new Google Calendar integrations is not working for some people. Our team is looking for the cause of the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:16am PDT&lt;/small&gt; - We're investigating reports of problems with setting up a Google Calendar integration with Slack. Apologies for the trouble.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/3311b7dde2ec2491</id>
+        <published>2018-09-14T09:42:03-07:00</published>
+        <updated>2018-09-15T09:41:34-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/3311b7dde2ec2491"/>
+        <title>Notice: Giphy integrations are having troubles</title>
+        <summary>Technical Summary:
+            <br />
+On September 14th between 9:42am to 10:19am Pacific Time, we became aware of search issues in Giphy, which were affecting the Giphy slash command. We reported the issue to Giphy, and they were able to resolve the problem. We called an all-clear at 10:19am Pacific Time. Slack users should be able to use Giphy again, however if you're still having trouble please reach out to us at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;9:41am PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On September 14th between 9:42am to 10:19am Pacific Time, we became aware of search issues in Giphy, which were affecting the Giphy slash command. We reported the issue to Giphy, and they were able to resolve the problem. We called an all-clear at 10:19am Pacific Time. Slack users should be able to use Giphy again, however if you're still having trouble please reach out to us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:30am PDT&lt;/small&gt; - Giphy has cleared up the issue on their end, and GIFs should be back to normal.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:42am PDT&lt;/small&gt; - We’ve received word that the Giphy integration isn't working correctly. We’re investigating and will have an update shortly.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/58313e70c7f3b713</id>
+        <published>2018-09-13T17:05:22-07:00</published>
+        <updated>2018-09-13T20:55:00-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/58313e70c7f3b713"/>
+        <title>Notice: Issues receiving 2FA codes via SMS for Japanese customers</title>
+        <summary>Technical Summary:
+            <br />
+On September 13th between 5:05pm and 7:20pm Pacific Time, some customers from Japan were unable to receive SMS authentication codes for Slack. This was due to a temporary issue with an upstream provider which has now been resolved. Everyone who was affected should once again be able to receive codes and sign in to Slack. If you have any trouble, please contact us via feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;8:55pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On September 13th between 5:05pm and 7:20pm Pacific Time, some customers from Japan were unable to receive SMS authentication codes for Slack. This was due to a temporary issue with an upstream provider which has now been resolved. Everyone who was affected should once again be able to receive codes and sign in to Slack. If you have any trouble, please contact us via feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:20pm PDT&lt;/small&gt; - Japanese customers should now be able to receive 2FA SMS codes once more. We're continuing to work with our service provider to understand the cause of the issue. Apologies for all that hassle.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:08pm PDT&lt;/small&gt; - From our investigations this appears to be caused by an upstream provider issue and we will continue to follow up with them for a resolution.
+            <br />
+            <br />
+In the meantime, you can talk to a workspace Admin or Owner to temporarily disable Two-Factor authentication. Alternatively, you could try using a 2FA authentication app — we have instructions on how to do so here: https://get.slack.help/hc/en-us/articles/204509068-Set-up-two-factor-authentication#turn-on-2fa
+            <br />
+            <br />
+Apologies again for this disruption to your day.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:05pm PDT&lt;/small&gt; - We're digging into reports of some of our Japanese customers having trouble receiving 2FA codes via SMS. Please bear with us.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/2f0cb7104c3958ad</id>
+        <published>2018-09-12T21:59:00-07:00</published>
+        <updated>2018-09-13T16:18:00-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/2f0cb7104c3958ad"/>
+        <title>Incident: Connectivity issues affecting some users</title>
+        <summary>Technical summary:
+            <br />
+On September 12th from 9:59pm to 10:18pm Pacific Time, a few hundred people were not able to do connect to Slack.
+            <br />
+            <br />
+A network event between servers in Slack’s central data centers caused normal login attempts to fail in such a way that people’s Slack clients retried aggressively. These retries were rate-limited by Slack’s servers in order to protect themselves.  As soon as the network event was resolved by our data center provider, and as soon as rate limits allowed, people were once again able to connect to Slack.
+            <br />
+            <br />
+The all clear was called at 11:05pm Pacific Time, after prolonged observation of network conditions.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;4:18pm PDT&lt;/small&gt; - Technical summary:
+            <br />
+On September 12th from 9:59pm to 10:18pm Pacific Time, a few hundred people were not able to do connect to Slack.
+            <br />
+            <br />
+A network event between servers in Slack’s central data centers caused normal login attempts to fail in such a way that people’s Slack clients retried aggressively. These retries were rate-limited by Slack’s servers in order to protect themselves.  As soon as the network event was resolved by our data center provider, and as soon as rate limits allowed, people were once again able to connect to Slack.
+            <br />
+            <br />
+The all clear was called at 11:05pm Pacific Time, after prolonged observation of network conditions.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:18pm PDT&lt;/small&gt; - Everyone should be able to connect to Slack again. If you have any further trouble, please reach out at feedback@slack.com. We really appreciate your patience as we worked through this.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:14pm PDT&lt;/small&gt; - We're still digging in to this, but things are beginning to look up. Thank you for bearing with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:59pm PDT&lt;/small&gt; - Some users may have trouble connecting to Slack. We're investigating and we're very sorry for the disruption to your day.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/6e89370a2038dd43</id>
+        <published>2018-09-11T00:27:00-07:00</published>
+        <updated>2018-09-11T02:17:00-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/6e89370a2038dd43"/>
+        <title>Incident: Connectivity issues in Europe</title>
+        <summary>Technical Summary:
+            <br />
+From 12:27am to 01:50am PT, people in Europe were not able to access Slack.
+            <br />
+            <br />
+Networking problems caused our servers in central Europe to be unreachable to Slack clients, resulting in people being unable to connect. We diverted traffic away from this region to other facilities in Europe, which allowed people to reconnect to Slack once again. An all clear was called at 01:50am PT.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:17am PDT&lt;/small&gt; - Technical Summary:
+            <br />
+From 12:27am to 01:50am PT, people in Europe were not able to access Slack.
+            <br />
+            <br />
+Networking problems caused our servers in central Europe to be unreachable to Slack clients, resulting in people being unable to connect. We diverted traffic away from this region to other facilities in Europe, which allowed people to reconnect to Slack once again. An all clear was called at 01:50am PT.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:50am PDT&lt;/small&gt; - We're now in the clear for the connectivity troubles affecting folks in Europe. We're so sorry for having disrupted your day, and thank you again for sticking with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;1:34am PDT&lt;/small&gt; - We're seeing some positive signs and people should be able to connect again after reloading Slack (Ctrl/Cmd + R). Our team is still monitoring the issue on our end, and we will keep updating the status site until we are completely out of the woods.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:27am PDT&lt;/small&gt; - We're getting reports that customers can't connect to Slack. We're investigating as we speak and we apologize for the disruption.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/7dea1cd14cd0f657</id>
+        <published>2018-09-07T14:35:00-07:00</published>
+        <updated>2018-09-07T18:34:15-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/7dea1cd14cd0f657"/>
+        <title>Notice: Slack’s forwarding email feature is failing for some customers</title>
+        <summary>Technical Summary:
+            <br />
+On September 7th at 2:35pm PT, we received reports that emails were failing to deliver to Slack forwarding addresses. We identified that this was the result of an expired certificate used to verify requests sent from our email provider. At 4:55pm PT, we deployed an update that corrected this and fixed the problem. Unfortunately any email sent to a forwarding address during this time is not retrievable and will need to be resent.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;6:34pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On September 7th at 2:35pm PT, we received reports that emails were failing to deliver to Slack forwarding addresses. We identified that this was the result of an expired certificate used to verify requests sent from our email provider. At 4:55pm PT, we deployed an update that corrected this and fixed the problem. Unfortunately any email sent to a forwarding address during this time is not retrievable and will need to be resent.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:55pm PDT&lt;/small&gt; - The issue with Slack's forwarding email feature has been fixed. Thank you for your patience while we resolved this!&lt;/p&gt;&lt;p&gt;&lt;small&gt;2:35pm PDT&lt;/small&gt; - A problem with an upstream provider has caused the feature that allows you to send emails to Slack to fail. We’re working with our partners to resolve this problem.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/2b2dc2db9e67258d</id>
+        <published>2018-09-07T07:58:56-07:00</published>
+        <updated>2018-09-07T18:23:56-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/2b2dc2db9e67258d"/>
+        <title>Incident: Connectivity issues affecting some workspaces in South America</title>
+        <summary>Technical Summary:
+            <br />
+On September 7th between 7:43am PT and 8:05am PT, Slack could not connect to our servers in the Sao Paulo region due to network issues. As a result, some people could not access their workspaces.
+            <br />
+            <br />
+At 8:05am PT we deployed a fix that would route users out of the troubled region and to a healthier server, which allowed people to successfully connect to Slack again.
+            <br />
+            <br />
+We are currently hard at work on scoping preventive measures to ensure this doesn’t happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;6:23pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On September 7th between 7:43am PT and 8:05am PT, Slack could not connect to our servers in the Sao Paulo region due to network issues. As a result, some people could not access their workspaces.
+            <br />
+            <br />
+At 8:05am PT we deployed a fix that would route users out of the troubled region and to a healthier server, which allowed people to successfully connect to Slack again.
+            <br />
+            <br />
+We are currently hard at work on scoping preventive measures to ensure this doesn’t happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:23am PDT&lt;/small&gt; - We've patched up the connectivity issues for the South America folks, and things should be working better now with a refresh (CMD/CTRL + R). If this isn't the case, don't hesitate to drop us a line and let us know.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:58am PDT&lt;/small&gt; - We've confirmed that folks are running into issues when trying to connect from South America specifically. We're looking into this further, and will keep updating with new information.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/60787986d73e3949</id>
+        <published>2018-09-07T11:15:00-07:00</published>
+        <updated>2018-09-07T18:20:47-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/60787986d73e3949"/>
+        <title>Outage: Some people are having trouble connecting to Slack, we're working on it.</title>
+        <summary>Technical Summary:
+            <br />
+From 11:15am to 11:28am PT, 100% of customers were not able to use Slack.
+            <br />
+            <br />
+A deploy to our webapp to enable a feature for how we handle incoming connection requests referenced a function which wasn’t present in a specific file. This missing function caused all incoming requests to fail, returning connection errors to our users.
+            <br />
+            <br />
+We rolled back that change for all users at 11:26am. Users were able to receive responses from our app again by 11:28am.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;6:20pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+From 11:15am to 11:28am PT, 100% of customers were not able to use Slack.
+            <br />
+            <br />
+A deploy to our webapp to enable a feature for how we handle incoming connection requests referenced a function which wasn’t present in a specific file. This missing function caused all incoming requests to fail, returning connection errors to our users.
+            <br />
+            <br />
+We rolled back that change for all users at 11:26am. Users were able to receive responses from our app again by 11:28am.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:28am PDT&lt;/small&gt; - Everyone should be able to connect to their workspace again now. We're very sorry for the disruption to your day, and appreciate your patience while we got things fixed up on our end.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:15am PDT&lt;/small&gt; - We're investigating problems with connectivity at this time. We're sorry for the interruption and will keep you posted as soon as we have an update.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/131958265ab58e95</id>
+        <published>2018-09-07T04:49:00-07:00</published>
+        <updated>2018-09-07T17:59:31-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/131958265ab58e95"/>
+        <title>Incident: Issues with opening new direct messages for Guests on Enterprise Grid</title>
+        <summary>Technical Summary:
+            <br />
+On September 4th at 10:39am PT, we deployed a code change intended to fix an existing bug with guests on Enterprise Grid. On September 7th at 4:49am PT, we first received reports that Enterprise Grid users were unable to send direct messages with users on other workspaces whom they had not messaged before. At 6:38am PT, we reverted that code change and this fixed the problem.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;5:59pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On September 4th at 10:39am PT, we deployed a code change intended to fix an existing bug with guests on Enterprise Grid. On September 7th at 4:49am PT, we first received reports that Enterprise Grid users were unable to send direct messages with users on other workspaces whom they had not messaged before. At 6:38am PT, we reverted that code change and this fixed the problem.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:38am PDT&lt;/small&gt; - We confirmed the fix. Direct messages are working again for Guests on Enterprise Grid. Apologies for the trouble and thanks for your patience.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:06am PDT&lt;/small&gt; - We're almost out of the woods. Guests on Enterprise Grid should be able to start new direct messages again. Please reload (Ctrl + R or Cmd + R) to make sure the fix is applied.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:34am PDT&lt;/small&gt; - We found the cause of the problem with new direct messages for Guests on Enterprise Grid. The team is patching it up and the functionality should be back soon.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:49am PDT&lt;/small&gt; - We've received reports that some Guests on Enterprise Grid workspaces cannot start new direct messages. Apologies for the trouble - our team is on the case.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/cf832e259da55b35</id>
+        <published>2018-09-06T16:38:51-07:00</published>
+        <updated>2018-09-07T16:34:50-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/cf832e259da55b35"/>
+        <title>Outage: Connectivity issues</title>
+        <summary>Technical Summary 18/09/07:
+            <br />
+At 4:38pm PT on September 6th, 2018, a change was deployed to Slack which prevented the majority of logged in users from viewing messages and stopped approximately 6.74% of users from logging in to Slack altogether.
+            <br />
+            <br />
+The change that was added increased the load on one of our databases, which eventually failed. At 4:53pm PT we reverted the changes and within five minutes users were able to begin using Slack again. We were officially “all clear” by 5:01pm PT.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;4:34pm PDT&lt;/small&gt; - Technical Summary 18/09/07:
+            <br />
+At 4:38pm PT on September 6th, 2018, a change was deployed to Slack which prevented the majority of logged in users from viewing messages and stopped approximately 6.74% of users from logging in to Slack altogether.
+            <br />
+            <br />
+The change that was added increased the load on one of our databases, which eventually failed. At 4:53pm PT we reverted the changes and within five minutes users were able to begin using Slack again. We were officially “all clear” by 5:01pm PT.&lt;/p&gt;&lt;p&gt;&lt;small&gt;5:01pm PDT&lt;/small&gt; - Things should be back to normal now. Thanks for your patience, and we're extremely sorry for the disruption to your day. Our team is continuing to investigate this issue to ensure it doesn't happen again.&lt;/p&gt;&lt;p&gt;&lt;small&gt;4:38pm PDT&lt;/small&gt; - We're investigating problems with connectivity at this time. We're sorry for the interruption and will keep you posted as soon as we have an update.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-09/00b128e1f5726bff</id>
+        <published>2018-09-05T12:21:00-07:00</published>
+        <updated>2018-09-06T09:10:17-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-09/00b128e1f5726bff"/>
+        <title>Notice: Indonesian customers may not be able to receive two-factor authentication codes through SMS</title>
+        <summary>Technical Summary:
+            <br />
+At 12:21pm Pacific Time, we received notice from a third-party vendor that they were observing some issues with SMS services for some customers in Indonesia. This had the potential to affect Two-Factor Authentication messages for users trying to log in to Slack from this region.
+            <br />
+            <br />
+As we understand it, this third-party is working as fast as possible to restore all services in Indonesia. At this stage there are no indications that this has directly affected any Slack users, but if you are experiencing any issues please do reach out at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;9:10am PDT&lt;/small&gt; - Technical Summary:
+            <br />
+At 12:21pm Pacific Time, we received notice from a third-party vendor that they were observing some issues with SMS services for some customers in Indonesia. This had the potential to affect Two-Factor Authentication messages for users trying to log in to Slack from this region.
+            <br />
+            <br />
+As we understand it, this third-party is working as fast as possible to restore all services in Indonesia. At this stage there are no indications that this has directly affected any Slack users, but if you are experiencing any issues please do reach out at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;7:00pm PDT&lt;/small&gt; - We're in touch with the provider while this is being ironed out. Please email us at feedback@slack.com if you run into any problems.&lt;/p&gt;&lt;p&gt;&lt;small&gt;12:21pm PDT&lt;/small&gt; - Customers in Indonesia might be unable to receive two-factor authentication codes via SMS at the moment due to issues with an upstream provider. We're very sorry for the disruption. If you need assistance signing in to Slack, please get in touch at feedback@slack.com.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-08/69f62ebb36a3b4db</id>
+        <published>2018-08-30T03:36:00-07:00</published>
+        <updated>2018-08-30T17:22:37-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-08/69f62ebb36a3b4db"/>
+        <title>Notice: Connectivity issues for SFR customers in France</title>
+        <summary>Technical Summary:
+            <br />
+On August 30th at 3:36 AM PT we internally detected customers in France using SFR were experiencing connectivity issues. We reached out to the SFR team to let them know of the customer facing impact. SFR actively worked to resolve the issue on their end.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;5:22pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On August 30th at 3:36 AM PT we internally detected customers in France using SFR were experiencing connectivity issues. We reached out to the SFR team to let them know of the customer facing impact. SFR actively worked to resolve the issue on their end.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:36am PDT&lt;/small&gt; - We’ve confirmed that the issue is only impacting SFR customers, and we’ve let their team know. We’ll keep an eye on the situation for now to make sure there are no changes. If you have any questions or concerns, please drop us a line at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;3:36am PDT&lt;/small&gt; - Some users in France may be experiencing connectivity issues due to problems with the upstream ISP provider SFR. We are keeping a close eye on this, and apologise for any inconvenience caused.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-08/c635ec8da0f4c469</id>
+        <published>2018-08-29T08:02:00-07:00</published>
+        <updated>2018-08-29T19:56:05-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-08/c635ec8da0f4c469"/>
+        <title>Notice: Some workspaces having issues with upstream two factor authentication service</title>
+        <summary>Technical Summary:
+            <br />
+On August 29th, 2018 at 08:02 AM PT we internally detected problems logging into Slack using Duo Mobile for two factor authentication. We reported the issue to Duo and Duo was able to resolve this for users.  We called an all-clear at 8:31 AM PT. Slack users should be able to sign into their accounts once again. If you’re still having trouble signing in with two-factor authentication, please reach out to us at feedback@slack.com.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;7:56pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On August 29th, 2018 at 08:02 AM PT we internally detected problems logging into Slack using Duo Mobile for two factor authentication. We reported the issue to Duo and Duo was able to resolve this for users.  We called an all-clear at 8:31 AM PT. Slack users should be able to sign into their accounts once again. If you’re still having trouble signing in with two-factor authentication, please reach out to us at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:31am PDT&lt;/small&gt; - Trouble with the upstream two factor authentication service has been resolved. All teams are now able to log in once again. Thanks for your patience with this.&lt;/p&gt;&lt;p&gt;&lt;small&gt;8:02am PDT&lt;/small&gt; - Some workspaces are having problems logging in with their upstream two factor authentication service. We're keeping an active eye on this issue until a solution has been found. Apologies about the interruption to your day.&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-08/e772478f7e05f532</id>
+        <published>2018-08-28T18:28:54-07:00</published>
+        <updated>2018-08-28T22:23:00-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-08/e772478f7e05f532"/>
+        <title>Incident: Some customers may experience trouble making Slack Calls from mobile</title>
+        <summary>Technical Summary
+            <br />
+On August 28th, 2018 between 6:28pmPDT and 9:24pmPDT, Slack users in the APAC region were unable to initiate a Slack call on a mobile device.
+            <br />
+            <br />
+At 6:28pmPDT, we retained an out-of-date DNS record during a routine infrastructure change. This prevented Slack Calls from mobile devices in APAC from connecting with the up-to-date infastructure settings.
+            <br />
+            <br />
+At 9:24pmPDT we manually removed the errant record and immediately resolved the issue. We’re currently working on preventative measures to avoid repeats of this scenario.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;10:23pm PDT&lt;/small&gt; - Technical Summary
+            <br />
+On August 28th, 2018 between 6:28pmPDT and 9:24pmPDT, Slack users in the APAC region were unable to initiate a Slack call on a mobile device.
+            <br />
+            <br />
+At 6:28pmPDT, we retained an out-of-date DNS record during a routine infrastructure change. This prevented Slack Calls from mobile devices in APAC from connecting with the up-to-date infastructure settings.
+            <br />
+            <br />
+At 9:24pmPDT we manually removed the errant record and immediately resolved the issue. We’re currently working on preventative measures to avoid repeats of this scenario.&lt;/p&gt;&lt;p&gt;&lt;small&gt;9:36pm PDT&lt;/small&gt; - We're back to smooth sailing! We've resolved the Calls trouble and you should now be able to make Slack Calls from Android and iOS as normal. Thank you for bearing with us.&lt;/p&gt;&lt;p&gt;&lt;small&gt;6:28pm PDT&lt;/small&gt; - We are investigating issues with making Slack Calls from the Android and iOS apps. Apologies for the trouble — we're on the case!&lt;/p&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>https://status.slack.com/2018-08/389f96c3886d7d56</id>
+        <published>2018-08-28T10:15:00-07:00</published>
+        <updated>2018-08-28T14:34:35-07:00</updated>
+        <link rel="alternate" type="text/html" href="https://status.slack.com/2018-08/389f96c3886d7d56"/>
+        <title>Outage: Connectivity issues affecting all workspaces</title>
+        <summary>Technical Summary:
+            <br />
+On August 28, 2018 between 10:15amPDT and 10:59amPDT, Slack experienced a 44-minute outage where all users were unable to establish new connections to the Slack service. Users who were already connected to the service were able to remain connected during this time.
+            <br />
+            <br />
+A configuration change at 10:15amPDT accessed incorrect settings and prevented service access for new connections. We reverted the configuration change at 10:59amPDT and new connections to the service were able to resume. We called the all clear at 11:23amPDT.
+            <br />
+            <br />
+We are currently hard at work to scope preventative measures to ensure this does not happen in the future.
+        </summary>
+        <content type="html">&lt;p&gt;&lt;small&gt;2:34pm PDT&lt;/small&gt; - Technical Summary:
+            <br />
+On August 28, 2018 between 10:15amPDT and 10:59amPDT, Slack experienced a 44-minute outage where all users were unable to establish new connections to the Slack service. Users who were already connected to the service were able to remain connected during this time.
+            <br />
+            <br />
+A configuration change at 10:15amPDT accessed incorrect settings and prevented service access for new connections. We reverted the configuration change at 10:59amPDT and new connections to the service were able to resume. We called the all clear at 11:23amPDT.
+            <br />
+            <br />
+We are currently hard at work to scope preventative measures to ensure this does not happen in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:23am PDT&lt;/small&gt; - Connections have improved for all users, and folks should be able to connect again. If you're still experiencing issues, drop us a line at feedback@slack.com.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:09am PDT&lt;/small&gt; - We've isolated the issue, and things look to be improving. Thanks for hanging in there.&lt;/p&gt;&lt;p&gt;&lt;small&gt;11:00am PDT&lt;/small&gt; - Investigation is ongoing, and we don't have updates to share at the moment. We apologize for the disruption to your day.&lt;/p&gt;&lt;p&gt;&lt;small&gt;10:15am PDT&lt;/small&gt; - Folks are having troubles connecting to their workspaces. We're looking into the cause and will have updates shortly.&lt;/p&gt;
+        </content>
+    </entry>
+</feed>
