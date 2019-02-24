@@ -1,8 +1,11 @@
 export interface Item {
+	// Feed?
 	type?: string;
 	version?: string;
+
+	// Others
 	attrs: Map<string, string>;
 	meta: Map<string, Item | Item[]>;
-	uri: string;
+	ns: string;
 	value: string;
 }

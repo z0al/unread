@@ -92,7 +92,7 @@ class Parser extends Transform {
 			$name: tag.name,
 			$prefix: tag.prefix,
 			$local: tag.local,
-			uri: tag.uri,
+			ns: tag.uri,
 			attrs: this.attributes(tag),
 			meta: new Map<string, Node | Node[]>(),
 			value: ''
@@ -247,7 +247,7 @@ class Parser extends Transform {
 	is_feed(node: Node) {
 		return Boolean(
 			node.$name === 'rss' ||
-				(node.$local === 'feed' && ns[node.uri] === 'atom') ||
+				(node.$local === 'feed' && ns[node.ns] === 'atom') ||
 				// Or
 				node.type
 		);
@@ -263,7 +263,7 @@ class Parser extends Transform {
 	is_item(node: Node) {
 		return Boolean(
 			node.$name === 'item' ||
-				(node.$local === 'entry' && ns[node.uri] === 'atom')
+				(node.$local === 'entry' && ns[node.ns] === 'atom')
 		);
 	}
 
@@ -337,7 +337,7 @@ class Parser extends Transform {
 			node.$name === tag.name &&
 			node.$local === tag.local &&
 			node.$prefix === tag.prefix &&
-			node.uri === tag.uri &&
+			node.ns === tag.uri &&
 			Array.from(node.attrs).every(([k, v]) => {
 				return (
 					tag.attributes[k] && (tag.attributes[k] as SaxesAttribute).value === v
