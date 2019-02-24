@@ -1,6 +1,6 @@
 {
 	"name": "feedify",
-	"version": "0.1.0",
+	"version": "0.0.0-semantically-released",
 	"description": "A Robust RSS, Atom, and JSON feeds parser in JavaScript",
 	"keywords": [
 		"atom",
@@ -19,8 +19,7 @@
 	"main": "dist/index.js",
 	"browser": "dist/index.umd.js",
 	"scripts": {
-		"prebuild": "rimraf ./dist",
-		"build": "rollup -c",
+		"build": "rimraf ./dist && rollup -c",
 		"watch": "rollup -c -w",
 		"prepublishOnly": "npm run build",
 		"test": "jest"
@@ -40,7 +39,8 @@
 		"rollup-plugin-commonjs": "^9.2.0",
 		"rollup-plugin-node-builtins": "^2.1.2",
 		"rollup-plugin-node-globals": "^1.4.0",
-		"rollup-plugin-node-resolve": "^4.0.0"
+		"rollup-plugin-node-resolve": "^4.0.0",
+		"semantic-release": "^15.13.3"
 	},
 	"engines": {
 		"node": ">=10"

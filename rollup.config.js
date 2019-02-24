@@ -35,6 +35,6 @@ export default [
 			format: 'cjs'
 		},
 		plugins,
-		external: ['readable-stream', 'string_decoder']
+		external: ['readable-stream']
 	}
 ];
