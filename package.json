@@ -17,10 +17,13 @@
 		"dist"
 	],
 	"main": "dist/index.js",
+	"module": "dist/index.esm.js",
 	"browser": "dist/index.umd.js",
+	"types": "dist/index.d.ts",
+	"source": "src/index.ts",
 	"scripts": {
-		"build": "rimraf ./dist && rollup -c",
-		"watch": "rollup -c -w",
+		"build": "rimraf ./dist && microbundle",
+		"dev": "microbundle watch",
 		"prepublishOnly": "npm run build",
 		"test": "jest"
 	},
@@ -33,13 +36,8 @@
 		"@types/readable-stream": "^2.3.0",
 		"globby": "^9.0.0",
 		"jest": "^24.1.0",
+		"microbundle": "^0.10.1",
 		"rimraf": "^2.6.3",
-		"rollup": "^1.2.0",
-		"rollup-plugin-babel": "^4.3.2",
-		"rollup-plugin-commonjs": "^9.2.0",
-		"rollup-plugin-node-builtins": "^2.1.2",
-		"rollup-plugin-node-globals": "^1.4.0",
-		"rollup-plugin-node-resolve": "^4.0.0",
 		"semantic-release": "^15.13.3"
 	},
 	"engines": {

@@ -6,7 +6,7 @@ import path from 'path';
 import glob from 'globby';
 
 // Ours
-import Parser from '..';
+import { RSSParser } from '../..';
 
 const cwd = path.resolve(__dirname, 'feeds');
 let samples = [];
@@ -23,7 +23,7 @@ test('Snapshots', async () => {
 
 			fs.createReadStream(path.resolve(cwd, file))
 				.on('error', err => reject(err))
-				.pipe(new Parser())
+				.pipe(new RSSParser())
 				.on('error', err => reject(err))
 				.on('feed', feed => {
 					output.feed = feed;

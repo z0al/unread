@@ -1,26 +1,17 @@
-// @ts-check
-
 // Packages
-import { SaxesParser } from 'saxes';
+import { SaxesParser, SaxesTag, SaxesAttribute } from 'saxes';
 import { Transform } from 'readable-stream';
 
 // Ours
+import { Item } from '../types';
 import ns from './namespaces';
 
-/**
- * @typedef Node
- * @property {string} [type]
- * @property {string} [version]
- * @property {string} [$name]
- * @property {string} [$prefix]
- * @property {string} [$local]
- * @property {Boolean} [$xhtml]
- * @property {string} uri
- * @property {Map<string,string>} attrs
- * @property {string} value
- * @property {Map<string,Node|Node[]>} meta
- *
- */
+interface Node extends Item {
+	$name?: string;
+	$prefix?: string;
+	$local?: string;
+	$xhtml?: Boolean;
+}
 
 /**
  * A Robust RSS/Atom Parser
@@ -29,6 +20,10 @@ import ns from './namespaces';
  * @extends {Transform}
  */
 class Parser extends Transform {
+	private _parser: SaxesParser;
+	private _stack: Array<Node>;
+	private _emitfeed: Boolean;
+
 	constructor() {
 		// Object mode: In short, allows readable streams to push any type of chunk
 		// other than Buffer and Uint8Array.
@@ -46,7 +41,6 @@ class Parser extends Transform {
 		this._parser.onend = this.onend.bind(this);
 
 		// Holds all open tags
-		/** @type Array<Node> */
 		this._stack = [];
 
 		// We only emit a "feed" event if we:
@@ -60,11 +54,9 @@ class Parser extends Transform {
 	 * @param {*} chunk
 	 * @param {string} encoding
 	 * @param {Function} cb
-	 *
-	 * @override
-	 * @private
+	 * @memberof Parser
 	 */
-	_transform(chunk, encoding, cb) {
+	_transform(chunk: any, encoding: string, cb: Function) {
 		try {
 			this._parser.write(chunk);
 			cb();
@@ -80,11 +72,9 @@ class Parser extends Transform {
 	 * stream.
 	 *
 	 * @param {Function} cb
-	 *
-	 * @override
-	 * @private
+	 * @memberof Parser
 	 */
-	_flush(cb) {
+	_flush(cb: Function) {
 		try {
 			this._parser.close();
 			cb();
@@ -94,20 +84,17 @@ class Parser extends Transform {
 	}
 
 	/**
-	 * @param {import('saxes').SaxesTag} tag
-	 * @private
+	 * @param {SaxesTag} tag
+	 * @memberof Parser
 	 */
-	onopentag(tag) {
-		/**
-		 * @type Node
-		 */
-		const node = {
+	onopentag(tag: SaxesTag) {
+		const node: Node = {
 			$name: tag.name,
 			$prefix: tag.prefix,
 			$local: tag.local,
 			uri: tag.uri,
 			attrs: this.attributes(tag),
-			meta: new Map(),
+			meta: new Map<string, Node | Node[]>(),
 			value: ''
 		};
 
@@ -159,7 +146,7 @@ class Parser extends Transform {
 
 				this.clear(feed);
 
-				this.emit('feed', feed);
+				this.emit('feed', feed as Item);
 			}
 
 			this._stack.unshift(node);
@@ -167,10 +154,10 @@ class Parser extends Transform {
 	}
 
 	/**
-	 * @param {import('saxes').SaxesTag} tag
-	 * @private
+	 * @param {SaxesTag} tag
+	 * @memberof Parser
 	 */
-	onclosetag(tag) {
+	onclosetag(tag: SaxesTag) {
 		// NOTE: We only rely on the internal stack to ensure correct output
 		// in some cases. That being said, it's up to the consumer to decide
 		// what happens in case of XML error.
@@ -189,44 +176,45 @@ class Parser extends Transform {
 			this._stack.shift();
 			const parent = this._stack[0];
 
+			// Emit items
 			if (parent && this.is_item(node)) {
 				// Don't emit illegally nested items
 				if (this.is_feed(parent) || parent.$name === 'channel') {
 					// Remove private attributes
 					this.clear(node);
 
-					return this.push(node);
+					this.push(node as Item);
 				}
-			}
+			} else {
+				// Add this node as a child
+				if (parent) {
+					this.assign(parent, node);
 
-			// Add this node as a child
-			if (parent) {
-				this.assign(parent, node);
-
-				// Was it a feed node?
-				if (this.is_feed(parent)) {
-					this._emitfeed = true;
+					// Was it a feed node?
+					if (this.is_feed(parent)) {
+						this._emitfeed = true;
+					}
 				}
-			}
 
-			// Emit "feed" if necessary
-			if (this.is_feed(node) && this._emitfeed) {
-				// This is probably the end anyway, but still, let's make sure that
-				// We don't emit unnecessary events
-				this._emitfeed = false;
+				// Emit "feed" if necessary
+				if (this.is_feed(node) && this._emitfeed) {
+					// This is probably the end anyway, but still, let's make sure
+					// that We don't emit unnecessary events
+					this._emitfeed = false;
 
-				this.clear(node);
+					this.clear(node);
 
-				this.emit('feed', node);
+					this.emit('feed', node as Item);
+				}
 			}
 		}
 	}
 
 	/**
 	 * @param {string} text
-	 * @private
+	 * @memberof Parser
 	 */
-	ontext(text) {
+	ontext(text: string) {
 		text = text.trim();
 		if (text && this._stack.length > 0) {
 			this._stack[0].value += text;
@@ -235,14 +223,14 @@ class Parser extends Transform {
 
 	/**
 	 * @param {Error} err
-	 * @private
+	 * @memberof Parser
 	 */
-	onerror(err) {
+	onerror(err: Error) {
 		this.emit('error', err);
 	}
 
 	/**
-	 * @private
+	 * @memberof Parser
 	 */
 	onend() {
 		// We are done here
@@ -253,10 +241,10 @@ class Parser extends Transform {
 	 * Checks if a given node is <rss> or <feed> tag
 	 *
 	 * @param {Node} node
-	 * @returns {Boolean}
-	 * @private
+	 * @returns
+	 * @memberof Parser
 	 */
-	is_feed(node) {
+	is_feed(node: Node) {
 		return Boolean(
 			node.$name === 'rss' ||
 				(node.$local === 'feed' && ns[node.uri] === 'atom') ||
@@ -269,10 +257,10 @@ class Parser extends Transform {
 	 * Checks if a given node is <item> or <entry> tag
 	 *
 	 * @param {Node} node
-	 * @returns {Boolean}
-	 * @private
+	 * @returns
+	 * @memberof Parser
 	 */
-	is_item(node) {
+	is_item(node: Node) {
 		return Boolean(
 			node.$name === 'item' ||
 				(node.$local === 'entry' && ns[node.uri] === 'atom')
@@ -282,13 +270,14 @@ class Parser extends Transform {
 	/**
 	 * Parse tag attributes
 	 *
-	 * @param {import('saxes').SaxesTag} tag
-	 * @private
+	 * @param {SaxesTag} tag
+	 * @returns
+	 * @memberof Parser
 	 */
-	attributes(tag) {
+	attributes(tag: SaxesTag) {
 		return Object.entries(tag.attributes).reduce(
 			(map, [name, meta]) => map.set(name, meta.value),
-			new Map()
+			new Map<string, string>()
 		);
 	}
 
@@ -297,9 +286,10 @@ class Parser extends Transform {
 	 *
 	 * @param {Node} parent
 	 * @param {Node} child
-	 * @private
+	 * @returns
+	 * @memberof Parser
 	 */
-	assign(parent, child) {
+	assign(parent: Node, child: Node) {
 		// Keep the name
 		const key = child.$name;
 
@@ -312,7 +302,7 @@ class Parser extends Transform {
 			return;
 		}
 
-		let node;
+		let node: Node | Node[];
 
 		// Handle duplicated keys
 		if (parent.meta.has(key)) {
@@ -332,12 +322,13 @@ class Parser extends Transform {
 
 	/**
 	 * Check if a node and an XML tag are equal
+	 *
 	 * @param {Node} node
-	 * @param {import('saxes').SaxesTag} tag
-	 * @returns {Boolean}
-	 * @private
+	 * @param {SaxesTag} tag
+	 * @returns
+	 * @memberof Parser
 	 */
-	equals(node, tag) {
+	equals(node: Node, tag: SaxesTag) {
 		if (node.attrs.size !== Object.keys(tag.attributes).length) {
 			return false;
 		}
@@ -348,8 +339,9 @@ class Parser extends Transform {
 			node.$prefix === tag.prefix &&
 			node.uri === tag.uri &&
 			Array.from(node.attrs).every(([k, v]) => {
-				// @ts-ignore
-				return tag.attributes[k] && tag.attributes[k].value === v;
+				return (
+					tag.attributes[k] && (tag.attributes[k] as SaxesAttribute).value === v
+				);
 			})
 		);
 	}
@@ -358,9 +350,9 @@ class Parser extends Transform {
 	 * Removes private attributes from a given node.
 	 *
 	 * @param {Node} node
-	 * @private
+	 * @memberof Parser
 	 */
-	clear(node) {
+	clear(node: Node) {
 		if (node.value === '') {
 			delete node.value;
 		}

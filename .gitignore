@@ -176,4 +176,5 @@ $RECYCLE.BIN/
 
 ### Custom ###
 .rpt2_cache
+.rts2_cache*
 dist
