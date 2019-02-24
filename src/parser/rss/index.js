@@ -23,7 +23,10 @@ import ns from './namespaces';
  */
 
 /**
- * RSS/ATOM Parser
+ * A Robust RSS/Atom Parser
+ *
+ * @class Parser
+ * @extends {Transform}
  */
 class Parser extends Transform {
 	constructor() {
@@ -59,6 +62,7 @@ class Parser extends Transform {
 	 * @param {Function} cb
 	 *
 	 * @override
+	 * @private
 	 */
 	_transform(chunk, encoding, cb) {
 		try {
@@ -78,6 +82,7 @@ class Parser extends Transform {
 	 * @param {Function} cb
 	 *
 	 * @override
+	 * @private
 	 */
 	_flush(cb) {
 		try {
@@ -90,6 +95,7 @@ class Parser extends Transform {
 
 	/**
 	 * @param {import('saxes').SaxesTag} tag
+	 * @private
 	 */
 	onopentag(tag) {
 		/**
@@ -162,6 +168,7 @@ class Parser extends Transform {
 
 	/**
 	 * @param {import('saxes').SaxesTag} tag
+	 * @private
 	 */
 	onclosetag(tag) {
 		// NOTE: We only rely on the internal stack to ensure correct output
@@ -217,6 +224,7 @@ class Parser extends Transform {
 
 	/**
 	 * @param {string} text
+	 * @private
 	 */
 	ontext(text) {
 		text = text.trim();
@@ -227,11 +235,15 @@ class Parser extends Transform {
 
 	/**
 	 * @param {Error} err
+	 * @private
 	 */
 	onerror(err) {
 		this.emit('error', err);
 	}
 
+	/**
+	 * @private
+	 */
 	onend() {
 		// We are done here
 		this.push(null);
@@ -242,6 +254,7 @@ class Parser extends Transform {
 	 *
 	 * @param {Node} node
 	 * @returns {Boolean}
+	 * @private
 	 */
 	is_feed(node) {
 		return Boolean(
@@ -257,6 +270,7 @@ class Parser extends Transform {
 	 *
 	 * @param {Node} node
 	 * @returns {Boolean}
+	 * @private
 	 */
 	is_item(node) {
 		return Boolean(
@@ -269,7 +283,7 @@ class Parser extends Transform {
 	 * Parse tag attributes
 	 *
 	 * @param {import('saxes').SaxesTag} tag
-	 *
+	 * @private
 	 */
 	attributes(tag) {
 		return Object.entries(tag.attributes).reduce(
@@ -283,6 +297,7 @@ class Parser extends Transform {
 	 *
 	 * @param {Node} parent
 	 * @param {Node} child
+	 * @private
 	 */
 	assign(parent, child) {
 		// Keep the name
@@ -320,6 +335,7 @@ class Parser extends Transform {
 	 * @param {Node} node
 	 * @param {import('saxes').SaxesTag} tag
 	 * @returns {Boolean}
+	 * @private
 	 */
 	equals(node, tag) {
 		if (node.attrs.size !== Object.keys(tag.attributes).length) {
@@ -342,6 +358,7 @@ class Parser extends Transform {
 	 * Removes private attributes from a given node.
 	 *
 	 * @param {Node} node
+	 * @private
 	 */
 	clear(node) {
 		if (node.value === '') {
