@@ -6,7 +6,7 @@ import * as path from 'path';
 import * as glob from 'globby';
 
 // Ours
-import RSSParser from '../../src/parser/rss';
+import { RSSParser } from '../../src';
 
 const cwd = path.resolve(__dirname, 'feeds');
 let samples = [];
