@@ -1,12 +1,12 @@
 // Native
-import fs from 'fs';
-import path from 'path';
+import { createReadStream } from 'fs';
+import * as path from 'path';
 
 // Packages
-import glob from 'globby';
+import * as glob from 'globby';
 
 // Ours
-import { RSSParser } from '../..';
+import RSSParser from '../../src/parser/rss';
 
 const cwd = path.resolve(__dirname, 'feeds');
 let samples = [];
@@ -19,9 +19,9 @@ beforeAll(async () => {
 test('Snapshots', async () => {
 	for (const file of samples) {
 		const feed = await new Promise((resolve, reject) => {
-			const output = { items: [] };
+			const output = { items: [], feed: null };
 
-			fs.createReadStream(path.resolve(cwd, file))
+			createReadStream(path.resolve(cwd, file))
 				.on('error', err => reject(err))
 				.pipe(new RSSParser())
 				.on('error', err => reject(err))
