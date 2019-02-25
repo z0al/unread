@@ -1,15 +1,28 @@
 # Feedify
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors) [![Build](https://badgen.net/travis/z0al/feedify)](https://travis-ci.org/z0al/feedify) [![Bundlephobia](https://badgen.net/bundlephobia/minzip/feedify)](https://bundlephobia.com/result?p=feedify)
+
+[![NPM](https://nodei.co/npm/feedify.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/feedify/)
+
+A package for parsing RSS, Atom, and (soon) JSON feeds.
 
 ## Installation
 
+```sh
+npm add feedify
+```
+
 ## Usage
+
+TODO
 
 ### Options
 
+- **normalize** (`boolean`, default: `true`): provide the most common used attributes regardless of the feed type. For example, `feed.image` will refere to the URL value of `image` in RSS or `atom:logo` if exists.
+
 ## Examples
 
-## License
+See the [examples](./examples) directory.
 
 ## Contributors
 
@@ -22,3 +35,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## License
+
+MIT © Ahmed T. Ali
