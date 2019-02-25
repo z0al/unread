@@ -4,9 +4,9 @@ import { Transform } from 'readable-stream';
 
 // Ours
 import { Item } from '../types';
-import ns from './namespaces';
+import { byURI, byName } from './namespaces';
 
-interface Node extends Item {
+export interface Node extends Item {
 	$name?: string;
 	$prefix?: string;
 	$local?: string;
@@ -247,7 +247,7 @@ class Parser extends Transform {
 	is_feed(node: Node) {
 		return Boolean(
 			node.$name === 'rss' ||
-				(node.$local === 'feed' && ns[node.ns] === 'atom') ||
+				(node.$local === 'feed' && byURI.get(node.ns) === 'atom') ||
 				// Or
 				node.type
 		);
@@ -263,7 +263,7 @@ class Parser extends Transform {
 	is_item(node: Node) {
 		return Boolean(
 			node.$name === 'item' ||
-				(node.$local === 'entry' && ns[node.ns] === 'atom')
+				(node.$local === 'entry' && byURI.get(node.ns) === 'atom')
 		);
 	}
 
@@ -344,6 +344,84 @@ class Parser extends Transform {
 				);
 			})
 		);
+	}
+
+	/**
+	 * Accepts multiple queries and return the first (if many) Node that
+	 * matches one of the queries (executed in order).
+	 *
+	 * Examples:
+	 *
+	 *  1. "title": returns the first <title> that has empty namespace
+	 *
+	 *  2. "atom:link": returns the first <link> that has Atom namespace
+	 *
+	 *  3. "atom:link[rel=self]": returns the first <link> that as Atom
+	 *     namespace and has the attribute "rel" set to "self"
+	 *
+	 * 	We only recognize namespaces specified in ./namespaces.ts
+	 *
+	 * @param {Item} node
+	 * @param {string[]} names
+	 * @returns
+	 * @memberof Parser
+	 */
+	query(node: Item, names: string[]) {
+		for (const name of names) {
+			// e.g atom:link => prefix=atom, local=link
+			let [prefix, local] = name.trim().split(':');
+
+			// Namespace URI
+			let uri = '';
+
+			// Attribute
+			let attr = null;
+
+			// contains namespace e.g. atom:link
+			if (prefix && local) {
+				uri = byName.get(prefix);
+			} else {
+				local = prefix;
+			}
+
+			// Filter by attribute? e.g link[rel=self]
+			const attribute = /\[(\w+)=(\w+)\]$/su.exec(local);
+			if (attribute) {
+				// e.g. [a=b] => {key: "a", value: "b"}
+				attr = { key: attribute[1], value: attribute[2] };
+				local = local.split('[')[0];
+			}
+
+			// Namespaced key has a higher rank
+			const key = prefix + ':' + local;
+			const n = node.meta.get(key) || node.meta.get(local);
+
+			// A helper matcher
+			const match = (obj: Node) => {
+				if (obj.ns !== uri) return false;
+
+				if (attr) {
+					return obj.attrs.get(attr.key) === attr.value;
+				}
+
+				return true;
+			};
+
+			// A node can be an Array or a single object
+			if (n) {
+				if (n instanceof Array) {
+					const index = n.findIndex(el => match(el));
+
+					if (index !== -1) {
+						return n[index];
+					}
+				} else {
+					if (match(n)) {
+						return n;
+					}
+				}
+			}
+		}
 	}
 
 	/**

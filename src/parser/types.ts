@@ -16,5 +16,5 @@ export interface Item {
 	attrs: Map<string, string>;
 	meta: Map<string, Item | Item[]>;
 	ns: string;
-	value: string;
+	value?: string;
 }

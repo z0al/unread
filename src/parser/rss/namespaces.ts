@@ -3,7 +3,14 @@
  *
  * Lookup by URI
  */
-export default {
-	'http://www.w3.org/2005/Atom': 'atom', // v1.0
-	'http://purl.org/rss/1.0/modules/content/': 'content'
-};
+
+const namespaces = [
+	['atom', 'http://www.w3.org/2005/Atom'], // v1.0
+	['content', 'http://purl.org/rss/1.0/modules/content/']
+];
+
+// @ts-ignore
+export const byName = new Map(namespaces);
+
+// @ts-ignore
+export const byURI = new Map(namespaces.map(ns => ns.reverse()));
