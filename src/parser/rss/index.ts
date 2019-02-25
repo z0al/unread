@@ -13,6 +13,11 @@ export interface Node extends Item {
 	$xhtml?: Boolean;
 }
 
+interface Options {
+	// Normalize common attributes e.g. title, description
+	normalize?: boolean;
+}
+
 /**
  * A Robust RSS/Atom Parser
  *
@@ -23,8 +28,9 @@ class Parser extends Transform {
 	private _parser: SaxesParser;
 	private _stack: Array<Node>;
 	private _emitfeed: Boolean;
+	private options: Options = { normalize: true };
 
-	constructor() {
+	constructor(options: Options = {}) {
 		// Object mode: In short, allows readable streams to push any type of chunk
 		// other than Buffer and Uint8Array.
 		//
@@ -48,6 +54,8 @@ class Parser extends Transform {
 		// 1. Encountered an item and `_emitfeed` is true.
 		// 2. Reached the end of the feed and `_emitfeed` is true.
 		this._emitfeed = false;
+
+		this.options = { ...this.options, ...options };
 	}
 
 	/**
@@ -146,7 +154,11 @@ class Parser extends Transform {
 
 				this.clear(feed);
 
-				this.emit('feed', feed as Item);
+				if (this.options.normalize) {
+					this.emit('feed', this.normalize(feed) as Item);
+				} else {
+					this.emit('feed', feed as Item);
+				}
 			}
 
 			this._stack.unshift(node);
@@ -183,7 +195,11 @@ class Parser extends Transform {
 					// Remove private attributes
 					this.clear(node);
 
-					this.push(node as Item);
+					if (this.options.normalize) {
+						this.push(this.normalize(node) as Item);
+					} else {
+						this.push(node as Item);
+					}
 				}
 			} else {
 				// Add this node as a child
@@ -204,7 +220,11 @@ class Parser extends Transform {
 
 					this.clear(node);
 
-					this.emit('feed', node as Item);
+					if (this.options.normalize) {
+						this.emit('feed', this.normalize(node) as Item);
+					} else {
+						this.emit('feed', node as Item);
+					}
 				}
 			}
 		}
@@ -418,6 +438,65 @@ class Parser extends Transform {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Normalize common attributes
+	 *
+	 * @param {Node} node
+	 * @memberof Parser
+	 */
+	normalize(node: Node) {
+		const id = this.query(node, ['guid', 'atom:id']);
+		if (id) {
+			node.id = id.value;
+		}
+
+		const title = this.query(node, ['title', 'atom:title']);
+		if (title) {
+			node.title = title.value;
+		}
+
+		const summary = this.query(node, [
+			'description',
+			'atom:summary',
+			'atom:subtitle'
+		]);
+		if (summary) {
+			node.summary = summary.value;
+		}
+
+		const content = this.query(node, ['content:encoded', 'atom:content']);
+		if (content) {
+			node.content = content.value;
+		}
+
+		const published = this.query(node, ['pubDate', 'atom:published']);
+		if (published) {
+			node.published = published.value;
+		}
+
+		const updated = this.query(node, ['lastBuildDate', 'atom:updated']);
+		if (updated) {
+			node.updated = updated.value;
+		}
+
+		const image = this.query(node, ['image', 'atom:logo']);
+		if (image) {
+			// RSS
+			if (image.meta.has('url')) {
+				const url = image.meta.get('url');
+				if (!(url instanceof Array)) {
+					node.image = url.value;
+				}
+			}
+			// Atom
+			else {
+				node.image = image.value;
+			}
+		}
+
+		return node;
 	}
 
 	/**
