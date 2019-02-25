@@ -4,7 +4,7 @@ import { Transform } from 'readable-stream';
 
 // Ours
 import { Item } from '../types';
-import { byURI, byName } from './namespaces';
+import { nsLookup } from './namespaces';
 
 export interface Node extends Item {
 	$name?: string;
@@ -247,7 +247,7 @@ class Parser extends Transform {
 	is_feed(node: Node) {
 		return Boolean(
 			node.$name === 'rss' ||
-				(node.$local === 'feed' && byURI.get(node.ns) === 'atom') ||
+				(node.$local === 'feed' && nsLookup(node.ns) === 'atom') ||
 				// Or
 				node.type
 		);
@@ -263,7 +263,7 @@ class Parser extends Transform {
 	is_item(node: Node) {
 		return Boolean(
 			node.$name === 'item' ||
-				(node.$local === 'entry' && byURI.get(node.ns) === 'atom')
+				(node.$local === 'entry' && nsLookup(node.ns) === 'atom')
 		);
 	}
 
@@ -371,17 +371,13 @@ class Parser extends Transform {
 			// e.g atom:link => prefix=atom, local=link
 			let [prefix, local] = name.trim().split(':');
 
-			// Namespace URI
-			let uri = '';
-
 			// Attribute
 			let attr = null;
 
-			// contains namespace e.g. atom:link
-			if (prefix && local) {
-				uri = byName.get(prefix);
-			} else {
+			// No namespace e.g. title
+			if (!local) {
 				local = prefix;
+				prefix = '';
 			}
 
 			// Filter by attribute? e.g link[rel=self]
@@ -398,7 +394,7 @@ class Parser extends Transform {
 
 			// A helper matcher
 			const match = (obj: Node) => {
-				if (obj.ns !== uri) return false;
+				if (nsLookup(obj.ns) !== prefix) return false;
 
 				if (attr) {
 					return obj.attrs.get(attr.key) === attr.value;

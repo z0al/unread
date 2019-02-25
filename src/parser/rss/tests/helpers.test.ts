@@ -42,7 +42,7 @@ describe('parser.query', () => {
 		};
 
 		node.meta.set('atom:link', link);
-		expect(parser.query(node, ['atom:link'])).toBe(link);
+		expect(parser.query(node, ['atom:link', 'title'])).toBe(link);
 	});
 
 	test('duplicated keys', () => {
