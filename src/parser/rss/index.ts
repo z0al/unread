@@ -449,12 +449,12 @@ class Parser extends Transform {
 	normalize(node: Node) {
 		const id = this.query(node, ['guid', 'atom:id']);
 		if (id) {
-			node.id = id.value;
+			node.id = id.value || '';
 		}
 
 		const title = this.query(node, ['title', 'atom:title']);
 		if (title) {
-			node.title = title.value;
+			node.title = title.value || '';
 		}
 
 		const summary = this.query(node, [
@@ -463,22 +463,22 @@ class Parser extends Transform {
 			'atom:subtitle'
 		]);
 		if (summary) {
-			node.summary = summary.value;
+			node.summary = summary.value || '';
 		}
 
 		const content = this.query(node, ['content:encoded', 'atom:content']);
 		if (content) {
-			node.content = content.value;
+			node.content = content.value || '';
 		}
 
 		const published = this.query(node, ['pubDate', 'atom:published']);
 		if (published) {
-			node.published = published.value;
+			node.published = published.value || '';
 		}
 
 		const updated = this.query(node, ['lastBuildDate', 'atom:updated']);
 		if (updated) {
-			node.updated = updated.value;
+			node.updated = updated.value || '';
 		}
 
 		const image = this.query(node, ['image', 'atom:logo']);
@@ -487,12 +487,12 @@ class Parser extends Transform {
 			if (image.meta.has('url')) {
 				const url = image.meta.get('url');
 				if (!(url instanceof Array)) {
-					node.image = url.value;
+					node.image = url.value || '';
 				}
 			}
 			// Atom
 			else {
-				node.image = image.value;
+				node.image = image.value || '';
 			}
 		}
 

@@ -98,7 +98,7 @@ Object {
       },
     },
     "ns": "http://www.w3.org/2005/Atom",
-    "summary": undefined,
+    "summary": "",
     "title": "Flickr Blog",
     "type": "atom",
     "updated": "2019-02-24T07:47:44Z",
