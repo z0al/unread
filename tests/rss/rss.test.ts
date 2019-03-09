@@ -27,7 +27,7 @@ test('Snapshots', async () => {
 
 		parser.write(text).close();
 
-		for await (const item of parser.items()) {
+		for (const item of parser.items()) {
 			output.items.push(item);
 		}
 

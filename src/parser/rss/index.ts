@@ -69,10 +69,10 @@ class RSSParser extends Parser {
 	/**
 	 * @override
 	 */
-	async *items() {
+	*items() {
 		while (!this._done || this._buffer.length > 0) {
 			if (this._buffer.length > 0) {
-				yield await this._buffer.pop();
+				yield this._buffer.pop();
 			}
 		}
 	}

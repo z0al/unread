@@ -44,11 +44,11 @@ export abstract class Parser {
 	/**
 	 * Iterates over avaiable items
 	 *
-	 * @returns {AsyncIterableIterator<Item>}
+	 * @returns {IterableIterator<Item>}
 	 * @memberof Parser
 	 * @abstract
 	 */
-	async *items(): AsyncIterableIterator<Item> {}
+	*items(): IterableIterator<Item> {}
 
 	/**
 	 * Write text to stream.
