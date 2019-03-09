@@ -28,13 +28,11 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"readable-stream": "^3.1.1",
 		"saxes": "^3.1.7"
 	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.3.1",
 		"@types/jest": "^24.0.6",
-		"@types/readable-stream": "^2.3.0",
 		"globby": "^9.0.0",
 		"jest": "^24.1.0",
 		"microbundle": "^0.10.1",

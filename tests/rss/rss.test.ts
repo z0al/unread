@@ -1,5 +1,5 @@
 // Native
-import { createReadStream } from 'fs';
+import { readFileSync } from 'fs';
 import * as path from 'path';
 
 // Packages
@@ -7,6 +7,7 @@ import * as glob from 'globby';
 
 // Ours
 import { RSSParser } from '../../src';
+import { Parser } from '../../src/parser/types';
 
 const cwd = path.resolve(__dirname, 'feeds');
 let samples = [];
@@ -18,26 +19,20 @@ beforeAll(async () => {
 
 test('Snapshots', async () => {
 	for (const file of samples) {
-		const feed = await new Promise((resolve, reject) => {
-			const output = { items: [], feed: null };
+		const output = { items: [], feed: null };
 
-			createReadStream(path.resolve(cwd, file))
-				.on('error', err => reject(err))
-				.pipe(new RSSParser())
-				.on('error', err => reject(err))
-				.on('feed', feed => {
-					output.feed = feed;
-				})
-				.on('readable', function() {
-					let item;
-					while ((item = this.read())) {
-						output.items.push(item);
-					}
-				})
-				.on('end', () => {
-					resolve(output);
-				});
-		});
-		expect(feed).toMatchSnapshot(file);
+		const parser: Parser = new RSSParser();
+
+		const text = readFileSync(path.resolve(cwd, file)).toString();
+
+		parser.write(text).close();
+
+		for await (const item of parser.items()) {
+			output.items.push(item);
+		}
+
+		output.feed = parser.feed();
+
+		expect(output).toMatchSnapshot(file);
 	}
 });

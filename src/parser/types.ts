@@ -18,3 +18,54 @@ export interface Item {
 	ns: string;
 	value?: string;
 }
+
+export interface ParserOptions {
+	// Normalize common attributes e.g. title, description
+	normalize?: boolean;
+}
+
+export abstract class Parser {
+	options: ParserOptions = { normalize: true };
+
+	constructor(opt: ParserOptions = {}) {
+		this.options = { ...this.options, ...opt };
+	}
+
+	/**
+	 * Get the current parsed feed data.
+	 *
+	 * @returns {Item}
+	 * @memberof Parser
+	 */
+	feed(): Item {
+		return null;
+	}
+
+	/**
+	 * Iterates over avaiable items
+	 *
+	 * @returns {AsyncIterableIterator<Item>}
+	 * @memberof Parser
+	 * @abstract
+	 */
+	async *items(): AsyncIterableIterator<Item> {}
+
+	/**
+	 * Write text to stream.
+	 *
+	 * @param {string} chunk
+	 * @returns {Parser}
+	 * @memberof Parser
+	 */
+	write(chunk: string): Parser {
+		return this;
+	}
+
+	/**
+	 * Close the current stream.
+	 *
+	 * @membthis.write
+	 * @abstract
+	 */
+	close() {}
+}
