@@ -14,15 +14,70 @@ npm add feedify
 
 ## Usage
 
-TODO
+### Simple
 
-### Options
+```javascript
+import { parse } from 'feedify';
 
-- **normalize** (`boolean`, default: `true`): provide the most common used attributes regardless of the feed type. For example, `feed.image` will refere to the URL value of `image` in RSS or `atom:logo` if exists.
+fetch('https://overreacted.io/rss.xml')
+	.then(resp => {
+		return resp.text();
+	})
+	.then(text => {
+		return parse(text);
+	})
+	.then(data => {
+		console.log('Feed: ', data.feed);
+		console.log('Items: ', data.items);
+	});
+```
 
-## Examples
+### Stream-like
 
-See the [examples](./examples) directory.
+If you want more control you can use parsers directly. E.g.:
+
+```javascript
+import { RSSParser } from 'feedify';
+
+const parser = new RSSParser();
+
+parser.write('<rss> ....');
+parser.write('... </rss>');
+// ...
+
+// You MUST close the stream or an infinite loop might happen
+parser.close();
+
+for (let item of parser.items()) {
+	console.log(item);
+}
+
+console.log(parser.feed());
+```
+
+### Error handling
+
+```javascript
+import { parse } from 'feedify';
+
+const text = 'borken feed';
+
+// using .catch
+parse(text)
+	.then(output => console.log(output))
+	.catch(err => {
+		console.log('Oops, ', err);
+	});
+
+// OR, using try catch
+
+try {
+	const output = await parse(text);
+	console.log(output);
+} catch (err) {
+	console.log('Oops, ', err);
+}
+```
 
 ## Contributors
 
