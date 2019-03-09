@@ -22,8 +22,8 @@
 	"types": "dist/index.d.ts",
 	"source": "src/index.ts",
 	"scripts": {
-		"build": "rimraf ./dist && microbundle",
-		"dev": "microbundle watch",
+		"build": "rimraf ./dist && rollup -c",
+		"dev": "rollup -c -w",
 		"prepublishOnly": "npm run build",
 		"test": "jest"
 	},
@@ -35,8 +35,13 @@
 		"@types/jest": "^24.0.6",
 		"globby": "^9.0.0",
 		"jest": "^24.1.0",
-		"microbundle": "^0.10.1",
 		"rimraf": "^2.6.3",
+		"rollup": "^1.6.0",
+		"rollup-plugin-babel": "^4.3.2",
+		"rollup-plugin-commonjs": "^9.2.1",
+		"rollup-plugin-node-resolve": "^4.0.1",
+		"rollup-plugin-terser": "^4.0.4",
+		"rollup-plugin-typescript2": "^0.19.3",
 		"semantic-release": "^15.13.3",
 		"ts-jest": "^24.0.0",
 		"typescript": "^3.3.3333"

@@ -1,0 +1,6 @@
+{
+	"compilerOptions": {
+		"downlevelIteration": true
+	},
+	"exclude": ["node_modules"]
+}

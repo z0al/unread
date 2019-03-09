@@ -2,25 +2,16 @@ const fs = require('fs');
 const path = require('path');
 const { RSSParser } = require('..');
 
-const feed = path.resolve(__dirname, 'data', 'sample.atom');
+const text = fs
+	.readFileSync(path.resolve(__dirname, 'data', 'sample.atom'))
+	.toString();
 
-fs.createReadStream(feed)
-	.on('error', function(error) {
-		console.error(error);
-	})
-	.pipe(new RSSParser())
-	.on('error', function(error) {
-		console.error(error);
-	})
-	.on('feed', function(feed) {
-		console.log({ feed });
-	})
-	.on('readable', function() {
-		let item;
-		while ((item = this.read())) {
-			console.log({ item });
-		}
-	})
-	.on('end', () => {
-		console.log('Finished!');
-	});
+const parser = new RSSParser();
+
+parser.write(text).close();
+
+for (const item of parser.items()) {
+	console.log(item);
+}
+
+console.log(parser.feed());
