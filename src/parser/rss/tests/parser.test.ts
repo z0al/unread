@@ -1,6 +1,5 @@
 // Ours
 import Parser from '..';
-import parse from '../../../parse';
 
 describe('RSS Parser', () => {
 	test('multiple calls to parser.write()', () => {
