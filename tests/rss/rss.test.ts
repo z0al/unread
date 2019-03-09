@@ -6,8 +6,7 @@ import * as path from 'path';
 import * as glob from 'globby';
 
 // Ours
-import { RSSParser } from '../../src';
-import { Parser } from '../../src/parser/types';
+import { parse } from '../../src';
 
 const cwd = path.resolve(__dirname, 'feeds');
 let samples = [];
@@ -19,19 +18,9 @@ beforeAll(async () => {
 
 test('Snapshots', async () => {
 	for (const file of samples) {
-		const output = { items: [], feed: null };
-
-		const parser: Parser = new RSSParser();
-
 		const text = readFileSync(path.resolve(cwd, file)).toString();
 
-		parser.write(text).close();
-
-		for (const item of parser.items()) {
-			output.items.push(item);
-		}
-
-		output.feed = parser.feed();
+		const output = await parse(text);
 
 		expect(output).toMatchSnapshot(file);
 	}

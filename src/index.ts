@@ -1,4 +1,5 @@
 // Ours
+import parse from './parse';
 import RSSParser from './parser/rss';
 
-export { RSSParser };
+export { parse, RSSParser };
