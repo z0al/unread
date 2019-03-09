@@ -20,7 +20,9 @@ export interface Item {
 }
 
 export interface ParserOptions {
-	// Normalize common attributes e.g. title, description
+	// Provide the most common used attributes regardless of the feed
+	// type. For example, `feed.image` will refere to the URL value of
+	// `image` in RSS or `atom:logo` if exists.
 	normalize?: boolean;
 }
 
