@@ -1,6 +1,6 @@
 # Feedify
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors) [![Build](https://badgen.net/travis/z0al/feedify)](https://travis-ci.org/z0al/feedify) [![Bundlephobia](https://badgen.net/bundlephobia/minzip/feedify)](https://bundlephobia.com/result?p=feedify)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors) [![Build](https://img.shields.io/travis/z0al/feedify.svg)](https://travis-ci.org/z0al/feedify) [![Bundlephobia](https://img.shields.io/bundlephobia/minzip/feedify.svg)](https://bundlephobia.com/result?p=feedify)
 
 [![NPM](https://nodei.co/npm/feedify.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/feedify/)
 
