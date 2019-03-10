@@ -1,16 +1,11 @@
+// @ts-check
+
 // Packages
 import * as sx from 'saxes';
 
 // Ours
-import { Item, Parser, ParserOptions } from '../types';
+import { Parser } from '../types';
 import { nsLookup } from './namespaces';
-
-export interface Node extends Item {
-	$name?: string;
-	$prefix?: string;
-	$local?: string;
-	$xhtml?: Boolean;
-}
 
 /**
  * A Robust RSS/Atom Parser
@@ -19,22 +14,21 @@ export interface Node extends Item {
  * @extends {Parser}
  */
 class RSSParser extends Parser {
-	// XML Parser
-	private _parser: sx.SaxesParser;
-
-	// Holds all open tags
-	private _stack: Array<Node> = [];
-
-	// Holds not consumed items
-	private _buffer: Array<Item> = [];
-
-	// The feed element
-	private _feed: Node = null;
-
-	// Are we done processing?
-	private _done: Boolean = false;
-
-	constructor(options: ParserOptions = {}) {
+	/**
+	 * Creates an instance of RSSParser.
+	 *
+	 * @typedef NodeRef
+	 * @property {string} [$name]
+	 * @property {string} [$prefix]
+	 * @property {string} [$local]
+	 * @property {boolean} [$xhtml]
+	 *
+	 * @typedef {import('../types').Item & NodeRef} Node
+	 *
+	 * @param {import('../types').ParserOptions} [options={}]
+	 * @memberof RSSParser
+	 */
+	constructor(options = {}) {
 		super(options);
 
 		// XML Parser
@@ -45,12 +39,36 @@ class RSSParser extends Parser {
 		this._parser.oncdata = this.ontext.bind(this);
 		this._parser.onerror = this.onerror.bind(this);
 		this._parser.onend = this.onend.bind(this);
+
+		/**
+		 * Holds all open tags
+		 *
+		 * @type {Array<Node>}
+		 */
+		this._stack = [];
+
+		/**
+		 * Holds not consumed items
+		 *
+		 * @type {Array<import('../types').Item>}
+		 */
+		this._buffer = [];
+
+		/**
+		 * The feed element
+		 *
+		 * @type {Node}
+		 */
+		this._feed = null;
+
+		// Are we done processing?
+		this._done = false;
 	}
 
 	/**
 	 * @override
 	 */
-	feed(): Item {
+	feed() {
 		const { normalize } = this.options;
 
 		// Remove unnecessary attributes
@@ -80,7 +98,7 @@ class RSSParser extends Parser {
 	/**
 	 * @override
 	 */
-	write(chunk: string) {
+	write(chunk) {
 		this._parser.write(chunk);
 
 		// Enable chaining
@@ -98,14 +116,14 @@ class RSSParser extends Parser {
 	 * @param {sx.SaxesTag} tag
 	 * @memberof Parser
 	 */
-	onopentag(tag: sx.SaxesTag) {
-		const node: Node = {
+	onopentag(tag) {
+		const node = {
 			$name: tag.name,
 			$prefix: tag.prefix,
 			$local: tag.local,
 			ns: tag.uri,
 			attrs: this.attributes(tag),
-			meta: new Map<string, Node | Node[]>(),
+			meta: new Map(),
 			value: ''
 		};
 
@@ -161,7 +179,7 @@ class RSSParser extends Parser {
 	 * @param {sx.SaxesTag} tag
 	 * @memberof Parser
 	 */
-	onclosetag(tag: sx.SaxesTag) {
+	onclosetag(tag) {
 		// NOTE: We only rely on the internal stack to ensure correct output
 		// in some cases. That being said, it's up to the consumer to decide
 		// what happens in case of XML error.
@@ -216,7 +234,7 @@ class RSSParser extends Parser {
 	 * @param {string} text
 	 * @memberof Parser
 	 */
-	ontext(text: string) {
+	ontext(text) {
 		text = text.trim();
 		if (text && this._stack.length > 0) {
 			this._stack[0].value += text;
@@ -227,7 +245,7 @@ class RSSParser extends Parser {
 	 * @param {Error} err
 	 * @memberof Parser
 	 */
-	onerror(err: Error) {
+	onerror(err) {
 		throw err;
 	}
 
@@ -246,7 +264,7 @@ class RSSParser extends Parser {
 	 * @returns
 	 * @memberof Parser
 	 */
-	is_feed(node: Node) {
+	is_feed(node) {
 		return Boolean(
 			node.$name === 'rss' ||
 				(node.$local === 'feed' && nsLookup(node.ns) === 'atom') ||
@@ -262,7 +280,7 @@ class RSSParser extends Parser {
 	 * @returns
 	 * @memberof Parser
 	 */
-	is_item(node: Node) {
+	is_item(node) {
 		return Boolean(
 			node.$name === 'item' ||
 				(node.$local === 'entry' && nsLookup(node.ns) === 'atom')
@@ -276,10 +294,15 @@ class RSSParser extends Parser {
 	 * @returns
 	 * @memberof Parser
 	 */
-	attributes(tag: sx.SaxesTag) {
+	attributes(tag) {
+		/**
+		 * @type {Map<string, string>}
+		 */
+		const attrs = new Map();
+
 		return Object.entries(tag.attributes).reduce(
 			(map, [name, meta]) => map.set(name, meta.value),
-			new Map<string, string>()
+			attrs
 		);
 	}
 
@@ -291,7 +314,7 @@ class RSSParser extends Parser {
 	 * @returns
 	 * @memberof Parser
 	 */
-	assign(parent: Node, child: Node) {
+	assign(parent, child) {
 		// Keep the name
 		const key = child.$name;
 
@@ -304,7 +327,10 @@ class RSSParser extends Parser {
 			return;
 		}
 
-		let node: Node | Node[];
+		/**
+		 * @type {Node | Node[]}
+		 */
+		let node;
 
 		// Handle duplicated keys
 		if (parent.meta.has(key)) {
@@ -330,7 +356,7 @@ class RSSParser extends Parser {
 	 * @returns
 	 * @memberof Parser
 	 */
-	equals(node: Node, tag: sx.SaxesTag) {
+	equals(node, tag) {
 		if (node.attrs.size !== Object.keys(tag.attributes).length) {
 			return false;
 		}
@@ -341,10 +367,9 @@ class RSSParser extends Parser {
 			node.$prefix === tag.prefix &&
 			node.ns === tag.uri &&
 			Array.from(node.attrs).every(([k, v]) => {
-				return (
-					tag.attributes[k] &&
-					(tag.attributes[k] as sx.SaxesAttribute).value === v
-				);
+				const sxAttr = tag.attributes[k];
+				// @ts-ignore
+				return sxAttr && sxAttr.value === v;
 			})
 		);
 	}
@@ -364,12 +389,12 @@ class RSSParser extends Parser {
 	 *
 	 * 	We only recognize namespaces specified in ./namespaces.ts
 	 *
-	 * @param {Item} node
+	 * @param {import('../types').Item} node
 	 * @param {string[]} names
 	 * @returns
 	 * @memberof Parser
 	 */
-	query(node: Item, names: string[]) {
+	query(node, names) {
 		for (const name of names) {
 			// e.g atom:link => prefix=atom, local=link
 			let [prefix, local] = name.trim().split(':');
@@ -395,8 +420,12 @@ class RSSParser extends Parser {
 			const key = prefix + ':' + local;
 			const n = node.meta.get(key) || node.meta.get(local);
 
-			// A helper matcher
-			const match = (obj: Node) => {
+			/**
+			 * A helper matcher
+			 *
+			 * @param {Node} obj
+			 */
+			const match = obj => {
 				if (nsLookup(obj.ns) !== prefix) return false;
 
 				if (attr) {
@@ -429,7 +458,7 @@ class RSSParser extends Parser {
 	 * @param {Node} node
 	 * @memberof Parser
 	 */
-	normalize(node: Node) {
+	normalize(node) {
 		const id = this.query(node, ['guid', 'atom:id']);
 		if (id) {
 			node.id = id.value || '';
@@ -488,7 +517,7 @@ class RSSParser extends Parser {
 	 * @param {Node} node
 	 * @memberof Parser
 	 */
-	clear(node: Node) {
+	clear(node) {
 		if (node.value === '') {
 			delete node.value;
 		}

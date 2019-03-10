@@ -1,8 +1,10 @@
+// @ts-check
+
 // Ours
-import Parser, { Node } from '..';
+import Parser from '..';
 
 describe('parser.query', () => {
-	let node: Node, parser: Parser;
+	let node, parser;
 
 	beforeEach(() => {
 		node = { attrs: new Map(), meta: new Map(), ns: '' };
@@ -10,7 +12,7 @@ describe('parser.query', () => {
 	});
 
 	test('simple term', () => {
-		const title: Node = {
+		const title = {
 			attrs: new Map(),
 			meta: new Map(),
 			value: 'my title',
@@ -23,7 +25,7 @@ describe('parser.query', () => {
 	});
 
 	test('namespaced prefix', () => {
-		const title: Node = {
+		const title = {
 			attrs: new Map(),
 			meta: new Map(),
 			value: 'hello world',
@@ -34,7 +36,7 @@ describe('parser.query', () => {
 		expect(parser.query(node, ['title'])).toBeUndefined();
 		expect(parser.query(node, ['atom:title'])).toBe(title);
 
-		const link: Node = {
+		const link = {
 			attrs: new Map(),
 			meta: new Map(),
 			value: 'https://example.com',
@@ -46,7 +48,7 @@ describe('parser.query', () => {
 	});
 
 	test('duplicated keys', () => {
-		const titles: Node[] = [
+		const titles = [
 			{
 				attrs: new Map(),
 				meta: new Map(),
@@ -68,7 +70,7 @@ describe('parser.query', () => {
 	});
 
 	test('filter by attribute', () => {
-		const links: Node[] = [
+		const links = [
 			{
 				attrs: new Map([['rel', 'alternate']]),
 				meta: new Map(),

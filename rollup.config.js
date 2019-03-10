@@ -3,7 +3,6 @@ import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
-import typescript from '@wessberg/rollup-plugin-ts';
 
 // Ours
 import pkg from './package.json';
@@ -27,9 +26,8 @@ export default {
 	],
 	plugins: [
 		resolve(),
-		commonjs(),
 		babel({ exclude: 'node_modules/**' }),
-		typescript(),
+		commonjs(),
 		terser()
 	]
 };

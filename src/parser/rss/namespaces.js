@@ -1,3 +1,5 @@
+// @ts-check
+
 /*
  * Known namespaces
  *
@@ -8,6 +10,10 @@ const namespaces = {
 	'http://purl.org/rss/1.0/modules/content/': 'content'
 };
 
-export function nsLookup(uri: string) {
+/**
+ * @param {string} uri
+ * @returns
+ */
+export function nsLookup(uri) {
 	return namespaces[uri] || '';
 }

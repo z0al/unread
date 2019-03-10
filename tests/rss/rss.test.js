@@ -1,9 +1,11 @@
+// @ts-check
+
 // Native
 import { readFileSync } from 'fs';
 import * as path from 'path';
 
 // Packages
-import * as glob from 'globby';
+import glob from 'globby';
 
 // Ours
 import { parse } from '../../src';

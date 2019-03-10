@@ -1,19 +1,19 @@
+// @ts-check
+
 // Ours
 import RSS from './parser/rss';
-import { Item } from './parser/types';
-
-interface ParserResult {
-	feed: Item;
-	items: Item[];
-}
 
 /**
  * A simple promise interface for the parsing RSS/Atom feeds.
  *
+ * @typedef ParserResult
+ * @property {import('./parser/types').Item} feed
+ * @property {import('./parser/types').Item[]} items
+ *
  * @param {string} text
  * @returns {Promise<ParserResult>}
  */
-async function parse(text: string): Promise<ParserResult> {
+async function parse(text) {
 	const result = { feed: null, items: [] };
 
 	const parser = new RSS();
