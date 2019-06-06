@@ -409,7 +409,7 @@ class RSSParser extends Parser {
 			}
 
 			// Filter by attribute? e.g link[rel=self]
-			const attribute = /\[(\w+)=(\w+)\]$/su.exec(local);
+			const attribute = /\[(\w+)=(\w+)\]$/u.exec(local);
 			if (attribute) {
 				// e.g. [a=b] => {key: "a", value: "b"}
 				attr = { key: attribute[1], value: attribute[2] };
