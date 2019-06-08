@@ -4,7 +4,7 @@
 
 [![NPM](https://nodei.co/npm/feedify.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/feedify/)
 
-A package for parsing RSS, Atom, and (soon) JSON feeds.
+A package for parsing RSS 2.0, Atom 1.0.
 
 ## Installation
 

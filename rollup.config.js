@@ -11,11 +11,6 @@ export default {
 	input: pkg.source,
 	output: [
 		{
-			file: pkg.browser,
-			format: 'umd',
-			name: 'Feedify'
-		},
-		{
 			file: pkg.module,
 			format: 'es'
 		},
@@ -24,6 +19,7 @@ export default {
 			format: 'cjs'
 		}
 	],
+	external: ['string_decoder', 'stream'],
 	plugins: [
 		resolve(),
 		babel({ exclude: 'node_modules/**' }),
