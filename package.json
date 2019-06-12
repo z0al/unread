@@ -28,7 +28,7 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"sax": "^1.2.4"
+		"saxes": "^3.1.10"
 	},
 	"devDependencies": {
 		"@babel/plugin-proposal-class-properties": "^7.3.4",

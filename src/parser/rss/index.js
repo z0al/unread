@@ -1,7 +1,7 @@
 // @ts-check
 
 // Packages
-import sax from 'sax';
+import saxes from 'saxes';
 
 // Ours
 import { Parser } from '../types';
@@ -32,11 +32,7 @@ class RSSParser extends Parser {
 		super(options);
 
 		// XML Parser
-		this._parser = new sax.SAXParser(true, {
-			xmlns: true,
-			position: false,
-			lowercase: true
-		});
+		this._parser = new saxes.SaxesParser({ xmlns: true, position: false });
 		this._parser.onopentag = this.onopentag.bind(this);
 		this._parser.onclosetag = this.onclosetag.bind(this);
 		this._parser.ontext = this.ontext.bind(this);
@@ -50,14 +46,6 @@ class RSSParser extends Parser {
 		 * @type {Array<Node>}
 		 */
 		this._stack = [];
-
-		/**
-		 * Holds the current opened HTML tag when since sax doesn't pass
-		 * the full tag on `onclosetag`.
-		 *
-		 * @type {sax.QualifiedTag}
-		 */
-		this._html_tag = null;
 
 		/**
 		 * Holds not consumed items
@@ -126,7 +114,7 @@ class RSSParser extends Parser {
 	}
 
 	/**
-	 * @param {sax.QualifiedTag} tag
+	 * @param {saxes.SaxesTag} tag
 	 * @memberof Parser
 	 */
 	onopentag(tag) {
@@ -153,8 +141,6 @@ class RSSParser extends Parser {
 			if (!tag.isSelfClosing) {
 				this._stack[0].value += '>';
 			}
-
-			this._html_tag = tag;
 		} else {
 			// xhtml?
 			if (node.attrs.get('type') === 'xhtml') {
@@ -191,7 +177,7 @@ class RSSParser extends Parser {
 	}
 
 	/**
-	 * @param {string} tag
+	 * @param {saxes.SaxesTag} tag
 	 * @memberof Parser
 	 */
 	onclosetag(tag) {
@@ -207,7 +193,7 @@ class RSSParser extends Parser {
 
 		// Inside xhtml
 		if (node.$xhtml && !this.equals(node, tag)) {
-			node.value += this._html_tag.isSelfClosing ? `/>` : `</${tag}>`;
+			node.value += tag.isSelfClosing ? '/>' : `</${tag.name}>`;
 		} else {
 			// Consume node
 			this._stack.shift();
@@ -305,7 +291,7 @@ class RSSParser extends Parser {
 	/**
 	 * Parse tag attributes
 	 *
-	 * @param {sax.QualifiedTag} tag
+	 * @param {saxes.SaxesTag} tag
 	 * @returns
 	 * @memberof Parser
 	 */
@@ -367,12 +353,12 @@ class RSSParser extends Parser {
 	 * Check if a node and an XML tag are equal
 	 *
 	 * @param {Node} node
-	 * @param {string} tag
+	 * @param {saxes.SaxesTag} tag
 	 * @returns
 	 * @memberof Parser
 	 */
 	equals(node, tag) {
-		return node.$name === tag;
+		return node.$name === tag.name;
 	}
 
 	/**
