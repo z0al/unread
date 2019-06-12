@@ -12,14 +12,6 @@ A package for parsing RSS 2.0, Atom 1.0.
 npm add feedify
 ```
 
-### React Native
-
-To use this package in React Native you need to install these dependencies first:
-
-```sh
-npm add stream string_decoder
-```
-
 ## Usage
 
 ### Simple
