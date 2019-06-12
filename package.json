@@ -1,7 +1,7 @@
 {
 	"name": "feedify",
 	"version": "0.0.0-semantically-released",
-	"description": "A Robust RSS, Atom, and JSON feeds parser in JavaScript",
+	"description": "A package for parsing RSS and Atom feeds",
 	"keywords": [
 		"atom",
 		"feed",
