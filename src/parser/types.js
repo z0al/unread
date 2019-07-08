@@ -12,8 +12,6 @@
  * @property {string} [value]
  * @property {string} [id]
  * @property {string} [title]
- * @property {string} [summary]
- * @property {string} [content]
  * @property {string} [image]
  * @property {string} [published]
  * @property {string} [updated]

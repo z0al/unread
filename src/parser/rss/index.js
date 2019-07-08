@@ -78,7 +78,7 @@ class RSSParser extends Parser {
 
 		// Normalize?
 		if (normalize) {
-			this.normalize(node);
+			node = this.normalize(node);
 		}
 
 		return node;
@@ -381,7 +381,7 @@ class RSSParser extends Parser {
 	 * @returns
 	 * @memberof Parser
 	 */
-	query(node, names) {
+	static query(node, names) {
 		for (const name of names) {
 			// e.g atom:link => prefix=atom, local=link
 			let [prefix, local] = name.trim().split(':');
@@ -446,56 +446,49 @@ class RSSParser extends Parser {
 	 * @memberof Parser
 	 */
 	normalize(node) {
-		const id = this.query(node, ['guid', 'atom:id']);
-		if (id) {
-			node.id = id.value || '';
-		}
+		const self = RSSParser;
 
-		const title = this.query(node, ['title', 'atom:title']);
-		if (title) {
-			node.title = title.value || '';
-		}
+		return {
+			...node,
 
-		const summary = this.query(node, [
-			'description',
-			'atom:summary',
-			'atom:subtitle'
-		]);
-		if (summary) {
-			node.summary = summary.value || '';
-		}
+			get id() {
+				const id = self.query(node, ['guid', 'atom:id']);
+				return id && id.value;
+			},
 
-		const content = this.query(node, ['content:encoded', 'atom:content']);
-		if (content) {
-			node.content = content.value || '';
-		}
+			get title() {
+				const title = self.query(node, ['title', 'atom:title']);
+				return title && title.value;
+			},
 
-		const published = this.query(node, ['pubDate', 'atom:published']);
-		if (published) {
-			node.published = published.value || '';
-		}
+			get published() {
+				const published = self.query(node, ['pubDate', 'atom:published']);
+				return published && published.value;
+			},
 
-		const updated = this.query(node, ['lastBuildDate', 'atom:updated']);
-		if (updated) {
-			node.updated = updated.value || '';
-		}
+			get updated() {
+				const updated = self.query(node, ['lastBuildDate', 'atom:updated']);
+				return updated && updated.value;
+			},
 
-		const image = this.query(node, ['image', 'atom:logo']);
-		if (image) {
-			// RSS
-			if (image.meta.has('url')) {
-				const url = image.meta.get('url');
-				if (!(url instanceof Array)) {
-					node.image = url.value || '';
+			get image() {
+				const image = self.query(node, ['image', 'atom:logo']);
+
+				if (image) {
+					// RSS
+					if (image.meta.has('url')) {
+						const url = image.meta.get('url');
+						if (!(url instanceof Array)) {
+							return url.value;
+						}
+					}
+					// Atom
+					else {
+						return image.value;
+					}
 				}
 			}
-			// Atom
-			else {
-				node.image = image.value || '';
-			}
-		}
-
-		return node;
+		};
 	}
 
 	/**

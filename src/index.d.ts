@@ -13,8 +13,6 @@ export interface Item {
 	// Normalized
 	id?: string;
 	title?: string;
-	summary?: string;
-	content?: string;
 	image?: string;
 	published?: string;
 	updated?: string;
