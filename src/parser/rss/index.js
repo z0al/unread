@@ -381,7 +381,7 @@ class RSSParser extends Parser {
 	 * @returns
 	 * @memberof Parser
 	 */
-	static query(node, names) {
+	query(node, names) {
 		for (const name of names) {
 			// e.g atom:link => prefix=atom, local=link
 			let [prefix, local] = name.trim().split(':');
@@ -446,33 +446,41 @@ class RSSParser extends Parser {
 	 * @memberof Parser
 	 */
 	normalize(node) {
-		const self = RSSParser;
-
 		return {
 			...node,
 
+			/**
+			 * Attribute selector
+			 *
+			 * @param {string[]} selectors
+			 */
+			get: selectors => {
+				return this.query(node, selectors);
+			},
+
+			// Common attributes
 			get id() {
-				const id = self.query(node, ['guid', 'atom:id']);
+				const id = this.get(['guid', 'atom:id']);
 				return id && id.value;
 			},
 
 			get title() {
-				const title = self.query(node, ['title', 'atom:title']);
+				const title = this.get(['title', 'atom:title']);
 				return title && title.value;
 			},
 
 			get published() {
-				const published = self.query(node, ['pubDate', 'atom:published']);
+				const published = this.get(['pubDate', 'atom:published']);
 				return published && published.value;
 			},
 
 			get updated() {
-				const updated = self.query(node, ['lastBuildDate', 'atom:updated']);
+				const updated = this.get(['lastBuildDate', 'atom:updated']);
 				return updated && updated.value;
 			},
 
 			get image() {
-				const image = self.query(node, ['image', 'atom:logo']);
+				const image = this.get(['image', 'atom:logo']);
 
 				if (image) {
 					// RSS

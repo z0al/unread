@@ -9,6 +9,7 @@
  * @property {Map<string, string>} attrs
  * @property {Map<string, Item | Item[]>} meta
  * @property {string} ns
+ * @property {(s: string[])=> Item} [get]
  * @property {string} [value]
  * @property {string} [id]
  * @property {string} [title]

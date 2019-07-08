@@ -4,10 +4,11 @@
 import Parser from '..';
 
 describe('Parser.query', () => {
-	let node;
+	let node, parser;
 
 	beforeEach(() => {
 		node = { attrs: new Map(), meta: new Map(), ns: '' };
+		parser = new Parser();
 	});
 
 	test('simple term', () => {
@@ -20,7 +21,7 @@ describe('Parser.query', () => {
 
 		node.meta.set('title', title);
 
-		expect(Parser.query(node, ['title'])).toBe(title);
+		expect(parser.query(node, ['title'])).toBe(title);
 	});
 
 	test('namespaced prefix', () => {
@@ -32,8 +33,8 @@ describe('Parser.query', () => {
 		};
 		node.meta.set('title', title);
 
-		expect(Parser.query(node, ['title'])).toBeUndefined();
-		expect(Parser.query(node, ['atom:title'])).toBe(title);
+		expect(parser.query(node, ['title'])).toBeUndefined();
+		expect(parser.query(node, ['atom:title'])).toBe(title);
 
 		const link = {
 			attrs: new Map(),
@@ -43,7 +44,7 @@ describe('Parser.query', () => {
 		};
 
 		node.meta.set('atom:link', link);
-		expect(Parser.query(node, ['atom:link', 'title'])).toBe(link);
+		expect(parser.query(node, ['atom:link', 'title'])).toBe(link);
 	});
 
 	test('duplicated keys', () => {
@@ -64,8 +65,8 @@ describe('Parser.query', () => {
 
 		node.meta.set('title', titles);
 
-		expect(Parser.query(node, ['title'])).toBe(titles[0]);
-		expect(Parser.query(node, ['atom:title'])).toBe(titles[1]);
+		expect(parser.query(node, ['title'])).toBe(titles[0]);
+		expect(parser.query(node, ['atom:title'])).toBe(titles[1]);
 	});
 
 	test('filter by attribute', () => {
@@ -86,7 +87,7 @@ describe('Parser.query', () => {
 
 		node.meta.set('link', links);
 
-		expect(Parser.query(node, ['atom:link'])).toBe(links[0]);
-		expect(Parser.query(node, ['atom:link[rel=self]'])).toBe(links[1]);
+		expect(parser.query(node, ['atom:link'])).toBe(links[0]);
+		expect(parser.query(node, ['atom:link[rel=self]'])).toBe(links[1]);
 	});
 });

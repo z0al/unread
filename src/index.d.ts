@@ -10,6 +10,9 @@ export interface Item {
 	ns: string;
 	value?: string;
 
+	// Helpers
+	get: (selectors: string[]) => Item;
+
 	// Normalized
 	id?: string;
 	title?: string;

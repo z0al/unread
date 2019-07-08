@@ -11,6 +11,7 @@ Object {
       "xmlns:georss" => "http://www.georss.org/georss",
       "xmlns:geo" => "http://www.w3.org/2003/01/geo/wgs84_pos#",
     },
+    "get": [Function],
     "id": "http://blog.flickr.net/en/feed/atom/",
     "image": undefined,
     "meta": Map {
@@ -108,6 +109,7 @@ Object {
   "items": Array [
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=82028",
       "image": undefined,
       "meta": Map {
@@ -252,6 +254,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=82017",
       "image": undefined,
       "meta": Map {
@@ -345,6 +348,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=82003",
       "image": undefined,
       "meta": Map {
@@ -576,6 +580,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=81994",
       "image": undefined,
       "meta": Map {
@@ -764,6 +769,7 @@ The Flickr Team</p>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=81979",
       "image": undefined,
       "meta": Map {
@@ -907,6 +913,7 @@ The Flickr Team</p>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=81971",
       "image": undefined,
       "meta": Map {
@@ -1041,6 +1048,7 @@ The Flickr Team</p>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=81957",
       "image": undefined,
       "meta": Map {
@@ -1168,6 +1176,7 @@ The Flickr Team</p>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=81959",
       "image": undefined,
       "meta": Map {
@@ -1259,6 +1268,7 @@ The Flickr Team</p>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=81946",
       "image": undefined,
       "meta": Map {
@@ -1428,6 +1438,7 @@ The Flickr Team</p>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=81942",
       "image": undefined,
       "meta": Map {
@@ -1559,6 +1570,7 @@ The Flickr Team</p>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=81930",
       "image": undefined,
       "meta": Map {
@@ -1697,6 +1709,7 @@ The Flickr Team</p>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "http://blog.flickr.net/?p=81924",
       "image": undefined,
       "meta": Map {
@@ -1844,6 +1857,7 @@ Object {
       "version" => "2.0",
       "xmlns:cc" => "http://cyber.law.harvard.edu/rss/creativeCommonsRssModule.html",
     },
+    "get": [Function],
     "id": undefined,
     "image": "https://cdn-images-1.medium.com/proxy/1*TGH72Nnw24QL3iV9IOm4VA.png",
     "meta": Map {
@@ -1937,6 +1951,7 @@ Object {
   "items": Array [
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://medium.com/p/99e62f56714a",
       "image": undefined,
       "meta": Map {
@@ -2024,6 +2039,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://medium.com/p/bd1489f05a1d",
       "image": undefined,
       "meta": Map {
@@ -2105,6 +2121,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://medium.com/p/503dd91c2edd",
       "image": undefined,
       "meta": Map {
@@ -2180,6 +2197,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://medium.com/p/92ab3c47abc8",
       "image": undefined,
       "meta": Map {
@@ -2267,6 +2285,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://medium.com/p/e9edd5b655d8",
       "image": undefined,
       "meta": Map {
@@ -2348,6 +2367,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://medium.com/p/4c7844560887",
       "image": undefined,
       "meta": Map {
@@ -2429,6 +2449,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://medium.com/p/aeee8ef5dacf",
       "image": undefined,
       "meta": Map {
@@ -2498,6 +2519,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://medium.com/p/4b9602c972e8",
       "image": undefined,
       "meta": Map {
@@ -2585,6 +2607,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://medium.com/p/386506ae62b9",
       "image": undefined,
       "meta": Map {
@@ -2646,6 +2669,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://medium.com/p/dfceca24042",
       "image": undefined,
       "meta": Map {
@@ -2738,6 +2762,7 @@ Object {
       "xmlns:atom" => "http://www.w3.org/2005/Atom",
       "version" => "2.0",
     },
+    "get": [Function],
     "id": undefined,
     "image": undefined,
     "meta": Map {
@@ -2782,6 +2807,7 @@ Object {
   "items": Array [
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/fix-like-no-ones-watching/",
       "image": undefined,
       "meta": Map {
@@ -2840,6 +2866,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/making-setinterval-declarative-with-react-hooks/",
       "image": undefined,
       "meta": Map {
@@ -3293,6 +3320,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/react-as-a-ui-runtime/",
       "image": undefined,
       "meta": Map {
@@ -4116,6 +4144,7 @@ fiber<span class=\\"token punctuation\\">.</span>hooks <span class=\\"token oper
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/why-isnt-x-a-hook/",
       "image": undefined,
       "meta": Map {
@@ -4319,6 +4348,7 @@ fiber<span class=\\"token punctuation\\">.</span>hooks <span class=\\"token oper
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/the-bug-o-notation/",
       "image": undefined,
       "meta": Map {
@@ -4514,6 +4544,7 @@ fiber<span class=\\"token punctuation\\">.</span>hooks <span class=\\"token oper
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/preparing-for-tech-talk-part-2-what-why-and-how/",
       "image": undefined,
       "meta": Map {
@@ -4746,6 +4777,7 @@ fiber<span class=\\"token punctuation\\">.</span>hooks <span class=\\"token oper
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/the-elements-of-ui-engineering/",
       "image": undefined,
       "meta": Map {
@@ -4849,6 +4881,7 @@ fiber<span class=\\"token punctuation\\">.</span>hooks <span class=\\"token oper
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/things-i-dont-know-as-of-2018/",
       "image": undefined,
       "meta": Map {
@@ -5003,6 +5036,7 @@ fiber<span class=\\"token punctuation\\">.</span>hooks <span class=\\"token oper
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/preparing-for-tech-talk-part-1-motivation/",
       "image": undefined,
       "meta": Map {
@@ -5168,6 +5202,7 @@ fiber<span class=\\"token punctuation\\">.</span>hooks <span class=\\"token oper
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/why-do-hooks-rely-on-call-order/",
       "image": undefined,
       "meta": Map {
@@ -5639,6 +5674,7 @@ Status
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/optimized-for-change/",
       "image": undefined,
       "meta": Map {
@@ -5697,6 +5733,7 @@ Status
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/how-does-setstate-know-what-to-do/",
       "image": undefined,
       "meta": Map {
@@ -5870,6 +5907,7 @@ inst<span class=\\"token punctuation\\">.</span>props <span class=\\"token opera
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/my-wishlist-for-hot-reloading/",
       "image": undefined,
       "meta": Map {
@@ -6072,6 +6110,7 @@ window<span class=\\"token punctuation\\">.</span><span class=\\"token function-
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/why-do-react-elements-have-typeof-property/",
       "image": undefined,
       "meta": Map {
@@ -6200,6 +6239,7 @@ messageEl<span class=\\"token punctuation\\">.</span>innerHTML <span class=\\"to
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/how-does-react-tell-a-class-from-a-function/",
       "image": undefined,
       "meta": Map {
@@ -6596,6 +6636,7 @@ console<span class=\\"token punctuation\\">.</span><span class=\\"token function
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://overreacted.io/why-do-we-write-super-props/",
       "image": undefined,
       "meta": Map {
@@ -6770,6 +6811,7 @@ Object {
     "attrs": Map {
       "xmlns" => "http://www.w3.org/2005/Atom",
     },
+    "get": [Function],
     "id": "urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af6",
     "image": undefined,
     "meta": Map {
@@ -6825,6 +6867,7 @@ Object {
   "items": Array [
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a",
       "image": undefined,
       "meta": Map {
@@ -6921,6 +6964,7 @@ Object {
       "xml:lang" => "en-US",
       "xmlns" => "http://www.w3.org/2005/Atom",
     },
+    "get": [Function],
     "id": "https://status.slack.com",
     "image": undefined,
     "meta": Map {
@@ -6985,6 +7029,7 @@ Object {
   "items": Array [
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-02/69d120f665f3923c",
       "image": undefined,
       "meta": Map {
@@ -7109,6 +7154,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-02/d7b84e659de62c1e",
       "image": undefined,
       "meta": Map {
@@ -7193,6 +7239,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-02/06202409be3748a8",
       "image": undefined,
       "meta": Map {
@@ -7307,6 +7354,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-02/4b0afffbb8ef6169",
       "image": undefined,
       "meta": Map {
@@ -7391,6 +7439,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-02/6f76cbee0127cc14",
       "image": undefined,
       "meta": Map {
@@ -7449,6 +7498,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-02/e9f24f8067bbd139",
       "image": undefined,
       "meta": Map {
@@ -7533,6 +7583,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-02/f0db7f15a8ffd08e",
       "image": undefined,
       "meta": Map {
@@ -7617,6 +7668,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-02/5cce6446b18753c8",
       "image": undefined,
       "meta": Map {
@@ -7675,6 +7727,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-02/1a04824a80af8810",
       "image": undefined,
       "meta": Map {
@@ -7733,6 +7786,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-02/a8216819dca5d688",
       "image": undefined,
       "meta": Map {
@@ -7857,6 +7911,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-01/1513ef2c0027d002",
       "image": undefined,
       "meta": Map {
@@ -7943,6 +7998,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-01/2a10adb34c0b1f4e",
       "image": undefined,
       "meta": Map {
@@ -8047,6 +8103,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-01/8240d05d98def202",
       "image": undefined,
       "meta": Map {
@@ -8191,6 +8248,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-01/65dd2378d9565469",
       "image": undefined,
       "meta": Map {
@@ -8325,6 +8383,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-01/5aed0201fcd66efc",
       "image": undefined,
       "meta": Map {
@@ -8429,6 +8488,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-01/a9ca29916211bcb1",
       "image": undefined,
       "meta": Map {
@@ -8513,6 +8573,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-01/59738ee8cdb3ab7f",
       "image": undefined,
       "meta": Map {
@@ -8617,6 +8678,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-12/9a0d69ecc7f5ee93",
       "image": undefined,
       "meta": Map {
@@ -8701,6 +8763,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-01/cfb2b908120ed793",
       "image": undefined,
       "meta": Map {
@@ -8785,6 +8848,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-01/ffed22614a5751cc",
       "image": undefined,
       "meta": Map {
@@ -8889,6 +8953,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2019-01/0072a982ccb40d17",
       "image": undefined,
       "meta": Map {
@@ -8993,6 +9058,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-12/7976a69e0344ea82",
       "image": undefined,
       "meta": Map {
@@ -9051,6 +9117,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-12/11d58a6f37b53a8e",
       "image": undefined,
       "meta": Map {
@@ -9165,6 +9232,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-12/47c45b1ed9ce5332",
       "image": undefined,
       "meta": Map {
@@ -9269,6 +9337,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-12/bc0f970e626e80fd",
       "image": undefined,
       "meta": Map {
@@ -9327,6 +9396,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-12/0582a24382b2166c",
       "image": undefined,
       "meta": Map {
@@ -9385,6 +9455,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-12/480025e027dfd320",
       "image": undefined,
       "meta": Map {
@@ -9469,6 +9540,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-12/9de790501e8e7733",
       "image": undefined,
       "meta": Map {
@@ -9593,6 +9665,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-12/a4ade99dc2606c86",
       "image": undefined,
       "meta": Map {
@@ -9707,6 +9780,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-12/dfe522d4e1143317",
       "image": undefined,
       "meta": Map {
@@ -9765,6 +9839,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/b618435fde16c719",
       "image": undefined,
       "meta": Map {
@@ -9859,6 +9934,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/57083c5a9ee7a44d",
       "image": undefined,
       "meta": Map {
@@ -9973,6 +10049,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/e3c26eb6ed8557da",
       "image": undefined,
       "meta": Map {
@@ -10077,6 +10154,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/b7f3e3f62e67d909",
       "image": undefined,
       "meta": Map {
@@ -10201,6 +10279,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/dfb286a2a9c9c5c7",
       "image": undefined,
       "meta": Map {
@@ -10325,6 +10404,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/8bde70551adfa4e5",
       "image": undefined,
       "meta": Map {
@@ -10429,6 +10509,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/e1159d007796a987",
       "image": undefined,
       "meta": Map {
@@ -10533,6 +10614,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/8b93d7ed11dae018",
       "image": undefined,
       "meta": Map {
@@ -10657,6 +10739,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/91ea065b78fee016",
       "image": undefined,
       "meta": Map {
@@ -10791,6 +10874,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/8abae7811317864c",
       "image": undefined,
       "meta": Map {
@@ -11025,6 +11109,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/48527a5ccfb38110",
       "image": undefined,
       "meta": Map {
@@ -11129,6 +11214,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/aa55a879f52285ab",
       "image": undefined,
       "meta": Map {
@@ -11253,6 +11339,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/1788c1938cd5eeac",
       "image": undefined,
       "meta": Map {
@@ -11311,6 +11398,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/97e8bbad78bd2475",
       "image": undefined,
       "meta": Map {
@@ -11369,6 +11457,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-11/4dee90803f32f8bc",
       "image": undefined,
       "meta": Map {
@@ -11473,6 +11562,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/85fb7a6305ba28ba",
       "image": undefined,
       "meta": Map {
@@ -11557,6 +11647,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/d2fc44fde1871338",
       "image": undefined,
       "meta": Map {
@@ -11641,6 +11732,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/1c4a2cf8bd32a071",
       "image": undefined,
       "meta": Map {
@@ -11745,6 +11837,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/d16406e5b360ed21",
       "image": undefined,
       "meta": Map {
@@ -11869,6 +11962,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/8afdfdd3b594a44d",
       "image": undefined,
       "meta": Map {
@@ -11953,6 +12047,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/ea787268537b0b8b",
       "image": undefined,
       "meta": Map {
@@ -12037,6 +12132,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/1461cbba9b59dc68",
       "image": undefined,
       "meta": Map {
@@ -12121,6 +12217,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/d5e4b5097bc15673",
       "image": undefined,
       "meta": Map {
@@ -12245,6 +12342,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/d130bf0b7398126d",
       "image": undefined,
       "meta": Map {
@@ -12379,6 +12477,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/875b825326a3c962",
       "image": undefined,
       "meta": Map {
@@ -12523,6 +12622,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/3390291b1e6ecd54",
       "image": undefined,
       "meta": Map {
@@ -12607,6 +12707,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/09a2d5dd583da1ca",
       "image": undefined,
       "meta": Map {
@@ -12691,6 +12792,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/7ec438ee4c62c813",
       "image": undefined,
       "meta": Map {
@@ -12761,6 +12863,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/72cd786c10d71000",
       "image": undefined,
       "meta": Map {
@@ -12845,6 +12948,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/1c354f7a43f6d32c",
       "image": undefined,
       "meta": Map {
@@ -12969,6 +13073,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/2464df5576e7c501",
       "image": undefined,
       "meta": Map {
@@ -13063,6 +13168,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/33d5d5753e355491",
       "image": undefined,
       "meta": Map {
@@ -13167,6 +13273,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/f46274dc89de1bef",
       "image": undefined,
       "meta": Map {
@@ -13225,6 +13332,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/16528d681fd6d493",
       "image": undefined,
       "meta": Map {
@@ -13295,6 +13403,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/707ab942cce634b9",
       "image": undefined,
       "meta": Map {
@@ -13365,6 +13474,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/8a3a5ecd41eb7c37",
       "image": undefined,
       "meta": Map {
@@ -13479,6 +13589,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/8c40a362f50cd01f",
       "image": undefined,
       "meta": Map {
@@ -13593,6 +13704,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-10/c6623ec51663130d",
       "image": undefined,
       "meta": Map {
@@ -13697,6 +13809,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/b607be9581cadb9f",
       "image": undefined,
       "meta": Map {
@@ -13811,6 +13924,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/f9510c1608e09a89",
       "image": undefined,
       "meta": Map {
@@ -13905,6 +14019,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/3311b7dde2ec2491",
       "image": undefined,
       "meta": Map {
@@ -13975,6 +14090,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/58313e70c7f3b713",
       "image": undefined,
       "meta": Map {
@@ -14067,6 +14183,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/2f0cb7104c3958ad",
       "image": undefined,
       "meta": Map {
@@ -14181,6 +14298,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/6e89370a2038dd43",
       "image": undefined,
       "meta": Map {
@@ -14275,6 +14393,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/7dea1cd14cd0f657",
       "image": undefined,
       "meta": Map {
@@ -14345,6 +14464,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/2b2dc2db9e67258d",
       "image": undefined,
       "meta": Map {
@@ -14459,6 +14579,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/60787986d73e3949",
       "image": undefined,
       "meta": Map {
@@ -14573,6 +14694,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/131958265ab58e95",
       "image": undefined,
       "meta": Map {
@@ -14643,6 +14765,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/cf832e259da55b35",
       "image": undefined,
       "meta": Map {
@@ -14737,6 +14860,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-09/00b128e1f5726bff",
       "image": undefined,
       "meta": Map {
@@ -14831,6 +14955,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-08/69f62ebb36a3b4db",
       "image": undefined,
       "meta": Map {
@@ -14901,6 +15026,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-08/c635ec8da0f4c469",
       "image": undefined,
       "meta": Map {
@@ -14971,6 +15097,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-08/e772478f7e05f532",
       "image": undefined,
       "meta": Map {
@@ -15085,6 +15212,7 @@ Object {
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://status.slack.com/2018-08/389f96c3886d7d56",
       "image": undefined,
       "meta": Map {
@@ -15209,6 +15337,7 @@ Object {
       "xmlns:thr" => "http://purl.org/syndication/thread/1.0",
       "xml:lang" => "en-us",
     },
+    "get": [Function],
     "id": "https://www.tbray.org/ongoing/",
     "image": "rsslogo.jpg",
     "meta": Map {
@@ -15319,6 +15448,7 @@ Object {
   "items": Array [
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/05/26/SQS",
       "image": undefined,
       "meta": Map {
@@ -15453,6 +15583,7 @@ design doesn’t have a queuing component, quite possibly you’re Doing It Wron
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/05/17/Sad-Times",
       "image": undefined,
       "meta": Map {
@@ -15596,6 +15727,7 @@ around and keep them company.</p></div>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/05/12/SunGarden",
       "image": undefined,
       "meta": Map {
@@ -15711,6 +15843,7 @@ first time in spring we get over. Almost painfully pure, to my eye.</p><img src=
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/05/09/Jat-at-Four-Months",
       "image": undefined,
       "meta": Map {
@@ -15846,6 +15979,7 @@ whole lot less carbon than I used to.  But a new car isn’t a life-changer. Exc
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/04/27/Tianjin",
       "image": undefined,
       "meta": Map {
@@ -16019,6 +16153,7 @@ on my screen; being face-to-face with these<em>big</em>graphics is really hard-h
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/05/01/2019-Networking",
       "image": undefined,
       "meta": Map {
@@ -16137,6 +16272,7 @@ me.</p></div>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/04/22/Walking-the-Wall",
       "image": undefined,
       "meta": Map {
@@ -16323,6 +16459,7 @@ we’d already seen.</p><h2 id=\\"p-5\\">Take-aways</h2><p>It’s fantastic. Bel
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/04/15/Liking-Beijing",
       "image": undefined,
       "meta": Map {
@@ -16509,6 +16646,7 @@ think if you had to live in Beijing, this might not be the worst place.</p><img 
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/04/14/Disliking-Beijing",
       "image": undefined,
       "meta": Map {
@@ -16686,6 +16824,7 @@ But this prejudice is a failing in me, not in the city.</p><p>I was awfully happ
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/04/11/X-T30",
       "image": undefined,
       "meta": Map {
@@ -16881,6 +17020,7 @@ which a few turn out great.</p><p>I don’t think you can get more camera for th
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/04/09/2700km",
       "image": undefined,
       "meta": Map {
@@ -17057,6 +17197,7 @@ driver.</p><p>Then you’re into Beijing traffic, and may God have mercy on your
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/04/07/Visiting-Buddha",
       "image": undefined,
       "meta": Map {
@@ -17219,6 +17360,7 @@ the driver ninja’d each and every of the many turns on the way to the train, w
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/04/06/The-Surface-of-China",
       "image": undefined,
       "meta": Map {
@@ -17389,6 +17531,7 @@ look at all.</p></div>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/03/17/Fun-With-Semiotics",
       "image": undefined,
       "meta": Map {
@@ -17502,6 +17645,7 @@ portrayed as sodomizing a burly French policeman in a threesome including a prom
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/03/13/Pink-Floyd-Dad-Jokes",
       "image": undefined,
       "meta": Map {
@@ -17629,6 +17773,7 @@ explanation to be easy. But silence is; too easy.</p><blockquote><p><i>If I were
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/03/11/Lights-Going-Out",
       "image": undefined,
       "meta": Map {
@@ -17787,6 +17932,7 @@ time grows short.</p></div>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/03/03/Crocuses-2019",
       "image": undefined,
       "meta": Map {
@@ -17889,6 +18035,7 @@ garden’s color palette will expand.</p></div>",
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/02/23/LP-Log",
       "image": undefined,
       "meta": Map {
@@ -18032,6 +18179,7 @@ than digital<span class=\\"dashes\\">—</span>creating the illusion of a bunch 
     },
     Object {
       "attrs": Map {},
+      "get": [Function],
       "id": "https://www.tbray.org/ongoing/When/201x/2019/02/15/Walking-Around-the-Office",
       "image": undefined,
       "meta": Map {
