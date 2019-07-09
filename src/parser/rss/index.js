@@ -367,11 +367,11 @@ class RSSParser extends Parser {
 	 *
 	 * Examples:
 	 *
-	 *  1. "title": returns the first <title> that has empty namespace
+	 *  * "title": returns the first <title> that has empty namespace
 	 *
-	 *  2. "atom:link": returns the first <link> that has Atom namespace
+	 *  * "atom:link": returns the first <link> that has Atom namespace
 	 *
-	 *  3. "atom:link[rel=self]": returns the first <link> that as Atom
+	 *  * "atom:link[rel=self]": returns the first <link> that as Atom
 	 *     namespace and has the attribute "rel" set to "self"
 	 *
 	 * 	We only recognize namespaces specified in ./namespaces.ts
@@ -444,6 +444,7 @@ class RSSParser extends Parser {
 	 *
 	 * @param {Node} node
 	 * @memberof Parser
+	 * @returns {Node}
 	 */
 	normalize(node) {
 		return {
@@ -453,6 +454,7 @@ class RSSParser extends Parser {
 			 * Attribute selector
 			 *
 			 * @param {string[]} selectors
+			 * @returns {Node}
 			 */
 			get: selectors => {
 				return this.query(node, selectors);
@@ -462,6 +464,13 @@ class RSSParser extends Parser {
 			get id() {
 				const id = this.get(['guid', 'atom:id']);
 				return id && id.value;
+			},
+
+			get feedURL() {
+				if (node.type) {
+					const url = this.get(['atom:link[rel=self]']);
+					return url && url.attrs.get('href');
+				}
 			},
 
 			get title() {
