@@ -1,16 +1,31 @@
 import * as sx from 'saxes';
 
 export interface Item {
-	// Feed ?
-	type?: string;
-	version?: string;
-
 	attrs: Map<string, string>;
 	meta: Map<string, Item | Item[]>;
 	ns: string;
 	value?: string;
 
-	// Helpers
+	/**
+	 * Accepts multiple queries and return the first (if many) Node that
+	 * matches one of the queries (executed in order).
+	 *
+	 * Examples:
+	 *
+	 *  * "title": returns the first <title> that has empty namespace
+	 *
+	 *  * "atom:link": returns the first <link> that has Atom namespace
+	 *
+	 *  * "atom:link[rel=self]": returns the first <link> that as Atom
+	 *     namespace and has the attribute "rel" set to "self"
+	 *
+	 * 	We only recognize namespaces specified in ./namespaces.ts
+	 *
+	 * @param {import('../types').Item} node
+	 * @param {string[]} names
+	 * @returns
+	 * @memberof Parser
+	 */
 	get: (selectors: string[]) => Item;
 
 	// Normalized
@@ -21,28 +36,33 @@ export interface Item {
 	updated?: string;
 }
 
+export interface Feed extends Item {
+	type?: string;
+	version?: string;
+	feedURL?: string;
+}
+
 export interface ParserOptions {
 	normalize?: boolean;
 }
 
-declare abstract class Parser {
+declare class Parser {
 	options: ParserOptions;
 	constructor(opt?: ParserOptions);
 
 	/**
 	 * Get the current parsed feed data.
 	 *
-	 * @returns {Item}
+	 * @returns {Feed}
 	 * @memberof Parser
 	 */
-	feed(): Item;
+	feed(): Feed;
 
 	/**
 	 * Iterates over avaiable items
 	 *
 	 * @returns {IterableIterator<Item>}
 	 * @memberof Parser
-	 * @abstract
 	 */
 
 	items(): IterableIterator<Item>;
@@ -59,7 +79,6 @@ declare abstract class Parser {
 	 * Close the current stream.
 	 *
 	 * @membthis.write
-	 * @abstract
 	 */
 	close(): void;
 }
@@ -70,29 +89,7 @@ declare abstract class Parser {
  * @class RSSParser
  * @extends {Parser}
  */
-declare class RSSParser extends Parser {
-	constructor(options?: ParserOptions);
-
-	/**
-	 * @override
-	 */
-	feed(): Item;
-
-	/**
-	 * @override
-	 */
-	items(): IterableIterator<Item>;
-
-	/**
-	 * @override
-	 */
-	write(chunk: string): this;
-
-	/**
-	 * @override
-	 */
-	close(): void;
-}
+declare class RSSParser extends Parser {}
 
 export interface ParserResult {
 	feed: Item;

@@ -6,6 +6,7 @@
  * @typedef Item
  * @property {string} [type]
  * @property {string} [version]
+ * @property {string} [feedURL]
  * @property {Map<string, string>} attrs
  * @property {Map<string, Item | Item[]>} meta
  * @property {string} ns
