@@ -1,5 +1,3 @@
-// @ts-check
-
 // Native
 import { readFileSync } from 'fs';
 import * as path from 'path';
@@ -14,7 +12,7 @@ const cwd = path.resolve(__dirname, 'feeds');
 let samples = [];
 
 beforeAll(async () => {
-	// List availalbe samples
+	// List available samples
 	samples = samples.concat(await glob('*', { cwd }));
 });
 

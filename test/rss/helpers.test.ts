@@ -1,7 +1,5 @@
-// @ts-check
-
 // Ours
-import Parser from '..';
+import Parser from '../../src/parser/rss';
 
 describe('Parser.query', () => {
 	let node, parser;

@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"importHelpers": true,
+		"declaration": true,
+		"noFallthroughCasesInSwitch": true,
+		"esModuleInterop": true,
+		"moduleResolution": "node"
+	},
+	"include": [
+		"src",
+		"test/rss/parser.test.js",
+		"test/rss/helpers.test.js"
+	],
+	"exclude": ["node_modules"]
+}
