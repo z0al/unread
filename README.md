@@ -14,45 +14,27 @@ npm add unread
 
 ## Usage
 
-### Simple
-
 ```javascript
 import { parse } from 'unread';
 
-fetch('https://overreacted.io/rss.xml')
-	.then(resp => {
-		return resp.text();
-	})
-	.then(text => {
-		return parse(text);
-	})
-	.then(data => {
-		console.log('Feed: ', data.feed);
-		console.log('Items: ', data.items);
-	});
-```
+const res = await fetch('https://overreacted.io/rss.xml');
+const rss = await res.text();
 
-### Stream-like
-
-If you want more control you can use parsers directly. E.g.:
-
-```javascript
-import { RSSParser } from 'unread';
-
-const parser = new RSSParser();
-
-parser.write('<rss> ....');
-parser.write('... </rss>');
-// ...
-
-// You MUST close the stream or an infinite loop might happen
-parser.close();
-
-for (let item of parser.items()) {
-	console.log(item);
-}
-
-console.log(parser.feed());
+const output = await parse(rss);
+// {
+// 	feed: {
+// 		title,
+// 		description,
+// 		...
+// 	},
+// 	items: [
+// 		{
+// 			title,
+// 			description,
+// 			...
+// 		}
+// 	]
+// }
 ```
 
 ### Error handling
