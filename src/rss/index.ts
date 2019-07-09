@@ -3,7 +3,7 @@ import saxes from 'saxes';
 
 // Ours
 import { nsLookup } from './namespaces';
-import { Parser, Feed, ParserOptions } from '../types';
+import { Parser, Feed } from '../types';
 
 interface XMLNode extends Feed {
 	$name?: string;
@@ -15,7 +15,7 @@ interface XMLNode extends Feed {
 /**
  * A Robust RSS/Atom Parser
  */
-class RSSParser extends Parser {
+class RSS implements Parser {
 	/**
 	 * The feed element
 	 */
@@ -28,11 +28,9 @@ class RSSParser extends Parser {
 	private _parser: saxes.SaxesParser;
 
 	/**
-	 * Creates an instance of RSSParser.
+	 * Creates an instance of RSS.
 	 */
-	constructor(options: ParserOptions = {}) {
-		super(options);
-
+	constructor() {
 		// XML Parser
 		this._parser = new saxes.SaxesParser({
 			xmlns: true,
@@ -63,19 +61,12 @@ class RSSParser extends Parser {
 	 * @override
 	 */
 	feed() {
-		const { normalize } = this.options;
-
 		// Remove unnecessary attributes
 		this.clear(this._feed);
 
 		let node = this._feed;
 
-		// Normalize?
-		if (normalize) {
-			node = this.normalize(node);
-		}
-
-		return node;
+		return this.normalize(node);
 	}
 
 	/**
@@ -191,11 +182,7 @@ class RSSParser extends Parser {
 					// Remove private attributes
 					this.clear(node);
 
-					if (this.options.normalize) {
-						node = this.normalize(node);
-					}
-
-					this._buffer.unshift(node);
+					this._buffer.unshift(this.normalize(node));
 				}
 			} else {
 				// Add this node as a child
@@ -452,4 +439,4 @@ class RSSParser extends Parser {
 	}
 }
 
-export default RSSParser;
+export default RSS;

@@ -54,6 +54,13 @@ describe('RSS Parser', () => {
 		}).not.toThrow();
 
 		expect(output.feed).not.toBe(null);
+		expect(output.feed.get(['atom:subtitle']).value).toEqual(
+			'A subtitle.'
+		);
+
 		expect(output.items.length).toBe(1);
+		expect(output.items[0].get(['atom:title']).value).toEqual(
+			'Atom-Powered Robots Run Amok'
+		);
 	});
 });

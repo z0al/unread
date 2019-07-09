@@ -21,42 +21,24 @@ export interface Feed extends Item {
 	feedURL?: string;
 }
 
-export interface ParserOptions {
-	normalize?: boolean;
-}
-
-export class Parser {
-	options = { normalize: true };
-
-	/**
-	 * Creates an instance of Parser.
-	 *
-	 */
-	constructor(opt: ParserOptions = {}) {
-		this.options = { ...this.options, ...opt };
-	}
-
+export interface Parser {
 	/**
 	 * Get the current parsed feed data.
 	 */
-	feed(): Feed | undefined {
-		return undefined;
-	}
+	feed(): Feed;
 
 	/**
 	 * Iterates over avaiable items
 	 */
-	*items(): IterableIterator<Item> {}
+	items: () => IterableIterator<Item>;
 
 	/**
 	 * Write text to stream.
 	 */
-	write(chunk: string) {
-		return this;
-	}
+	write: (chunk: string) => Parser;
 
 	/**
 	 * Close the current stream.
 	 */
-	close() {}
+	close: () => void;
 }
