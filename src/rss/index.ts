@@ -3,7 +3,7 @@ import saxes from 'saxes';
 
 // Ours
 import { nsLookup } from './namespaces';
-import { Parser, Feed, ParserOptions } from '../../types';
+import { Parser, Feed, ParserOptions } from '../types';
 
 interface XMLNode extends Feed {
 	$name?: string;
@@ -113,7 +113,7 @@ class RSSParser extends Parser {
 			$local: tag.local,
 			ns: tag.uri,
 			attrs: this.attributes(tag),
-			meta: new Map(),
+			children: new Map(),
 			value: ''
 		};
 
@@ -278,15 +278,15 @@ class RSSParser extends Parser {
 
 		// Are we assigning "channel" element?
 		if (parent.type === 'rss' && key === 'channel') {
-			parent.meta = child.meta;
+			parent.children = child.children;
 			return;
 		}
 
 		let node: XMLNode | XMLNode[];
 
 		// Handle duplicated keys
-		if (parent.meta.has(key)) {
-			node = parent.meta.get(key);
+		if (parent.children.has(key)) {
+			node = parent.children.get(key);
 
 			if (node instanceof Array) {
 				node.push(child);
@@ -297,7 +297,7 @@ class RSSParser extends Parser {
 			node = child;
 		}
 
-		parent.meta.set(key, node);
+		parent.children.set(key, node);
 	}
 
 	/**
@@ -346,7 +346,7 @@ class RSSParser extends Parser {
 
 			// Namespaced key has a higher rank
 			const key = prefix + ':' + local;
-			const n = node.meta.get(key) || node.meta.get(local);
+			const n = node.children.get(key) || node.children.get(local);
 
 			/**
 			 * A helper matcher
@@ -422,8 +422,8 @@ class RSSParser extends Parser {
 
 				if (image) {
 					// RSS
-					if (image.meta.has('url')) {
-						const url = image.meta.get('url');
+					if (image.children.has('url')) {
+						const url = image.children.get('url');
 						if (!(url instanceof Array)) {
 							return url.value;
 						}

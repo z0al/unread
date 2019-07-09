@@ -1,5 +1,5 @@
 // Ours
-import RSS from './parser/rss';
+import RSS from './rss';
 import { Feed, Item } from './types';
 
 interface ParserResult {
