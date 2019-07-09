@@ -1,5 +1,5 @@
 {
-	"name": "feedify",
+	"name": "unread",
 	"version": "0.0.0-semantically-released",
 	"description": "A package for parsing RSS and Atom feeds",
 	"keywords": [
@@ -10,7 +10,7 @@
 		"syndication",
 		"xml"
 	],
-	"repository": "z0al/feedify",
+	"repository": "z0al/unread",
 	"license": "MIT",
 	"author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
 	"files": [
