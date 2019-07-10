@@ -104,6 +104,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
+## Credits
+
+- [Louis-Dominique Dubeau](https://github.com/lddubeau) for their work on [saxes](https://github.com/lddubeau/saxes). We use `saxes` to parse XML strings.
+- [Dan MacTough](https://github.com/danmactough) for their work on [node-feedparser](https://github.com/danmactough/node-feedparser). Our work is heavily inspired by `feedparser`.
+- [mmcdole](https://github.com/mmcdole) for their work on [gofeed](https://github.com/mmcdole/gofeed). We adopted `gofeed` fields mapping.
+
 ## License
 
 MIT © Ahmed T. Ali
