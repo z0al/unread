@@ -4,7 +4,14 @@
 
 [![NPM](https://nodei.co/npm/unread.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/unread/)
 
-A package for parsing RSS 2.0, Atom 1.0.
+> A package for parsing RSS 2.0, Atom 1.0. Works on both Node.js and the browser.
+
+## Features
+
+- **Small** footprint
+- **Query** attributes helper (see below)
+- **Cross-platform** works on browser and Node.js
+- **TypeScript** ready
 
 ## Installation
 
@@ -21,45 +28,29 @@ const res = await fetch('https://overreacted.io/rss.xml');
 const rss = await res.text();
 
 const output = await parse(rss);
-// {
-// 	feed: {
-// 		title,
-// 		description,
-// 		...
-// 	},
-// 	items: [
-// 		{
-// 			title,
-// 			description,
-// 			...
-// 		}
-// 	]
-// }
+
+// We support common attributes
+const { feed, items } = output;
+console.log(feed.title);
+console.log(feed.published);
+
+// And you can also query custom ones (as long as we support that namespace)
+console.log(item[0].get(['author', 'dc:creator'])); // returns first match or undefined
+console.log(item[0].getMany(['atom:link[ref=enclosure]'])); // Array of nodes
 ```
 
-### Error handling
+## Supported namespaces
 
-```javascript
-import { parse } from 'unread';
+We support the followings XML namespaces:
 
-const text = 'broken feed';
-
-// using .catch
-parse(text)
-	.then(output => console.log(output))
-	.catch(err => {
-		console.log('Oops, ', err);
-	});
-
-// OR, using try catch
-
-try {
-	const output = await parse(text);
-	console.log(output);
-} catch (err) {
-	console.log('Oops, ', err);
-}
-```
+- `http://www.w3.org/2005/Atom` (atom)
+- `http://purl.org/rss/1.0/modules/content/` (content)
+- `http://purl.org/dc/elements/1.1/` (dc)
+- `http://purl.org/dc/elements/1.0/` (dc)
+- `http://www.itunes.com/dtds/podcast-1.0.dtd` (itunes)
+- `http://search.yahoo.com/mrss/` (media)
+- `http://www.w3.org/1999/xhtml` (xhtml)
+- `http://www.w3.org/XML/1998/namespace` (xml)
 
 ## Mapping
 
