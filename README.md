@@ -63,34 +63,29 @@ try {
 
 ## Mapping
 
-| Feed        | RSS                                                                                                                                      | Atom                               |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| title       | /rss/channel/title<br>/rss/channel/dc:title                                                                                              | /feed/title                        |
-| description | /rss/channel/description<br>/rss/channel/itunes:subtitle                                                                                 | /feed/subtitle                     |
-| link        | /rss/channel/link                                                                                                                        | /feed/link[@rel=”alternate”]/@href |
-| feedURL     | /rss/channel/atom:link[@rel="self"]/@href                                                                                                | /feed/link[@rel="self"]/@href      |
-| updated     | /rss/channel/lastBuildDate<br>/rss/channel/dc:date                                                                                       | /feed/updated                      |
-| published   | /rss/channel/pubDate                                                                                                                     |                                    |
-| author      | /rss/channel/managingEditor<br>/rss/channel/webMaster<br>/rss/channel/dc:author<br>/rss/channel/dc:creator<br>/rss/channel/itunes:author | /feed/author                       |
-| language    | /rss/channel/language<br>/rss/channel/dc:language                                                                                        | /feed/@xml:lang                    |
-| image       | /rss/channel/image<br>/rss/channel/itunes:image                                                                                          | /feed/logo                         |
-| copyright   | /rss/channel/copyright<br>/rss/channel/dc:rights                                                                                         | /feed/rights<br>/feed/copyright    |
-| generator   | /rss/channel/generator                                                                                                                   | /feed/generator                    |
-| categories  | /rss/channel/category<br>/rss/channel/itunes:category<br>/rss/channel/itunes:keywords<br>/rss/channel/dc:subject                         | /feed/category                     |
+| Feed        | RSS                                                      | Atom                               |
+| ----------- | -------------------------------------------------------- | ---------------------------------- |
+| title       | /rss/channel/title<br>/rss/channel/dc:title              | /feed/title                        |
+| description | /rss/channel/description<br>/rss/channel/itunes:subtitle | /feed/subtitle                     |
+| link        | /rss/channel/link                                        | /feed/link[@rel=”alternate”]/@href |
+| feedURL     | /rss/channel/atom:link[@rel="self"]/@href                | /feed/link[@rel="self"]/@href      |
+| updated     | /rss/channel/lastBuildDate<br>/rss/channel/dc:date       | /feed/updated                      |
+| published   | /rss/channel/pubDate                                     |                                    |
+| language    | /rss/channel/language<br>/rss/channel/dc:language        | /feed/@xml:lang                    |
+| image       | /rss/channel/image<br>/rss/channel/itunes:image          | /feed/logo                         |
+| generator   | /rss/channel/generator                                   | /feed/generator                    |
 
-| Item        | RSS                                                                                                                        | Atom                                     |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| id          | /rss/channel/item/guid                                                                                                     | /feed/entry/id                           |
-| title       | /rss/channel/item/title<br>/rss/channel/item/dc:title                                                                      | /feed/entry/title                        |
-| description | /rss/channel/item/description<br>/rss/channel/item/dc:description                                                          | /feed/entry/summary                      |
-| content     | /rss/channel/item/content:encoded                                                                                          | /feed/entry/content                      |
-| link        | /rss/channel/item/link                                                                                                     | /feed/entry/link[@rel=”alternate”]/@href |
-| updated     | /rss/channel/item/dc:date                                                                                                  | /feed/entry/updated                      |
-| published   | /rss/channel/item/pubDate<br>/rss/channel/item/dc:date                                                                     | /feed/entry/published                    |
-| author      | /rss/channel/item/author<br>/rss/channel/item/dc:author<br>/rss/channel/item/dc:creator<br>/rss/channel/item/itunes:author | /feed/entry/author                       |
-| image       | /rss/channel/item/media:thumbnail                                                                                          |                                          |
-| categories  | /rss/channel/item/category<br>/rss/channel/item/dc:subject<br>/rss/channel/item/itunes:keywords                            | /feed/entry/category                     |
-| enclosures  | /rss/channel/item/enclosure                                                                                                | /feed/entry/link[@rel=”enclosure”]       |
+| Item        | RSS                                                               | Atom                                     |
+| ----------- | ----------------------------------------------------------------- | ---------------------------------------- |
+| id          | /rss/channel/item/guid                                            | /feed/entry/id                           |
+| title       | /rss/channel/item/title<br>/rss/channel/item/dc:title             | /feed/entry/title                        |
+| description | /rss/channel/item/description<br>/rss/channel/item/dc:description | /feed/entry/summary                      |
+| content     | /rss/channel/item/content:encoded                                 | /feed/entry/content                      |
+| link        | /rss/channel/item/link                                            | /feed/entry/link[@rel=”alternate”]/@href |
+| updated     | /rss/channel/item/dc:date                                         | /feed/entry/updated                      |
+| published   | /rss/channel/item/pubDate<br>/rss/channel/item/dc:date            | /feed/entry/published                    |
+| image       | /rss/channel/item/media:thumbnail                                 |                                          |
+| enclosures  | /rss/channel/item/enclosure                                       | /feed/entry/link[@rel=”enclosure”]       |
 
 ## Contributors
 

@@ -377,7 +377,11 @@ class RSS implements Parser {
 			},
 
 			get title() {
-				const title: Node = this.get(['title', 'atom:title']);
+				const title: Node = this.get([
+					'title',
+					'atom:title',
+					'dc:title'
+				]);
 				return title && title.value;
 			}
 		};
@@ -388,7 +392,11 @@ class RSS implements Parser {
 			...this.normalize(node),
 
 			get description() {
-				const desc: Node = this.get(['description', 'atom:summary']);
+				const desc: Node = this.get([
+					'description',
+					'atom:summary',
+					'dc:description'
+				]);
 				return desc && desc.value;
 			},
 
@@ -401,12 +409,16 @@ class RSS implements Parser {
 			},
 
 			get published() {
-				const published: Node = this.get(['pubDate', 'atom:published']);
+				const published: Node = this.get([
+					'pubDate',
+					'atom:published',
+					'dc:date'
+				]);
 				return published && published.value;
 			},
 
 			get updated() {
-				const updated: Node = this.get(['atom:updated']);
+				const updated: Node = this.get(['atom:updated', 'dc:date']);
 				return updated && updated.value;
 			},
 
@@ -428,10 +440,19 @@ class RSS implements Parser {
 			...this.normalize(node),
 
 			get feedURL() {
-				if (node.type) {
-					const url = this.get(['atom:link[rel=self]']);
-					return url && url.attrs.get('href');
+				const url: Node = this.get(['atom:link[rel=self]']);
+				return url && url.attrs.get('href');
+			},
+
+			get language() {
+				const lang: Node = this.get(['language', 'dc:language']);
+
+				// Atom uses the standard `xml:lang` attribute.
+				if (!lang) {
+					return node.attrs.get('xml:lang');
 				}
+
+				return lang.value;
 			},
 
 			get description() {
@@ -451,7 +472,8 @@ class RSS implements Parser {
 			get updated() {
 				const updated: Node = this.get([
 					'lastBuildDate',
-					'atom:updated'
+					'atom:updated',
+					'dc:date'
 				]);
 				return updated && updated.value;
 			},
