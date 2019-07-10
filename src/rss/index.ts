@@ -295,7 +295,7 @@ class RSS implements Parser {
 	/**
 	 * @override
 	 */
-	hasMany(node: Node, names: string[]) {
+	getMany(node: Node, names: string[]) {
 		for (const name of names) {
 			// e.g atom:link => prefix=atom, local=link
 			let [prefix, local] = name.trim().split(':');
@@ -352,8 +352,8 @@ class RSS implements Parser {
 	/**
 	 * @override
 	 */
-	has(node: Node, names: string[]) {
-		const match = this.hasMany(node, names);
+	get(node: Node, names: string[]) {
+		const match = this.getMany(node, names);
 
 		if (Array.isArray(match)) {
 			return match[0];
@@ -368,16 +368,16 @@ class RSS implements Parser {
 	normalize(node: XMLNode): XMLNode {
 		return {
 			...node,
-			has: this.has.bind(this, node),
-			hasMany: this.hasMany.bind(this, node),
+			get: this.get.bind(this, node),
+			getMany: this.getMany.bind(this, node),
 
 			get id() {
-				const id: Node = this.has(['guid', 'atom:id']);
+				const id: Node = this.get(['guid', 'atom:id']);
 				return id && id.value;
 			},
 
 			get title() {
-				const title: Node = this.has(['title', 'atom:title']);
+				const title: Node = this.get(['title', 'atom:title']);
 				return title && title.value;
 			}
 		};
@@ -388,12 +388,12 @@ class RSS implements Parser {
 			...this.normalize(node),
 
 			get description() {
-				const desc: Node = this.has(['description', 'atom:summary']);
+				const desc: Node = this.get(['description', 'atom:summary']);
 				return desc && desc.value;
 			},
 
 			get content() {
-				const content: Node = this.has([
+				const content: Node = this.get([
 					'content:encoded',
 					'atom:content'
 				]);
@@ -401,17 +401,17 @@ class RSS implements Parser {
 			},
 
 			get published() {
-				const published: Node = this.has(['pubDate', 'atom:published']);
+				const published: Node = this.get(['pubDate', 'atom:published']);
 				return published && published.value;
 			},
 
 			get updated() {
-				const updated: Node = this.has(['atom:updated']);
+				const updated: Node = this.get(['atom:updated']);
 				return updated && updated.value;
 			},
 
 			get image() {
-				const image: Node = this.has(['media:thumbnail']);
+				const image: Node = this.get(['media:thumbnail']);
 
 				if (image) {
 					// Media
@@ -429,13 +429,13 @@ class RSS implements Parser {
 
 			get feedURL() {
 				if (node.type) {
-					const url = this.has(['atom:link[rel=self]']);
+					const url = this.get(['atom:link[rel=self]']);
 					return url && url.attrs.get('href');
 				}
 			},
 
 			get description() {
-				const desc: Node = this.has([
+				const desc: Node = this.get([
 					'description',
 					'atom:subtitle',
 					'itunes:subtitle'
@@ -444,12 +444,12 @@ class RSS implements Parser {
 			},
 
 			get published() {
-				const published: Node = this.has(['pubDate']);
+				const published: Node = this.get(['pubDate']);
 				return published && published.value;
 			},
 
 			get updated() {
-				const updated: Node = this.has([
+				const updated: Node = this.get([
 					'lastBuildDate',
 					'atom:updated'
 				]);
@@ -457,7 +457,7 @@ class RSS implements Parser {
 			},
 
 			get image() {
-				const image: Node = this.has([
+				const image: Node = this.get([
 					'image',
 					'atom:logo',
 					'itunes:image'

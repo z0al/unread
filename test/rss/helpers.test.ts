@@ -1,7 +1,7 @@
 // Ours
 import Parser from '../../src/rss';
 
-describe('Parser.query', () => {
+describe('Parser.get', () => {
 	let node, parser;
 
 	beforeEach(() => {
@@ -19,7 +19,7 @@ describe('Parser.query', () => {
 
 		node.children.set('title', title);
 
-		expect(parser.query(node, ['title'])).toBe(title);
+		expect(parser.get(node, ['title'])).toBe(title);
 	});
 
 	test('namespaced prefix', () => {
@@ -31,8 +31,8 @@ describe('Parser.query', () => {
 		};
 		node.children.set('title', title);
 
-		expect(parser.query(node, ['title'])).toBeUndefined();
-		expect(parser.query(node, ['atom:title'])).toBe(title);
+		expect(parser.get(node, ['title'])).toBeUndefined();
+		expect(parser.get(node, ['atom:title'])).toBe(title);
 
 		const link = {
 			attrs: new Map(),
@@ -42,7 +42,7 @@ describe('Parser.query', () => {
 		};
 
 		node.children.set('atom:link', link);
-		expect(parser.query(node, ['atom:link', 'title'])).toBe(link);
+		expect(parser.get(node, ['atom:link', 'title'])).toBe(link);
 	});
 
 	test('duplicated keys', () => {
@@ -63,8 +63,8 @@ describe('Parser.query', () => {
 
 		node.children.set('title', titles);
 
-		expect(parser.query(node, ['title'])).toBe(titles[0]);
-		expect(parser.query(node, ['atom:title'])).toBe(titles[1]);
+		expect(parser.get(node, ['title'])).toBe(titles[0]);
+		expect(parser.get(node, ['atom:title'])).toBe(titles[1]);
 	});
 
 	test('filter by attribute', () => {
@@ -85,7 +85,7 @@ describe('Parser.query', () => {
 
 		node.children.set('link', links);
 
-		expect(parser.query(node, ['atom:link'])).toBe(links[0]);
-		expect(parser.query(node, ['atom:link[rel=self]'])).toBe(links[1]);
+		expect(parser.get(node, ['atom:link'])).toBe(links[0]);
+		expect(parser.get(node, ['atom:link[rel=self]'])).toBe(links[1]);
 	});
 });

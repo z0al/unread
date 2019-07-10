@@ -18,9 +18,9 @@ export interface Item extends Node {
 	updated?: string;
 
 	/**
-	 * A wrapper around `hasMany` that returns a single node.
+	 * A wrapper around `getMany` that returns a single node.
 	 */
-	has?: (names: string[]) => Node;
+	get?: (names: string[]) => Node;
 
 	/**
 	 * Accepts multiple queries and return the first (if many) Node that
@@ -37,7 +37,7 @@ export interface Item extends Node {
 	 *
 	 * 	We only recognize namespaces specified in `src/rss/namespaces.ts`
 	 */
-	hasMany?: (names: string[]) => Node | Node[];
+	getMany?: (names: string[]) => Node | Node[];
 }
 
 export interface Feed extends Except<Item, 'content'> {
