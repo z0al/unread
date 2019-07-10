@@ -85,7 +85,7 @@ try {
 | description | /rss/channel/item/description<br>/rss/channel/item/dc:description                                                          | /feed/entry/summary                      |
 | content     | /rss/channel/item/content:encoded                                                                                          | /feed/entry/content                      |
 | link        | /rss/channel/item/link                                                                                                     | /feed/entry/link[@rel=”alternate”]/@href |
-| updated     | /rss/channel/item/dc:date<                                                                                                 | /feed/entry/updated                      |
+| updated     | /rss/channel/item/dc:date                                                                                                  | /feed/entry/updated                      |
 | published   | /rss/channel/item/pubDate<br>/rss/channel/item/dc:date                                                                     | /feed/entry/published                    |
 | author      | /rss/channel/item/author<br>/rss/channel/item/dc:author<br>/rss/channel/item/dc:creator<br>/rss/channel/item/itunes:author | /feed/entry/author                       |
 | image       | /rss/channel/item/media:thumbnail                                                                                          |                                          |
