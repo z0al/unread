@@ -14,6 +14,12 @@ export interface Link {
 	href?: string;
 }
 
+export interface Enclosure {
+	type?: string;
+	href?: string;
+	length?: string;
+}
+
 export interface Item extends Node {
 	id?: string;
 	title?: string;
@@ -23,6 +29,7 @@ export interface Item extends Node {
 	published?: string;
 	updated?: string;
 	links?: Link[];
+	enclosures?: Enclosure[];
 
 	/**
 	 * A wrapper around `getMany` that returns a single node.
@@ -47,7 +54,7 @@ export interface Item extends Node {
 	getMany?: (names: string[]) => Node[];
 }
 
-export interface Feed extends Except<Item, 'content'> {
+export interface Feed extends Except<Item, 'content' | 'enclosures'> {
 	type?: string;
 	version?: string;
 	feedURL?: string;

@@ -448,6 +448,21 @@ class RSS implements Parser {
 						return image.attrs.get('url');
 					}
 				}
+			},
+
+			get enclosures() {
+				const files: Node[] = this.getMany([
+					'enclosure',
+					'atom:link[rel=enclosure]'
+				]);
+
+				if (files) {
+					return files.map(f => ({
+						type: f.attrs.get('type'),
+						href: f.attrs.get('url') || f.attrs.get('href'),
+						length: f.attrs.get('length')
+					}));
+				}
 			}
 		};
 	}
