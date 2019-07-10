@@ -455,6 +455,11 @@ class RSS implements Parser {
 				return lang.value;
 			},
 
+			get generator() {
+				const g: Node = this.get(['generator', 'atom:generator']);
+				return g && g.value;
+			},
+
 			get description() {
 				const desc: Node = this.get([
 					'description',

@@ -45,6 +45,7 @@ export interface Feed extends Except<Item, 'content'> {
 	version?: string;
 	feedURL?: string;
 	language?: string;
+	generator?: string;
 }
 
 export interface Parser {
