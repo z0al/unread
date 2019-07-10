@@ -16,7 +16,7 @@ beforeAll(async () => {
 	samples = samples.concat(await glob('*', { cwd }));
 });
 
-test('Snapshots', async () => {
+test('Samples', async () => {
 	for (const file of samples) {
 		const text = readFileSync(path.resolve(cwd, file)).toString();
 

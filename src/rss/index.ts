@@ -410,6 +410,17 @@ class RSS implements Parser {
 			get updated() {
 				const updated: Node = this.get(['atom:updated']);
 				return updated && updated.value;
+			},
+
+			get image() {
+				const image: Node = this.get(['media:thumbnail']);
+
+				if (image) {
+					// Media
+					if (image.attrs.has('url')) {
+						return image.attrs.get('url');
+					}
+				}
 			}
 		};
 	}
@@ -426,7 +437,11 @@ class RSS implements Parser {
 			},
 
 			get description() {
-				const desc: Node = this.get(['description', 'atom:subtitle']);
+				const desc: Node = this.get([
+					'description',
+					'atom:subtitle',
+					'itunes:subtitle'
+				]);
 				return desc && desc.value;
 			},
 
@@ -444,11 +459,19 @@ class RSS implements Parser {
 			},
 
 			get image() {
-				const image: Node = this.get(['image', 'atom:logo']);
+				const image: Node = this.get([
+					'image',
+					'atom:logo',
+					'itunes:image'
+				]);
 
 				if (image) {
+					// Itunes
+					if (image.attrs.has('href')) {
+						return image.attrs.get('href');
+					}
 					// RSS
-					if (image.children.has('url')) {
+					else if (image.children.has('url')) {
 						const url = image.children.get('url');
 						if (!(url instanceof Array)) {
 							return url.value;
