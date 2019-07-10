@@ -3,7 +3,7 @@ import saxes from 'saxes';
 
 // Ours
 import { nsLookup } from './namespaces';
-import { Parser, Feed } from '../types';
+import { Parser, Node, Feed, Item } from '../types';
 
 interface XMLNode extends Feed {
 	$name?: string;
@@ -64,9 +64,7 @@ class RSS implements Parser {
 		// Remove unnecessary attributes
 		this.clear(this._feed);
 
-		let node = this._feed;
-
-		return this.normalize(node);
+		return this.toFeed(this._feed);
 	}
 
 	/**
@@ -182,7 +180,7 @@ class RSS implements Parser {
 					// Remove private attributes
 					this.clear(node);
 
-					this._buffer.unshift(this.normalize(node));
+					this._buffer.unshift(this.toItem(node));
 				}
 			} else {
 				// Add this node as a child
@@ -370,7 +368,7 @@ class RSS implements Parser {
 	/**
 	 * Normalize common attributes
 	 */
-	normalize(node: XMLNode): XMLNode {
+	toItem(node: Item): Item {
 		return {
 			...node,
 
@@ -380,13 +378,6 @@ class RSS implements Parser {
 			get id() {
 				const id = this.get(['guid', 'atom:id']);
 				return id && id.value;
-			},
-
-			get feedURL() {
-				if (node.type) {
-					const url = this.get(['atom:link[rel=self]']);
-					return url && url.attrs.get('href');
-				}
 			},
 
 			get title() {
@@ -419,6 +410,18 @@ class RSS implements Parser {
 					else {
 						return image.value;
 					}
+				}
+			}
+		};
+	}
+
+	toFeed(node: Feed): Feed {
+		return {
+			...this.toItem(node),
+			get feedURL() {
+				if (node.type) {
+					const url = this.get(['atom:link[rel=self]']);
+					return url && url.attrs.get('href');
 				}
 			}
 		};
