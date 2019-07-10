@@ -342,7 +342,7 @@ class RSS implements Parser {
 					return list.length > 0 && list;
 				} else {
 					if (match(n)) {
-						return n;
+						return [n];
 					}
 				}
 			}
@@ -353,13 +353,8 @@ class RSS implements Parser {
 	 * @override
 	 */
 	get(node: Node, names: string[]) {
-		const match = this.getMany(node, names);
-
-		if (Array.isArray(match)) {
-			return match[0];
-		}
-
-		return match;
+		const matches = this.getMany(node, names);
+		return matches && matches[0];
 	}
 
 	/**
@@ -383,6 +378,28 @@ class RSS implements Parser {
 					'dc:title'
 				]);
 				return title && title.value;
+			},
+
+			get links() {
+				const links = [];
+
+				const rssLink: Node = this.get(['link']);
+				if (rssLink) {
+					links.push({ href: rssLink.value });
+				}
+
+				const atomLinks: Node[] = this.getMany(['atom:link']);
+				if (atomLinks) {
+					links.push(
+						...atomLinks.map(u => ({
+							type: u.attrs.get('type'),
+							rel: u.attrs.get('rel'),
+							href: u.attrs.get('href')
+						}))
+					);
+				}
+
+				return links;
 			}
 		};
 	}

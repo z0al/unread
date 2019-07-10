@@ -8,6 +8,12 @@ export interface Node {
 	value?: string;
 }
 
+export interface Link {
+	type?: string;
+	rel?: string;
+	href?: string;
+}
+
 export interface Item extends Node {
 	id?: string;
 	title?: string;
@@ -16,6 +22,7 @@ export interface Item extends Node {
 	image?: string;
 	published?: string;
 	updated?: string;
+	links?: Link[];
 
 	/**
 	 * A wrapper around `getMany` that returns a single node.
@@ -28,16 +35,16 @@ export interface Item extends Node {
 	 *
 	 * Examples:
 	 *
-	 *  * "title": returns the first <title> that has empty namespace
+	 *  * "title": returns the <title>(s) that has empty namespace
 	 *
-	 *  * "atom:link": returns the first <link> that has Atom namespace
+	 *  * "atom:link": returns the <link>(s) that has Atom namespace
 	 *
-	 *  * "atom:link[rel=self]": returns the first <link> that as Atom
+	 *  * "atom:link[rel=self]": returns the <link>(s) that as Atom
 	 *     namespace and has the attribute "rel" set to "self"
 	 *
 	 * 	We only recognize namespaces specified in `src/rss/namespaces.ts`
 	 */
-	getMany?: (names: string[]) => Node | Node[];
+	getMany?: (names: string[]) => Node[];
 }
 
 export interface Feed extends Except<Item, 'content'> {
