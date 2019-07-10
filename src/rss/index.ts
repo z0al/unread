@@ -368,35 +368,83 @@ class RSS implements Parser {
 	/**
 	 * Normalize common attributes
 	 */
-	toItem(node: Item): Item {
+	normalize(node: XMLNode): XMLNode {
 		return {
 			...node,
-
 			get: this.query.bind(this, node),
 
-			// Common attributes
 			get id() {
-				const id = this.get(['guid', 'atom:id']);
+				const id: Node = this.get(['guid', 'atom:id']);
 				return id && id.value;
 			},
 
 			get title() {
-				const title = this.get(['title', 'atom:title']);
+				const title: Node = this.get(['title', 'atom:title']);
 				return title && title.value;
+			}
+		};
+	}
+
+	toItem(node: Item): Item {
+		return {
+			...this.normalize(node),
+
+			get description() {
+				const desc: Node = this.get(['description', 'atom:summary']);
+				return desc && desc.value;
+			},
+
+			get content() {
+				const content: Node = this.get([
+					'content:encoded',
+					'atom:content'
+				]);
+				return content && content.value;
 			},
 
 			get published() {
-				const published = this.get(['pubDate', 'atom:published']);
+				const published: Node = this.get(['pubDate', 'atom:published']);
 				return published && published.value;
 			},
 
 			get updated() {
-				const updated = this.get(['lastBuildDate', 'atom:updated']);
+				const updated: Node = this.get(['atom:updated']);
+				return updated && updated.value;
+			}
+		};
+	}
+
+	toFeed(node: Feed): Feed {
+		return {
+			...this.normalize(node),
+
+			get feedURL() {
+				if (node.type) {
+					const url = this.get(['atom:link[rel=self]']);
+					return url && url.attrs.get('href');
+				}
+			},
+
+			get description() {
+				const desc: Node = this.get(['description', 'atom:subtitle']);
+				return desc && desc.value;
+			},
+
+			get published() {
+				const published: Node = this.get(['pubDate']);
+				return published && published.value;
+			},
+
+			get updated() {
+				const updated: Node = this.get([
+					'lastBuildDate',
+					'atom:updated'
+				]);
 				return updated && updated.value;
 			},
 
 			get image() {
-				const image = this.get(['image', 'atom:logo']);
+				const image: Node = this.get(['image', 'atom:logo']);
 
 				if (image) {
 					// RSS
@@ -410,18 +458,6 @@ class RSS implements Parser {
 					else {
 						return image.value;
 					}
-				}
-			}
-		};
-	}
-
-	toFeed(node: Feed): Feed {
-		return {
-			...this.toItem(node),
-			get feedURL() {
-				if (node.type) {
-					const url = this.get(['atom:link[rel=self]']);
-					return url && url.attrs.get('href');
 				}
 			}
 		};
