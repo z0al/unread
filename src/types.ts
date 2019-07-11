@@ -1,6 +1,3 @@
-// Packages
-import { Except } from 'type-fest';
-
 export interface Node {
 	attrs: Map<string, string>;
 	children: Map<string, Node | Node[]>;
@@ -20,7 +17,7 @@ export interface Enclosure {
 	length?: string;
 }
 
-export interface Item extends Node {
+interface Common extends Node {
 	id?: string;
 	title?: string;
 	description?: string;
@@ -54,7 +51,12 @@ export interface Item extends Node {
 	getMany?: (names: string[]) => Node[];
 }
 
-export interface Feed extends Except<Item, 'content' | 'enclosures'> {
+export interface Item extends Common {
+	content?: string;
+	enclosures?: Enclosure[];
+}
+
+export interface Feed extends Common {
 	type?: string;
 	version?: string;
 	feedURL?: string;

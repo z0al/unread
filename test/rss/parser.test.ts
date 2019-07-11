@@ -54,6 +54,7 @@ describe('RSS Parser', () => {
 		}).not.toThrow();
 
 		expect(output.feed).not.toBe(null);
+		expect(output.feed.title).toBeDefined();
 		expect(output.feed.get(['atom:subtitle']).value).toEqual(
 			'A subtitle.'
 		);

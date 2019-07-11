@@ -32,7 +32,7 @@ const output = await parse(rss);
 // We support common attributes
 const { feed, items } = output;
 console.log(feed.title);
-console.log(feed.published);
+console.log(feed.feedLink);
 
 // And you can also query custom ones (as long as we support that namespace)
 console.log(item[0].get(['author', 'dc:creator'])); // returns first match or undefined
