@@ -22,6 +22,36 @@ test('Samples', async () => {
 
 		const output = await parse(text);
 
-		expect(output).toMatchSnapshot(file);
+		let { feed, items } = output;
+
+		// Evaluate all selectors
+		feed = {
+			...feed,
+			id: feed.id(),
+			title: feed.title(),
+			description: feed.description(),
+			image: feed.image(),
+			published: feed.published(),
+			updated: feed.updated(),
+			links: feed.links(),
+			feedURL: feed.feedURL(),
+			language: feed.language(),
+			generator: feed.generator()
+		} as any;
+
+		items = items.map(item => ({
+			...item,
+			id: item.id(),
+			title: item.title(),
+			description: item.description(),
+			content: item.content(),
+			image: item.image(),
+			published: item.published(),
+			updated: item.updated(),
+			links: item.links(),
+			enclosures: item.enclosures()
+		})) as any[];
+
+		expect({ feed, items }).toMatchSnapshot(file);
 	}
 });

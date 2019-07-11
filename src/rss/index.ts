@@ -5,7 +5,7 @@ import saxes from 'saxes';
 import { nsLookup } from './namespaces';
 import { Parser, Node, Feed, Item } from '../types';
 
-interface XMLNode extends Feed {
+interface XMLNode extends Feed, Item {
 	$name?: string;
 	$prefix?: string;
 	$local?: string;
@@ -360,19 +360,19 @@ class RSS implements Parser {
 	/**
 	 * Normalize common attributes
 	 */
-	normalize(node: XMLNode): XMLNode {
+	normalize(node: Node): XMLNode {
 		return {
 			...node,
-			get: this.get.bind(this, node),
-			getMany: this.getMany.bind(this, node),
+			get: (names: string[]) => this.get(node, names),
+			getMany: (names: string[]) => this.getMany(node, names),
 
-			get id() {
-				const id: Node = this.get(['guid', 'atom:id']);
+			id: () => {
+				const id = this.get(node, ['guid', 'atom:id']);
 				return id && id.value;
 			},
 
-			get title() {
-				const title: Node = this.get([
+			title: () => {
+				const title = this.get(node, [
 					'title',
 					'atom:title',
 					'dc:title'
@@ -380,15 +380,15 @@ class RSS implements Parser {
 				return title && title.value;
 			},
 
-			get links() {
+			links: () => {
 				const links = [];
 
-				const rssLink: Node = this.get(['link']);
+				const rssLink = this.get(node, ['link']);
 				if (rssLink) {
 					links.push({ href: rssLink.value });
 				}
 
-				const atomLinks: Node[] = this.getMany(['atom:link']);
+				const atomLinks = this.getMany(node, ['atom:link']);
 				if (atomLinks) {
 					links.push(
 						...atomLinks.map(u => ({
@@ -404,12 +404,12 @@ class RSS implements Parser {
 		};
 	}
 
-	toItem(node: Item): Item {
+	toItem(node: Node): Item {
 		return {
 			...this.normalize(node),
 
-			get description() {
-				const desc: Node = this.get([
+			description: () => {
+				const desc = this.get(node, [
 					'description',
 					'atom:summary',
 					'dc:description'
@@ -417,16 +417,16 @@ class RSS implements Parser {
 				return desc && desc.value;
 			},
 
-			get content() {
-				const content: Node = this.get([
+			content: () => {
+				const content = this.get(node, [
 					'content:encoded',
 					'atom:content'
 				]);
 				return content && content.value;
 			},
 
-			get published() {
-				const published: Node = this.get([
+			published: () => {
+				const published = this.get(node, [
 					'pubDate',
 					'atom:published',
 					'dc:date'
@@ -434,13 +434,13 @@ class RSS implements Parser {
 				return published && published.value;
 			},
 
-			get updated() {
-				const updated: Node = this.get(['atom:updated', 'dc:date']);
+			updated: () => {
+				const updated = this.get(node, ['atom:updated', 'dc:date']);
 				return updated && updated.value;
 			},
 
-			get image() {
-				const image: Node = this.get(['media:thumbnail']);
+			image: () => {
+				const image = this.get(node, ['media:thumbnail']);
 
 				if (image) {
 					// Media
@@ -450,8 +450,8 @@ class RSS implements Parser {
 				}
 			},
 
-			get enclosures() {
-				const files: Node[] = this.getMany([
+			enclosures: () => {
+				const files = this.getMany(node, [
 					'enclosure',
 					'atom:link[rel=enclosure]'
 				]);
@@ -467,17 +467,17 @@ class RSS implements Parser {
 		};
 	}
 
-	toFeed(node: Feed): Feed {
+	toFeed(node: Node): Feed {
 		return {
 			...this.normalize(node),
 
-			get feedURL() {
-				const url: Node = this.get(['atom:link[rel=self]']);
+			feedURL: () => {
+				const url = this.get(node, ['atom:link[rel=self]']);
 				return url && url.attrs.get('href');
 			},
 
-			get language() {
-				const lang: Node = this.get(['language', 'dc:language']);
+			language: () => {
+				const lang = this.get(node, ['language', 'dc:language']);
 
 				// Atom uses the standard `xml:lang` attribute.
 				if (!lang) {
@@ -487,13 +487,13 @@ class RSS implements Parser {
 				return lang.value;
 			},
 
-			get generator() {
-				const g: Node = this.get(['generator', 'atom:generator']);
+			generator: () => {
+				const g = this.get(node, ['generator', 'atom:generator']);
 				return g && g.value;
 			},
 
-			get description() {
-				const desc: Node = this.get([
+			description: () => {
+				const desc = this.get(node, [
 					'description',
 					'atom:subtitle',
 					'itunes:subtitle'
@@ -501,13 +501,13 @@ class RSS implements Parser {
 				return desc && desc.value;
 			},
 
-			get published() {
-				const published: Node = this.get(['pubDate']);
+			published: () => {
+				const published = this.get(node, ['pubDate']);
 				return published && published.value;
 			},
 
-			get updated() {
-				const updated: Node = this.get([
+			updated: () => {
+				const updated = this.get(node, [
 					'lastBuildDate',
 					'atom:updated',
 					'dc:date'
@@ -515,8 +515,8 @@ class RSS implements Parser {
 				return updated && updated.value;
 			},
 
-			get image() {
-				const image: Node = this.get([
+			image: () => {
+				const image = this.get(node, [
 					'image',
 					'atom:logo',
 					'itunes:image'

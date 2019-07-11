@@ -18,15 +18,13 @@ export interface Enclosure {
 }
 
 interface Common extends Node {
-	id?: string;
-	title?: string;
-	description?: string;
-	content?: string;
-	image?: string;
-	published?: string;
-	updated?: string;
-	links?: Link[];
-	enclosures?: Enclosure[];
+	id?: () => string;
+	title?: () => string;
+	description?: () => string;
+	image?: () => string;
+	published?: () => string;
+	updated?: () => string;
+	links?: () => Link[];
 
 	/**
 	 * A wrapper around `getMany` that returns a single node.
@@ -52,16 +50,16 @@ interface Common extends Node {
 }
 
 export interface Item extends Common {
-	content?: string;
-	enclosures?: Enclosure[];
+	content?: () => string;
+	enclosures?: () => Enclosure[];
 }
 
 export interface Feed extends Common {
 	type?: string;
 	version?: string;
-	feedURL?: string;
-	language?: string;
-	generator?: string;
+	feedURL?: () => string;
+	language?: () => string;
+	generator?: () => string;
 }
 
 export interface Parser {
