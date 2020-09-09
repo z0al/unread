@@ -25,7 +25,7 @@
 		"test": "tsdx test"
 	},
 	"dependencies": {
-		"saxes": "^3.1.11"
+		"saxes": "^5.0.1"
 	},
 	"devDependencies": {
 		"@types/globby": "^9.1.0",

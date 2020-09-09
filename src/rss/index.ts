@@ -1,5 +1,5 @@
 // Packages
-import saxes from 'saxes';
+import { SaxesParser, SaxesTag } from 'saxes';
 
 // Ours
 import { nsLookup } from './namespaces';
@@ -25,23 +25,24 @@ class RSS implements Parser {
 	private _stack: XMLNode[];
 	private _buffer: XMLNode[];
 
-	private _parser: saxes.SaxesParser;
+	private _parser: SaxesParser;
 
 	/**
 	 * Creates an instance of RSS.
 	 */
 	constructor() {
 		// XML Parser
-		this._parser = new saxes.SaxesParser({
+		this._parser = new SaxesParser({
 			xmlns: true,
 			position: false
 		});
-		this._parser.onopentag = this.onopentag.bind(this);
-		this._parser.onclosetag = this.onclosetag.bind(this);
-		this._parser.ontext = this.ontext.bind(this);
-		this._parser.oncdata = this.ontext.bind(this);
-		this._parser.onerror = this.onerror.bind(this);
-		this._parser.onend = this.onend.bind(this);
+
+		this._parser.on('opentag', this.onopentag);
+		this._parser.on('closetag', this.onclosetag);
+		this._parser.on('text', this.ontext);
+		this._parser.on('cdata', this.ontext);
+		this._parser.on('error', this.onerror);
+		this._parser.on('end', this.onend);
 
 		/**
 		 * Holds all open tags
@@ -95,7 +96,7 @@ class RSS implements Parser {
 		this._parser.close();
 	}
 
-	onopentag(tag: saxes.SaxesTag) {
+	onopentag = (tag: SaxesTag) => {
 		const node: XMLNode = {
 			$name: tag.name,
 			$prefix: tag.prefix,
@@ -152,9 +153,9 @@ class RSS implements Parser {
 
 			this._stack.unshift(node);
 		}
-	}
+	};
 
-	onclosetag(tag: saxes.SaxesTag) {
+	onclosetag = (tag: SaxesTag) => {
 		// NOTE: We only rely on the internal stack to ensure correct output
 		// in some cases. That being said, it's up to the consumer to decide
 		// what happens in case of XML error.
@@ -199,23 +200,23 @@ class RSS implements Parser {
 				}
 			}
 		}
-	}
+	};
 
-	ontext(text: string) {
+	ontext = (text: string) => {
 		text = text.trim();
 		if (text && this._stack.length > 0) {
 			this._stack[0].value += text;
 		}
-	}
+	};
 
-	onerror(err: Error) {
+	onerror = (err: Error) => {
 		throw err;
-	}
+	};
 
-	onend() {
+	onend = () => {
 		// We are done here
 		this._done = true;
-	}
+	};
 
 	/**
 	 * Checks if a given node is <rss> or <feed> tag
@@ -242,7 +243,7 @@ class RSS implements Parser {
 	/**
 	 * Parse tag attributes
 	 */
-	attributes(tag: saxes.SaxesTag) {
+	attributes(tag: SaxesTag) {
 		const attrs = new Map<string, string>();
 
 		return Object.entries(tag.attributes).reduce(
@@ -288,7 +289,7 @@ class RSS implements Parser {
 	/**
 	 * Check if a node and an XML tag are equal
 	 */
-	equals(node: XMLNode, tag: saxes.SaxesTag) {
+	equals(node: XMLNode, tag: SaxesTag) {
 		return node.$name === tag.name;
 	}
 
