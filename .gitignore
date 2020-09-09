@@ -178,3 +178,4 @@ $RECYCLE.BIN/
 .rpt2_cache
 .rts2_cache*
 dist
+package-lock.json
