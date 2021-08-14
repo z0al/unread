@@ -3,7 +3,7 @@ import { readFileSync } from 'fs';
 import * as path from 'path';
 
 // Packages
-import glob from 'globby';
+import glob from 'glob';
 
 // Ours
 import { parse } from '../../src';
@@ -11,9 +11,9 @@ import { parse } from '../../src';
 const cwd = path.resolve(__dirname, 'feeds');
 let samples = [];
 
-beforeAll(async () => {
+beforeAll(() => {
 	// List available samples
-	samples = samples.concat(await glob('*', { cwd }));
+	samples = samples.concat(glob.sync('*', { cwd }));
 });
 
 test('Samples', async () => {
@@ -36,10 +36,10 @@ test('Samples', async () => {
 			links: feed.links(),
 			feedURL: feed.feedURL(),
 			language: feed.language(),
-			generator: feed.generator()
+			generator: feed.generator(),
 		} as any;
 
-		items = items.map(item => ({
+		items = items.map((item) => ({
 			...item,
 			id: item.id(),
 			title: item.title(),
@@ -49,7 +49,7 @@ test('Samples', async () => {
 			published: item.published(),
 			updated: item.updated(),
 			links: item.links(),
-			enclosures: item.enclosures()
+			enclosures: item.enclosures(),
 		})) as any[];
 
 		expect({ feed, items }).toMatchSnapshot(file);
