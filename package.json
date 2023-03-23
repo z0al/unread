@@ -30,7 +30,7 @@
 	"devDependencies": {
 		"@types/glob": "^7.1.4",
 		"@types/jest": "^27.0.1",
-		"glob": "^7.1.7",
+		"glob": "^9.3.2",
 		"husky": "^7.0.1",
 		"jest": "^27.0.6",
 		"prettier": "^2.1.1",
